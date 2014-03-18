@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>notes to self - avconv</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="http://kerma.github.io/theme/css/main.css" type="text/css" />
+        <link href="http://kerma.github.io/" type="application/atom+xml" rel="alternate" title="notes to self ATOM Feed" />
+
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="http://kerma.github.io/css/ie.css"/>
+                <script src="http://kerma.github.io/js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="http://kerma.github.io/css/ie6.css"/><![endif]-->
+
+</head>
+
+<body>
+        
+        
+
+            <header>
+                <h1><a href="http://kerma.github.io" id="site-title">notes to self </a> : <a href="http://kerma.github.io/remove-audio-from-video.html" id="page-title">How to remove unnecessary audio from a video file</a></h1>
+<time datetime="2013-07-30T00:00:00">Tue 30 July 2013</time>            </header>
+
+            <article>
+                <p>Once in a while I encounter a video file which has more than one audio stream attached to it. Usually
+I'm only interested in one of those and want to get rid of the others. Specially if the first one is not
+the one I'm interested in. Xbox does provide an easy way to selecting some other stream besides the
+first one.</p>
+<p>So let's fire up avprobe first:</p>
+<div class="highlight"><pre><span class="o">:&gt;</span> <span class="n">avprobe</span> <span class="n">something_nice</span><span class="p">.</span><span class="n">avi</span>
+
+<span class="n">avprobe</span> <span class="n">version</span> <span class="mf">0.8.6</span><span class="o">-</span><span class="mi">4</span><span class="o">:</span><span class="mf">0.8.6</span><span class="o">-</span><span class="mi">0u</span><span class="n">buntu0</span><span class="mf">.12.04.1</span><span class="p">,</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> 
+<span class="mi">2007</span><span class="o">-</span><span class="mi">2013</span> <span class="n">the</span> <span class="n">Libav</span> <span class="n">developers</span> <span class="n">built</span> <span class="n">on</span> <span class="n">Apr</span>  <span class="mi">2</span> <span class="mi">2013</span> <span class="mi">17</span><span class="o">:</span><span class="mo">00</span><span class="o">:</span><span class="mi">59</span> 
+<span class="n">with</span> <span class="n">gcc</span> <span class="mf">4.6.3</span>
+<span class="n">Input</span> <span class="err">#</span><span class="mi">0</span><span class="p">,</span> <span class="n">avi</span><span class="p">,</span> <span class="n">from</span> <span class="err">&#39;</span><span class="n">something_nice</span><span class="p">.</span><span class="n">avi</span><span class="err">&#39;</span><span class="o">:</span>
+  <span class="nl">Metadata:</span>
+    <span class="n">encoder</span>         <span class="o">:</span> <span class="n">VirtualDubModRus</span> <span class="mf">1.5.10.2</span> <span class="p">(</span><span class="n">build</span> <span class="mi">2542</span><span class="o">/</span><span class="n">release</span><span class="p">)</span>
+    <span class="n">title</span>           <span class="o">:</span> <span class="n">Something</span> <span class="n">Nice</span>
+    <span class="n">artist</span>          <span class="o">:</span> <span class="n">Released</span>
+    <span class="n">copyright</span>       <span class="o">:</span> <span class="n">HQ</span><span class="o">-</span><span class="n">ViDEO</span>
+    <span class="n">genre</span>           <span class="o">:</span> <span class="n">Action</span>
+    <span class="n">album</span>           <span class="o">:</span> <span class="n">Movie</span>
+    <span class="n">comment</span>         <span class="o">:</span> <span class="n">DVD</span>
+  <span class="nl">Duration:</span> <span class="mo">01</span><span class="o">:</span><span class="mi">54</span><span class="o">:</span><span class="mf">04.25</span><span class="p">,</span> <span class="n">start</span><span class="o">:</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="n">bitrate</span><span class="o">:</span> <span class="mi">2738</span> <span class="n">kb</span><span class="o">/</span><span class="n">s</span>
+    <span class="n">Stream</span> <span class="err">#</span><span class="mf">0.0</span><span class="o">:</span> <span class="n">Video</span><span class="o">:</span> <span class="n">mpeg4</span> <span class="p">(</span><span class="n">Advanced</span> <span class="n">Simple</span> <span class="n">Profile</span><span class="p">),</span> <span class="n">yuv420p</span><span class="p">,</span>
+    <span class="mi">720</span><span class="n">x304</span> <span class="p">[</span><span class="n">PAR</span> <span class="mi">1</span><span class="o">:</span><span class="mi">1</span> <span class="n">DAR</span> <span class="mi">45</span><span class="o">:</span><span class="mi">19</span><span class="p">],</span> <span class="mf">23.98</span> <span class="n">tbr</span><span class="p">,</span> <span class="mf">23.98</span> <span class="n">tbn</span><span class="p">,</span> <span class="mf">23.98</span> <span class="n">tbc</span>
+    <span class="n">Stream</span> <span class="err">#</span><span class="mf">0.1</span><span class="o">:</span> <span class="n">Audio</span><span class="o">:</span> <span class="n">ac3</span><span class="p">,</span> <span class="mi">48000</span> <span class="n">Hz</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="n">s16</span><span class="p">,</span> <span class="mi">448</span> <span class="n">kb</span><span class="o">/</span><span class="n">s</span>
+    <span class="n">Stream</span> <span class="err">#</span><span class="mf">0.2</span><span class="o">:</span> <span class="n">Audio</span><span class="o">:</span> <span class="n">ac3</span><span class="p">,</span> <span class="mi">48000</span> <span class="n">Hz</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="n">s16</span><span class="p">,</span> <span class="mi">448</span> <span class="n">kb</span><span class="o">/</span><span class="n">s</span>
+</pre></div>
+
+
+<p>I'm interested in the second audio stream, which is in the language I understand. avconv helps:</p>
+<div class="highlight"><pre><span class="o">&gt;:</span><span class="n">avconv</span> <span class="o">-</span><span class="n">i</span> <span class="n">something_nice</span><span class="p">.</span><span class="n">avi</span> <span class="o">-</span><span class="n">map</span> <span class="mi">0</span><span class="o">:</span><span class="mi">0</span> <span class="o">-</span><span class="n">c</span><span class="o">:</span><span class="n">v</span> <span class="n">copy</span> <span class="o">-</span><span class="n">map</span> <span class="mi">0</span><span class="o">:</span><span class="mi">2</span> <span class="o">-</span><span class="n">c</span><span class="o">:</span><span class="n">a</span> \
+<span class="n">copy</span> <span class="n">something_nice_eng</span><span class="p">.</span><span class="n">avi</span>
+</pre></div>            </article>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="http://kerma.github.io/pages/about.html">About</a></li>
+                    <li>:: <a href="http://kerma.github.io/tags.html">Tags</a></li>
+                </ul>
+            </nav>
+                <p id="theme-credit"><a href="http://mathieu.agopian.info/mnmlist/theme.html">Thème mnmlist</a></p>
+        </footer>
+
+</body>
+</html>

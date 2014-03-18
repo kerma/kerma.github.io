@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>notes to self</title>
+        <title>notes to self : How to concatenate multiple mp3's</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="http://kerma.github.io/theme/css/main.css" type="text/css" />
         <link href="http://kerma.github.io/" type="application/atom+xml" rel="alternate" title="notes to self ATOM Feed" />
@@ -20,28 +20,18 @@
 
 <body>
         
-        
-
-            <header>
-                <h1><a href="http://kerma.github.io" id="site-title">notes to self </a> : <a href="http://kerma.github.io/join-mp3-with-lame.html" id="page-title">How to concatenate multiple mp3's</a></h1>
-<time datetime="2014-03-18T00:00:00">Tue 18 March 2014</time>            </header>
-
-            <article>
-                <p>It's 2014 and yet it's not an obvious thing for some strange reason. Luckly someone 
+<header>
+    <h1><a href="http://kerma.github.io" id="site-title">notes to self </a> :
+        <a href="http://kerma.github.io/join-mp3-with-lame.html" id="page-title">How to concatenate multiple mp3's</a></h1>
+<time datetime="2014-03-18T00:00:00">Tue 18 March 2014</time></header>
+<article>
+    <p>It's 2014 and yet it's not an obvious thing for some strange reason. Luckly someone 
 <a href="http://serialized.net/2007/09/quick-lame-tip-concatenate-mp3s/">else</a> 
 was as frustrated as me. </p>
 <p>Here's my a bit shorter version of it:</p>
 <div class="highlight"><pre><span class="n">find</span> <span class="p">.</span> <span class="o">-</span><span class="n">name</span> <span class="err">&#39;</span><span class="o">*</span><span class="p">.</span><span class="n">mp3</span><span class="err">&#39;</span> <span class="o">-</span><span class="n">exec</span> <span class="n">lame</span> <span class="o">--</span><span class="n">decode</span> <span class="err">&#39;</span><span class="p">{}</span><span class="err">&#39;</span> <span class="o">-</span> <span class="sc">&#39;;&#39;</span> <span class="o">|</span> <span class="n">lame</span> <span class="o">-</span><span class="n">b</span> <span class="mi">64</span> <span class="o">-</span> <span class="n">out</span><span class="p">.</span><span class="n">mp3</span>
-</pre></div>            </article>
-                <section id="article-list">
-                    <h2>All posts</h2>
-                    <ol>
-        
-
- 
-            <li><a href="http://kerma.github.io/remove-audio-from-video.html" rel="bookmark" title="Permalink to How to remove unnecessary audio from a video file">How to remove unnecessary audio from a video file</a></li>
-    </ol>
-    </section><!-- #article-list -->
+</pre></div>
+</article>
 
         <footer>
             <nav>
