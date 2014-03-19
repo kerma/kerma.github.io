@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>notes to self - mongodb</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="http://kerma.github.io/theme/css/main.css" type="text/css" />
+        <link href="http://kerma.github.io/" type="application/atom+xml" rel="alternate" title="notes to self ATOM Feed" />
+
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="http://kerma.github.io/css/ie.css"/>
+                <script src="http://kerma.github.io/js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="http://kerma.github.io/css/ie6.css"/><![endif]-->
+
+</head>
+
+<body>
+        
+        
+
+            <header>
+                <h1><a href="http://kerma.github.io" id="site-title">notes to self </a> : <a href="http://kerma.github.io/mongodb-on-64bit-debian.html" id="page-title">Install mongoDB on 64bit Debian (Squeeze)</a></h1>
+<time datetime="2013-04-18T00:00:00">Thu 18 April 2013</time>            </header>
+
+            <article>
+                <p>Sometime the most obvious thing turns out to be the most complicated one. Here's
+my small journey to get mongoDB running on one 64bit Debian server.</p>
+<p>Like any other reasonable person I started from the
+<a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-debian/">manual</a>.
+Everything worked as they said it would and for some time I was quite happy with
+it. But at some point for whatever reason I peaked into
+<code>/var/log/mongodb/mongodb.log</code>.</p>
+<div class="highlight"><pre><span class="o">*****</span> <span class="n">SERVER</span> <span class="n">RESTARTED</span> <span class="o">*****</span>
+
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="n">warning</span><span class="o">:</span> <span class="mi">32</span><span class="o">-</span><span class="n">bit</span> <span class="n">servers</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">have</span> <span class="n">journaling</span> <span class="n">enabled</span> <span class="n">by</span> <span class="k">default</span><span class="p">.</span> <span class="n">Please</span> <span class="n">use</span> <span class="o">--</span><span class="n">journal</span> <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">durability</span><span class="p">.</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="n">MongoDB</span> <span class="n">starting</span> <span class="o">:</span> <span class="n">pid</span><span class="o">=</span><span class="mi">4281</span> <span class="n">port</span><span class="o">=</span><span class="mi">27017</span> <span class="n">dbpath</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mongodb</span> <span class="mi">32</span><span class="o">-</span><span class="n">bit</span> <span class="n">host</span><span class="o">=</span><span class="n">debian</span><span class="o">-</span><span class="n">server</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="o">**</span> <span class="n">NOTE</span><span class="o">:</span> <span class="n">when</span> <span class="n">using</span> <span class="n">MongoDB</span> <span class="mi">32</span> <span class="n">bit</span><span class="p">,</span> <span class="n">you</span> <span class="n">are</span> <span class="n">limited</span> <span class="n">to</span> <span class="n">about</span> <span class="mi">2</span> <span class="n">gigabytes</span> <span class="n">of</span> <span class="n">data</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="o">**</span>       <span class="n">see</span> <span class="n">http</span><span class="o">:</span><span class="c1">//blog.mongodb.org/post/137788967/32-bit-limitations</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="o">**</span>       <span class="n">with</span> <span class="o">--</span><span class="n">journal</span><span class="p">,</span> <span class="n">the</span> <span class="n">limit</span> <span class="n">is</span> <span class="n">lower</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="o">**</span> <span class="n">WARNING</span><span class="o">:</span> <span class="n">You</span> <span class="n">are</span> <span class="n">running</span> <span class="n">on</span> <span class="n">a</span> <span class="n">NUMA</span> <span class="n">machine</span><span class="p">.</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="o">**</span>          <span class="n">We</span> <span class="n">suggest</span> <span class="n">launching</span> <span class="n">mongod</span> <span class="n">like</span> <span class="n">this</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">performance</span> <span class="n">problems</span><span class="o">:</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="o">**</span>              <span class="n">numactl</span> <span class="o">--</span><span class="n">interleave</span><span class="o">=</span><span class="n">all</span> <span class="n">mongod</span> <span class="p">[</span><span class="n">other</span> <span class="n">options</span><span class="p">]</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="n">db</span> <span class="n">version</span> <span class="n">v2</span><span class="mf">.2.2</span><span class="p">,</span> <span class="n">pdfile</span> <span class="n">version</span> <span class="mf">4.5</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="n">git</span> <span class="n">version</span><span class="o">:</span> <span class="n">d1b43b61a5308c4ad0679d34b262c5af9d664267</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="n">build</span> <span class="n">info</span><span class="o">:</span> <span class="n">Linux</span> <span class="n">domU</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">31</span><span class="o">-</span><span class="mi">39</span><span class="o">-</span><span class="mo">01</span><span class="o">-</span><span class="mi">70</span><span class="o">-</span><span class="n">B4</span> <span class="mf">2.6.21.7</span><span class="o">-</span><span class="mf">2.f</span><span class="n">c8xen</span> <span class="err">#</span><span class="mi">1</span> <span class="n">SMP</span> <span class="n">Fri</span> <span class="n">Feb</span> <span class="mi">15</span> <span class="mi">12</span><span class="o">:</span><span class="mi">39</span><span class="o">:</span><span class="mi">36</span> <span class="n">EST</span> <span class="mi">2008</span> <span class="n">i686</span> <span class="n">BOOST_LIB_VERSION</span><span class="o">=</span><span class="mi">1</span><span class="n">_49</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="n">options</span><span class="o">:</span> <span class="p">{</span> <span class="n">config</span><span class="o">:</span> <span class="s">&quot;/etc/mongodb.conf&quot;</span><span class="p">,</span> <span class="n">dbpath</span><span class="o">:</span> <span class="s">&quot;/var/lib/mongodb&quot;</span><span class="p">,</span> <span class="n">logappend</span><span class="o">:</span> <span class="s">&quot;true&quot;</span><span class="p">,</span> <span class="n">logpath</span><span class="o">:</span> <span class="s">&quot;/var/log/mongodb/mongodb.log&quot;</span> <span class="p">}</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">check</span> <span class="k">for</span> <span class="n">journal</span> <span class="n">files</span> <span class="n">due</span> <span class="n">to</span><span class="o">:</span> <span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">basic_directory_iterator</span> <span class="n">constructor</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span><span class="o">:</span> <span class="s">&quot;/var/lib/mongodb/journal&quot;</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">websvr</span><span class="p">]</span> <span class="n">admin</span> <span class="n">web</span> <span class="n">console</span> <span class="n">waiting</span> <span class="k">for</span> <span class="n">connections</span> <span class="n">on</span> <span class="n">port</span> <span class="mi">28017</span>
+<span class="n">Wed</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">17</span><span class="o">:</span><span class="mi">34</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="n">waiting</span> <span class="k">for</span> <span class="n">connections</span> <span class="n">on</span> <span class="n">port</span> <span class="mi">27017</span>
+</pre></div>
+
+
+<p>2GB limit? That really does not work for me in the long run. So how can I get
+this running on 64bit? </p>
+<p>After spending an hour trying to figure out how to install 64bit binaries via
+apt I gave up. There just isn't a way (please let me know if there is).</p>
+<p>So I downloaded Linux 64-bit binaries, but:  </p>
+<div class="highlight"><pre><span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="p">.</span><span class="o">/</span><span class="n">mongod</span>
+<span class="nl">bash:</span> <span class="p">.</span><span class="o">/</span><span class="n">mongod</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
+</pre></div>
+
+
+<p>Obviously the file exists, which means that the binary is not for the correct
+arch. As I knew little about my server I started to doubt whether I was actually
+on 64bit arch. Let's find out:</p>
+<div class="highlight"><pre><span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="n">uname</span> <span class="o">-</span><span class="n">a</span>
+<span class="n">Linux</span> <span class="n">debian</span><span class="o">-</span><span class="n">server</span> <span class="mf">2.6.32</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">amd64</span> <span class="err">#</span><span class="mi">1</span> <span class="n">SMP</span> <span class="n">Sun</span> <span class="n">May</span> <span class="mi">6</span> <span class="mo">05</span><span class="o">:</span><span class="mi">12</span><span class="o">:</span><span class="mo">07</span> <span class="n">UTC</span> <span class="mi">2012</span> <span class="n">x86_64</span> <span class="n">GNU</span><span class="o">/</span><span class="n">Linux</span>
+</pre></div>
+
+
+<p>amd64 definitely looks like 64bit.</p>
+<div class="highlight"><pre><span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="n">lscpu</span>
+<span class="nl">Architecture:</span>          <span class="n">x86_64</span>
+<span class="n">CPU</span> <span class="n">op</span><span class="o">-</span><span class="n">mode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">:</span>        <span class="mi">64</span><span class="o">-</span><span class="n">bit</span>
+<span class="p">...</span>
+
+<span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="n">grep</span> <span class="n">flags</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">cpuinfo</span>
+<span class="n">flags</span>       <span class="o">:</span> <span class="n">fpu</span> <span class="n">vme</span> <span class="n">de</span> <span class="n">pse</span> <span class="n">tsc</span> <span class="n">msr</span> <span class="n">pae</span> <span class="n">mce</span> <span class="n">cx8</span> <span class="n">apic</span> <span class="n">sep</span> <span class="n">mtrr</span> <span class="n">pge</span> <span class="n">mca</span> <span class="n">cmov</span> <span class="n">pat</span> <span class="n">pse36</span> <span class="n">clflush</span> <span class="n">mmx</span> <span class="n">fxsr</span> <span class="n">sse</span> <span class="n">sse2</span> <span class="n">ht</span> <span class="n">syscall</span> <span class="n">nx</span> <span class="n">mmxext</span> <span class="n">fxsr_opt</span> <span class="n">lm</span> <span class="mi">3</span><span class="n">dnowext</span> <span class="mi">3</span><span class="n">dnow</span> <span class="n">rep_good</span> <span class="n">pni</span> <span class="n">cmp_legacy</span>
+</pre></div>
+
+
+<p>So I have 64bit CPU and 64bit kernel. Did I download the correct
+binaries?  </p>
+<div class="highlight"><pre><span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="n">file</span> <span class="n">mongod</span>
+<span class="nl">mongod:</span> <span class="n">ELF</span> <span class="mi">64</span><span class="o">-</span><span class="n">bit</span> <span class="n">LSB</span> <span class="n">executable</span><span class="p">,</span> <span class="n">x86</span><span class="o">-</span><span class="mi">64</span><span class="p">,</span> <span class="n">version</span> <span class="mi">1</span> <span class="p">(</span><span class="n">SYSV</span><span class="p">),</span> <span class="n">dynamically</span> <span class="n">linked</span> <span class="p">(</span><span class="n">uses</span> <span class="n">shared</span> <span class="n">libs</span><span class="p">),</span> <span class="k">for</span> <span class="n">GNU</span><span class="o">/</span><span class="n">Linux</span> <span class="mf">2.6.9</span><span class="p">,</span> <span class="n">stripped</span>
+</pre></div>
+
+
+<p>Yup. Damn. Why is it not running then? </p>
+<p>Quite a few searches later I found a small tip, so I created a file test.c </p>
+<div class="highlight"><pre><span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;dafuq?</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>And tried to compile it:</p>
+<div class="highlight"><pre><span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="n">gcc</span> <span class="o">-</span><span class="n">m64</span> <span class="n">test</span><span class="p">.</span><span class="n">c</span>
+<span class="n">In</span> <span class="n">file</span> <span class="n">included</span> <span class="n">from</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">features</span><span class="p">.</span><span class="n">h</span><span class="o">:</span><span class="mi">378</span><span class="p">,</span>
+             <span class="n">from</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">:</span><span class="mi">28</span><span class="p">,</span>
+             <span class="n">from</span> <span class="n">test</span><span class="p">.</span><span class="n">c</span><span class="o">:</span><span class="mi">1</span><span class="o">:</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">gnu</span><span class="o">/</span><span class="n">stubs</span><span class="p">.</span><span class="n">h</span><span class="o">:</span><span class="mi">9</span><span class="o">:</span><span class="mi">27</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">gnu</span><span class="o">/</span><span class="n">stubs</span><span class="o">-</span><span class="mf">64.</span><span class="n">h</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
+</pre></div>
+
+
+<p>Now we are getting somewhere. Aparently stubs-64.h is part of a debian package
+libc6-dev-amd64. Let's install it and try my test again</p>
+<div class="highlight"><pre><span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libc6</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">amd64</span>
+<span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="n">gcc</span> <span class="o">-</span><span class="n">m64</span> <span class="n">test</span><span class="p">.</span><span class="n">c</span>
+<span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="p">.</span><span class="o">/</span><span class="n">a</span><span class="p">.</span><span class="n">out</span>
+<span class="n">dafuq</span><span class="o">?</span>
+</pre></div>
+
+
+<p>Better. How about mongoDB?</p>
+<div class="highlight"><pre><span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="p">.</span><span class="o">/</span><span class="n">mongod</span>
+<span class="p">.</span><span class="o">/</span><span class="n">mongod</span><span class="o">:</span> <span class="n">error</span> <span class="k">while</span> <span class="n">loading</span> <span class="n">shared</span> <span class="n">libraries</span><span class="o">:</span> <span class="n">libstdc</span><span class="o">++</span><span class="p">.</span><span class="n">so</span><span class="mf">.6</span><span class="o">:</span> <span class="n">cannot</span> <span class="n">open</span> <span class="n">shared</span> <span class="n">object</span> <span class="n">file</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
+</pre></div>
+
+
+<p>Dear mongoDB, why didn't you start with this? Final fix and it works:</p>
+<div class="highlight"><pre><span class="n">debian</span><span class="o">-</span><span class="n">server</span><span class="o">:~/</span><span class="n">mongodb</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">2.4.1</span><span class="o">/</span><span class="n">bin</span><span class="err">#</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">lib64stdc</span><span class="o">++</span><span class="mi">6</span>
+</pre></div>
+
+
+<p>PS. You may also be interested in mongodb.conf and init scripts for <a href="https://github.com/mongodb/mongo/tree/master/debian">debian</a></p>            </article>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="http://kerma.github.io/pages/about.html">About</a></li>
+                    <li>:: <a href="http://kerma.github.io/tags.html">Tags</a></li>
+                </ul>
+            </nav>
+                <p id="theme-credit"><a href="http://mathieu.agopian.info/mnmlist/theme.html">Thème mnmlist</a></p>
+        </footer>
+
+</body>
+</html>
