@@ -31,8 +31,26 @@
 <a href="http://serialized.net/2007/09/quick-lame-tip-concatenate-mp3s/">else</a> 
 was as frustrated as me. </p>
 <p>Here's my a bit shorter version of it:</p>
-<div class="highlight"><pre><span class="n">find</span> <span class="p">.</span> <span class="o">-</span><span class="n">name</span> <span class="err">&#39;</span><span class="o">*</span><span class="p">.</span><span class="n">mp3</span><span class="err">&#39;</span> <span class="o">-</span><span class="n">exec</span> <span class="n">lame</span> <span class="o">--</span><span class="n">decode</span> <span class="err">&#39;</span><span class="p">{}</span><span class="err">&#39;</span> <span class="o">-</span> <span class="sc">&#39;;&#39;</span> <span class="o">|</span> <span class="n">lame</span> <span class="o">-</span><span class="n">b</span> <span class="mi">64</span> <span class="o">-</span> <span class="n">out</span><span class="p">.</span><span class="n">mp3</span>
-</pre></div><div class="comments">
+<div class="highlight"><pre><span class="n">find</span> <span class="p">.</span> <span class="o">-</span><span class="n">name</span> <span class="err">&#39;</span><span class="o">*</span><span class="p">.</span><span class="n">mp3</span><span class="err">&#39;</span> <span class="o">-</span><span class="n">exec</span> <span class="n">lame</span> <span class="o">--</span><span class="n">decode</span> <span class="err">&#39;</span><span class="p">{}</span><span class="err">&#39;</span> <span class="o">-</span> <span class="sc">&#39;;&#39;</span> <span class="o">|</span> <span class="n">lame</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">b</span> <span class="mi">64</span> <span class="o">-</span> <span class="n">out</span><span class="p">.</span><span class="n">mp3</span>
+</pre></div>
+
+
+<p>Edit: I found out, that the max length of a output is around 3.5 hours. Don't know why, 
+but something happens and lame decode stops:</p>
+<div class="highlight"><pre><span class="nx">...</span>
+<span class="nb">input</span><span class="p">:</span>  <span class="nx">.</span><span class="p">/</span><span class="nb">input</span><span class="o">-</span><span class="mi">04</span><span class="bp">.</span><span class="nx">mp3</span>
+    <span class="p">(</span><span class="mf">44.1</span> <span class="nx">kHz</span><span class="p">,</span> <span class="mi">2</span> <span class="nx">channels</span><span class="p">,</span> <span class="nx">MPEG</span><span class="o">-</span><span class="mi">1</span> <span class="nx">Layer</span> <span class="nx">III</span><span class="p">)</span>
+<span class="nb">output</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">stdout</span><span class="o">&gt;</span>  <span class="p">(</span><span class="mi">16</span> <span class="nx">bit</span><span class="p">,</span> <span class="nx">Microsoft</span> <span class="nx">WAVE</span><span class="p">)</span>
+<span class="nx">skipping</span> <span class="nx">initial</span> <span class="mi">529</span> <span class="nx">samples</span> <span class="p">(</span><span class="nx">encoder</span><span class="o">+</span><span class="nx">decoder</span> <span class="nx">delay</span><span class="p">)</span>
+<span class="nx">Frame</span><span class="err">#</span>  <span class="mi">5505</span><span class="p">/</span><span class="nx">80510</span>   <span class="mi">64</span> <span class="nx">kbps</span>   <span class="nx">MS</span>    <span class="nx">LAME</span> <span class="mf">3.99.5</span> <span class="mi">64</span><span class="nx">bits</span> <span class="p">(</span><span class="nx">http</span><span class="p">:</span><span class="c1">//lame.sf.net)</span>
+<span class="nx">Autoconverting</span> <span class="nb">from</span> <span class="nx">stereo</span> <span class="k">to</span> <span class="nx">mono.</span> <span class="nx">Setting</span> <span class="nb">encoding</span> <span class="k">to</span> <span class="nx">mono</span> <span class="nx">mode.</span>
+<span class="nx">Using</span> <span class="nx">polyphase</span> <span class="nx">lowpass</span> <span class="nx">filter</span><span class="p">,</span> <span class="nx">transition</span> <span class="nx">band</span><span class="p">:</span> <span class="mi">16538</span> <span class="nx">Hz</span> <span class="o">-</span> <span class="mi">17071</span> <span class="nx">Hz</span>
+<span class="nb">Encoding</span> <span class="o">&lt;</span><span class="nb">stdin</span><span class="o">&gt;</span> <span class="k">to</span> <span class="nx">out.mp3</span>
+<span class="nb">Encoding</span> <span class="nx">as</span> <span class="mf">44.1</span> <span class="nx">kHz</span> <span class="nx">single</span><span class="na">-ch</span> <span class="nx">MPEG</span><span class="o">-</span><span class="mi">1</span> <span class="nx">Layer</span> <span class="nx">III</span> <span class="p">(</span><span class="mi">11</span><span class="nx">x</span><span class="p">)</span>  <span class="mi">64</span> <span class="nx">kbps</span> <span class="n">qval</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+
+
+<p>Everything works nicely if I keep input below 3.5 hours.</p><div class="comments">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'kerma';
