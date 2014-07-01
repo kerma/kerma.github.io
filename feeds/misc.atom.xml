@@ -5,7 +5,7 @@ Occasionally I want to get work stuff done at home as well, with my personal
 laptop. Chrome profile sync works well for bookmarks, plugins and preferences, but
 opening links from email and chats in Safari while I'm in "work mode" is a bit annoying.
 Navigation to Chrome preferences to set it as the default, and later to remember to set 
-Safari back seems a bit annoying. So I need button for that. And by button I mean a zsh alias. &lt;/p&gt;
+Safari back seems a bit daft. So I need button for that. And by button I mean a zsh alias. &lt;/p&gt;
 &lt;p&gt;An hour of search later and nothing. It seems there is no elegant way of doing it via
 some simple terminal commands. &lt;/p&gt;
 &lt;p&gt;But it &lt;a href="http://stackoverflow.com/questions/3809018/change-default-browser-programmatically-mac-osx"&gt;is possible&lt;/a&gt; 
