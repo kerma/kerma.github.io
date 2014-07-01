@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>notes to self</title><link href="http://kerma.github.io/" rel="alternate"></link><link href="http://kerma.github.io/feeds/all.atom.xml" rel="self"></link><id>http://kerma.github.io/</id><updated>2014-03-18T00:00:00+02:00</updated><entry><title>How to concatenate multiple mp3's</title><link href="http://kerma.github.io/join-mp3-with-lame.html" rel="alternate"></link><updated>2014-03-18T00:00:00+02:00</updated><author><name>kerma</name></author><id>tag:kerma.github.io,2014-03-18:join-mp3-with-lame.html</id><summary type="html">&lt;p&gt;It's 2014 and yet it's not an obvious thing for some strange reason. Luckly someone 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>notes to self</title><link href="http://kerma.github.io/" rel="alternate"></link><link href="http://kerma.github.io/feeds/all.atom.xml" rel="self"></link><id>http://kerma.github.io/</id><updated>2014-07-01T00:00:00+03:00</updated><entry><title>Set Mac OS X default browser via command line</title><link href="http://kerma.github.io/set-default-browser.html" rel="alternate"></link><updated>2014-07-01T00:00:00+03:00</updated><author><name>kerma</name></author><id>tag:kerma.github.io,2014-07-01:set-default-browser.html</id><summary type="html">&lt;p&gt;&lt;img alt="automation" src="http://imgs.xkcd.com/comics/automation.png" /&gt;&lt;/p&gt;
+&lt;p&gt;On my day job I use Chrome as my default browser and at home I roll with Safari.
+Occasionally I want to get work stuff done at home as well, with my personal 
+laptop. Chrome profile sync works well for bookmarks, plugins and preferences, but
+opening links from email and chats in Safari while I'm in "work mode" is a bit annoying.
+Navigation to Chrome preferences to set it as the default, and later to remember to set 
+Safari back seems a bit annoying. So I need button for that. And by button I mean a zsh alias. &lt;/p&gt;
+&lt;p&gt;An hour of search later and nothing. It seems there is no elegant way of doing it via
+some simple terminal commands. &lt;/p&gt;
+&lt;p&gt;But it &lt;a href="http://stackoverflow.com/questions/3809018/change-default-browser-programmatically-mac-osx"&gt;is possible&lt;/a&gt; 
+in Objective-C. So I didn't have an excuse.&lt;/p&gt;
+&lt;p&gt;Check out the details on 
+&lt;a href="https://github.com/kerma/defaultbrowser"&gt;github&lt;/a&gt;.
+If you are not feeling like building it yourself then you can try downloading 
+&lt;a href="https://github.com/kerma/defaultbrowser/raw/master/build/defaultbrowser"&gt;the build&lt;/a&gt; I made and let me 
+know whether it works for you.&lt;/p&gt;</summary><category term="macosx"></category><category term="terminal"></category><category term="browser"></category></entry><entry><title>How to concatenate multiple mp3's</title><link href="http://kerma.github.io/join-mp3-with-lame.html" rel="alternate"></link><updated>2014-03-18T00:00:00+02:00</updated><author><name>kerma</name></author><id>tag:kerma.github.io,2014-03-18:join-mp3-with-lame.html</id><summary type="html">&lt;p&gt;It's 2014 and yet it's not an obvious thing for some strange reason. Luckly someone 
 &lt;a href="http://serialized.net/2007/09/quick-lame-tip-concatenate-mp3s/"&gt;else&lt;/a&gt; 
 was as frustrated as me. &lt;/p&gt;
 &lt;p&gt;Here's my a bit shorter version of it:&lt;/p&gt;
