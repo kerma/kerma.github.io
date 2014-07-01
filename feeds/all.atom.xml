@@ -12,7 +12,7 @@ some simple terminal commands. &lt;/p&gt;
 in Objective-C. So I didn't have an excuse.&lt;/p&gt;
 &lt;p&gt;Check out the details on 
 &lt;a href="https://github.com/kerma/defaultbrowser"&gt;github&lt;/a&gt;.
-If you are not feeling like building it yourself then you can try downloading 
+If you are not feeling like compiling it yourself with XCode then you can try downloading 
 &lt;a href="https://github.com/kerma/defaultbrowser/raw/master/build/defaultbrowser"&gt;the build&lt;/a&gt; I made and let me 
 know whether it works for you.&lt;/p&gt;</summary><category term="macosx"></category><category term="terminal"></category><category term="browser"></category></entry><entry><title>How to concatenate multiple mp3's</title><link href="http://kerma.github.io/join-mp3-with-lame.html" rel="alternate"></link><updated>2014-03-18T00:00:00+02:00</updated><author><name>kerma</name></author><id>tag:kerma.github.io,2014-03-18:join-mp3-with-lame.html</id><summary type="html">&lt;p&gt;It's 2014 and yet it's not an obvious thing for some strange reason. Luckly someone 
 &lt;a href="http://serialized.net/2007/09/quick-lame-tip-concatenate-mp3s/"&gt;else&lt;/a&gt; 
