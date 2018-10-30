@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Usbmount on notes to self</title>
+    <link>http://kerma.codes/tags/usbmount/</link>
+    <description>Recent content in Usbmount on notes to self</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Mar 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://kerma.codes/tags/usbmount/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>USB drive extremely slow in Ubuntu</title>
+      <link>http://kerma.codes/posts/slow-usb-drive/</link>
+      <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://kerma.codes/posts/slow-usb-drive/</guid>
+      <description>After I got my ybercool home media server ready it was time to start using it properly. Which, for a sad reason, also meant that I had to occasionally copy some of my media to USB stick, to enjoy it also on my bedroom TV which is not connected to the network.
+At some point I noticed that moving 1.4GB data from server hard drive to usb flash drive took like an hour.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cli on notes to self</title>
+    <link>http://kerma.codes/tags/cli/</link>
+    <description>Recent content in Cli on notes to self</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Jul 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://kerma.codes/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Set MacOS default browser via command line</title>
+      <link>http://kerma.codes/posts/set-default-browser/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://kerma.codes/posts/set-default-browser/</guid>
+      <description>On my day job I use Chrome as my default browser and at home I roll with Safari. Occasionally I want to get work stuff done at home as well, with my personal laptop. Chrome profile sync works well for bookmarks, plugins and preferences, but opening links from email and chats in Safari while I&amp;rsquo;m in &amp;ldquo;work mode&amp;rdquo; is a bit annoying. Navigation to Chrome preferences to set it as the default, and later to remember to set Safari back seems a bit daft.</description>
+    </item>
+    
+    <item>
+      <title>How to concatenate multiple mp3&#39;s</title>
+      <link>http://kerma.codes/posts/join-mp3-with-lame/</link>
+      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://kerma.codes/posts/join-mp3-with-lame/</guid>
+      <description>It&amp;rsquo;s 2014 and yet it&amp;rsquo;s not an obvious thing for some strange reason. Luckly someone else was as frustrated as me.
+Here&amp;rsquo;s my a bit shorter version of it:
+find . -name &#39;*.mp3&#39; -exec lame --decode &#39;{}&#39; - &#39;;&#39; | lame -a -b 64 - out.mp3  Edit: I found out, that the max length of a output is around 3.5 hours. Don&amp;rsquo;t know why, but something happens and lame decode stops:</description>
+    </item>
+    
+  </channel>
+</rss>

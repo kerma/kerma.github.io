@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title> | notes to self</title>
+
+
+
+<link href="http://kerma.codes/index.xml" rel="alternate" type="application/rss+xml" title="notes to self" />
+
+<link rel="stylesheet" href="/css/style.css"/><link rel='stylesheet' href='http://kerma.codes/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://kerma.codes"><h1 class="title is-4">notes to self</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/kerma' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="linkedin" href='https://linkedin.com/in/kerma' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+    </div>
+    
+    <h1 class="title"></h1>
+    
+    <div class="content">
+      
+
+<p>&ndash;
+Title: How to resize FAT partition in Linux without losing data
+Date: 2013-03-12
+Tags: [linux, ubuntu, fat32]</p>
+
+<h2 id="slug-resize-fat-partition">Slug: resize-fat-partition</h2>
+
+<p>I have a small external hard drive that had three partitions on it. One I
+created for TimeMachine backups, one for keeping movies and one that I was not
+aware of. It had a boot flag so I suspect it was created by TimeMachine itself.</p>
+
+<p>So once I got a bigger HD just for TimeMachine I no longer needed the allocated
+100GB on that older drive. Getting rid of it however without losing data seemed
+a bit too complicated in Mac OS X. I was also too lazy to back up my data so I
+could just reformat the whole drive with Disk Utility.</p>
+
+<p>Couple of days ago I finally set up my headless home media server running Ubuntu
+12.04 LTS (more on this later) and I thought it&rsquo;s a good time to revisit the
+partitioning problem.</p>
+
+<p><a href="http://gparted.sourceforge.net/">GParted</a> was the first obvious thing, except I had no X11 installed. GParted has
+a command line interface as well, but installing all those gtk lib dependencies just for that didn&rsquo;t
+seem reasonable.</p>
+
+<p>A lot of searches later I wasn&rsquo;t still much smarter. There are many ways how to
+accomplish the task, but none of them actually said that you might not even
+experience any data loss.</p>
+
+<p>So I had to pull myself together and start with the backup. After that I decided
+to try my luck with <a href="http://www.gnu.org/software/parted/">Parted</a>. It came with
+the server and should work on pretty much on all Linux distros. I have version
+2.3 and I think it&rsquo;s the latest that works, because in the Parted user manual
+they say: &ldquo;Note that after version 2.4, the following commands were removed:
+check, cp, mkfs, mkpartfs, move, resize.&rdquo;</p>
+
+<p>So this was my &lsquo;fdisk -l&rsquo; output:</p>
+
+<pre><code>    Disk /dev/sdb: 250.1 GB, 250059350016 bytes
+    255 heads, 63 sectors/track, 30401 cylinders, total 488397168 sectors
+    Units = sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0x8d7fe87c
+
+    Device Boot      Start         End      Blocks   Id  System
+    /dev/sdb1               1      409639      204819+  ee  GPT
+    /dev/sdb2          409640   195722143    97656252   af  HFS / HFS+
+    /dev/sdb3       195984288   488134983   146075348    b  W95 FAT32
+</code></pre>
+
+<p>I needed to preserve /dev/sdb3, have all my files still accessible and extend
+the size of the partition form 150GB to the whole disk 250GB.</p>
+
+<p>I started with unmounting everything (every command below was performed as a
+root):</p>
+
+<pre><code>    umount /dev/sdb1
+    umount /dev/sdb2
+    umount /dev/sdb3
+</code></pre>
+
+<p>Then I started Parted with &lsquo;parted /dev/sdb&rsquo;. After typing &lsquo;print&rsquo; I saw:</p>
+
+<pre><code>    Model: WDC WD25 00BEVT-00SCST0 (scsi)
+    Disk /dev/sdb: 250GB
+    Sector size (logical/physical): 512B/512B
+    Partition Table: gpt
+
+    Number  Start   End    Size   File system  Name                   Flags
+    1      20.5kB  210MB  210MB  fat32        EFI System Partition   boot
+    2      210MB   100GB  100GB  hfs+         MacBook
+    3      100GB   250GB  150GB  fat32        DOS_FAT_32_Untitled_2
+</code></pre>
+
+<p>Ok, let&rsquo;s remove unnecessary partitions:</p>
+
+<pre><code>    (parted) rm 1
+    (parted) rm 2
+    (parted) print
+    Model: WDC WD25 00BEVT-00SCST0 (scsi)
+    Disk /dev/sdb: 250GB
+    Sector size (logical/physical): 512B/512B
+    Partition Table: gpt
+
+    Number  Start  End    Size   File system  Name                   Flags
+    3      100GB  250GB  150GB  fat32        DOS_FAT_32_Untitled_2
+</code></pre>
+
+<p>That was easy. Now I just closed my eyes, prayed and typed:</p>
+
+<pre><code>    (parted) resize 3
+    WARNING: you are attempting to use parted to operate on (resize) a file system.
+    parted's file system manipulation code is not as robust as what you'll find in
+    dedicated, file-system-specific packages like e2fsprogs.  We recommend
+    you use parted only to manipulate partition tables, whenever possible.
+    Support for performing most operations on most types of file systems
+    will be removed in an upcoming release.
+    Start?  [100GB]? 0GB
+    End?  [250GB]?
+
+    (parted) print
+    Model: WDC WD25 00BEVT-00SCST0 (scsi)
+    Disk /dev/sdb: 250GB
+    Sector size (logical/physical): 512B/512B
+    Partition Table: gpt
+
+    Number  Start   End    Size   File system  Name                   Flags
+    3      17.4kB  250GB  250GB  fat32        DOS_FAT_32_Untitled_2
+
+    (parted) quit
+</code></pre>
+
+<p>Resize worked nicely. I mounted the drive and were much pleased. All my data
+still there and accessible. I hope you will be as fortunate as me (:</p>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'kerma';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+    
+  </div>
+</section>
+
+
+
+</body>
+</html>
+

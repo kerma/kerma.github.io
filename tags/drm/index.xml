@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drm on notes to self</title>
+    <link>http://kerma.codes/tags/drm/</link>
+    <description>Recent content in Drm on notes to self</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 02 Nov 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://kerma.codes/tags/drm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Never ever buy a movie from iTunes</title>
+      <link>http://kerma.codes/posts/never-buy-a-movie-from-itunes/</link>
+      <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://kerma.codes/posts/never-buy-a-movie-from-itunes/</guid>
+      <description>Now this is getting ridiculous. When you buy a movie from iTunes you cannot watch this on your external screen. Yes, seriously. You can not plug in your second monitor, or your 1000$ 30&amp;rdquo; Apple Cinema Display, drag your iTunes window to that screen and hit play. It just won&amp;rsquo;t work.
+And apparently it&amp;rsquo;s due to a thing called High-bandwidth Digital Content Protection (HDCP). Something fancy that Apple added to all Macbook and Macbook Pro&amp;rsquo;s made after 2008.</description>
+    </item>
+    
+  </channel>
+</rss>

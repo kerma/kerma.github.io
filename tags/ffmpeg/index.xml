@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ffmpeg on notes to self</title>
+    <link>http://kerma.codes/tags/ffmpeg/</link>
+    <description>Recent content in Ffmpeg on notes to self</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 13 Mar 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://kerma.codes/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to make your MP4 video play on Xbox 360</title>
+      <link>http://kerma.codes/posts/2013-03-13_play_mp4_files_on_xbox/</link>
+      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://kerma.codes/posts/2013-03-13_play_mp4_files_on_xbox/</guid>
+      <description>There are some known limitations on Xbox 360 to play mp4 video. First of all you should update your Xbox, so if it&amp;rsquo;s not yet in the network you have to get it there. Once you&amp;rsquo;re confident that your box is up to date you can start looking into MP4 and it&amp;rsquo;s issues with Xbox. Some say that Xbox has the following special needs:
+Xbox can play H.264 MP4 video, but only up to 10 Mbps with resolutions of 1920*1080, 30 frames per second.</description>
+    </item>
+    
+  </channel>
+</rss>

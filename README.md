@@ -1,4 +1,5 @@
-kerma.github.io
-===============
+kerma.codes
+===========
 
-[notes to self](http://kerma.github.io) - a [Pelican](http://blog.getpelican.com) powered blog.
+[notes to self](http://kerma.codes) - a blog powered by 
+[GitHub Pages](https://pages.github.com/) and [Hugo](https://gohugo.io/).
