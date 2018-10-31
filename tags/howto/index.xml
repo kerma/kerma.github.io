@@ -23,6 +23,16 @@ find . -name &#39;*.mp3&#39; -exec lame --decode &#39;{}&#39; - &#39;;&#39; | la
     </item>
     
     <item>
+      <title>How to resize FAT partition in Linux without losing data</title>
+      <link>http://kerma.codes/posts/resize-fat-partition/</link>
+      <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://kerma.codes/posts/resize-fat-partition/</guid>
+      <description>I have a small external hard drive that had three partitions on it. One I created for TimeMachine backups, one for keeping movies and one that I was not aware of. It had a boot flag so I suspect it was created by TimeMachine itself.
+So once I got a bigger HD just for TimeMachine I no longer needed the allocated 100GB on that older drive. Getting rid of it however without losing data seemed a bit too complicated in Mac OS X.</description>
+    </item>
+    
+    <item>
       <title>How to install matplotlib on Mac OS X Lion</title>
       <link>http://kerma.codes/posts/install-matplotlib-on-osx/</link>
       <pubDate>Fri, 26 Oct 2012 00:00:00 +0000</pubDate>

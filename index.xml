@@ -685,6 +685,125 @@ video:1993177kB audio:126711kB global headers:0kB muxing overhead 0.123045%
     </item>
     
     <item>
+      <title>How to resize FAT partition in Linux without losing data</title>
+      <link>http://kerma.codes/posts/resize-fat-partition/</link>
+      <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
+      <author>kerma</author>
+      <guid>http://kerma.codes/posts/resize-fat-partition/</guid>
+      <description></description>
+      
+      <content>&lt;p&gt;I have a small external hard drive that had three partitions on it. One I
+created for TimeMachine backups, one for keeping movies and one that I was not
+aware of. It had a boot flag so I suspect it was created by TimeMachine itself.&lt;/p&gt;
+
+&lt;p&gt;So once I got a bigger HD just for TimeMachine I no longer needed the allocated
+100GB on that older drive. Getting rid of it however without losing data seemed
+a bit too complicated in Mac OS X. I was also too lazy to back up my data so I
+could just reformat the whole drive with Disk Utility.&lt;/p&gt;
+
+&lt;p&gt;Couple of days ago I finally set up my headless home media server running Ubuntu
+12.04 LTS (more on this later) and I thought it&amp;rsquo;s a good time to revisit the
+partitioning problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gparted.sourceforge.net/&#34;&gt;GParted&lt;/a&gt; was the first obvious thing, except I had no X11 installed. GParted has
+a command line interface as well, but installing all those gtk lib dependencies just for that didn&amp;rsquo;t
+seem reasonable.&lt;/p&gt;
+
+&lt;p&gt;A lot of searches later I wasn&amp;rsquo;t still much smarter. There are many ways how to
+accomplish the task, but none of them actually said that you might not even
+experience any data loss.&lt;/p&gt;
+
+&lt;p&gt;So I had to pull myself together and start with the backup. After that I decided
+to try my luck with &lt;a href=&#34;http://www.gnu.org/software/parted/&#34;&gt;Parted&lt;/a&gt;. It came with
+the server and should work on pretty much on all Linux distros. I have version
+2.3 and I think it&amp;rsquo;s the latest that works, because in the Parted user manual
+they say: &amp;ldquo;Note that after version 2.4, the following commands were removed:
+check, cp, mkfs, mkpartfs, move, resize.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;So this was my &amp;lsquo;fdisk -l&amp;rsquo; output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    Disk /dev/sdb: 250.1 GB, 250059350016 bytes
+    255 heads, 63 sectors/track, 30401 cylinders, total 488397168 sectors
+    Units = sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0x8d7fe87c
+
+    Device Boot      Start         End      Blocks   Id  System
+    /dev/sdb1               1      409639      204819+  ee  GPT
+    /dev/sdb2          409640   195722143    97656252   af  HFS / HFS+
+    /dev/sdb3       195984288   488134983   146075348    b  W95 FAT32
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I needed to preserve /dev/sdb3, have all my files still accessible and extend
+the size of the partition form 150GB to the whole disk 250GB.&lt;/p&gt;
+
+&lt;p&gt;I started with unmounting everything (every command below was performed as a
+root):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    umount /dev/sdb1
+    umount /dev/sdb2
+    umount /dev/sdb3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then I started Parted with &amp;lsquo;parted /dev/sdb&amp;rsquo;. After typing &amp;lsquo;print&amp;rsquo; I saw:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    Model: WDC WD25 00BEVT-00SCST0 (scsi)
+    Disk /dev/sdb: 250GB
+    Sector size (logical/physical): 512B/512B
+    Partition Table: gpt
+
+    Number  Start   End    Size   File system  Name                   Flags
+    1      20.5kB  210MB  210MB  fat32        EFI System Partition   boot
+    2      210MB   100GB  100GB  hfs+         MacBook
+    3      100GB   250GB  150GB  fat32        DOS_FAT_32_Untitled_2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ok, let&amp;rsquo;s remove unnecessary partitions:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    (parted) rm 1
+    (parted) rm 2
+    (parted) print
+    Model: WDC WD25 00BEVT-00SCST0 (scsi)
+    Disk /dev/sdb: 250GB
+    Sector size (logical/physical): 512B/512B
+    Partition Table: gpt
+
+    Number  Start  End    Size   File system  Name                   Flags
+    3      100GB  250GB  150GB  fat32        DOS_FAT_32_Untitled_2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That was easy. Now I just closed my eyes, prayed and typed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    (parted) resize 3
+    WARNING: you are attempting to use parted to operate on (resize) a file system.
+    parted&#39;s file system manipulation code is not as robust as what you&#39;ll find in
+    dedicated, file-system-specific packages like e2fsprogs.  We recommend
+    you use parted only to manipulate partition tables, whenever possible.
+    Support for performing most operations on most types of file systems
+    will be removed in an upcoming release.
+    Start?  [100GB]? 0GB
+    End?  [250GB]?
+
+    (parted) print
+    Model: WDC WD25 00BEVT-00SCST0 (scsi)
+    Disk /dev/sdb: 250GB
+    Sector size (logical/physical): 512B/512B
+    Partition Table: gpt
+
+    Number  Start   End    Size   File system  Name                   Flags
+    3      17.4kB  250GB  250GB  fat32        DOS_FAT_32_Untitled_2
+
+    (parted) quit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Resize worked nicely. I mounted the drive and were much pleased. All my data
+still there and accessible. I hope you will be as fortunate as me (:&lt;/p&gt;
+</content>
+      
+    </item>
+    
+    <item>
       <title>Can not select Airport Express remote speakers</title>
       <link>http://kerma.codes/posts/airport-express-remote-speakers/</link>
       <pubDate>Mon, 17 Dec 2012 00:00:00 +0000</pubDate>
@@ -901,134 +1020,6 @@ and suddenly all my wondering makes more sense.&lt;/p&gt;
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</content>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://kerma.codes/posts/2013-03-12_how_to_resize_fat_partition/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kerma</author>
-      <guid>http://kerma.codes/posts/2013-03-12_how_to_resize_fat_partition/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;p&gt;&amp;ndash;
-Title: How to resize FAT partition in Linux without losing data
-Date: 2013-03-12
-Tags: [linux, ubuntu, fat32]&lt;/p&gt;
-
-&lt;h2 id=&#34;slug-resize-fat-partition&#34;&gt;Slug: resize-fat-partition&lt;/h2&gt;
-
-&lt;p&gt;I have a small external hard drive that had three partitions on it. One I
-created for TimeMachine backups, one for keeping movies and one that I was not
-aware of. It had a boot flag so I suspect it was created by TimeMachine itself.&lt;/p&gt;
-
-&lt;p&gt;So once I got a bigger HD just for TimeMachine I no longer needed the allocated
-100GB on that older drive. Getting rid of it however without losing data seemed
-a bit too complicated in Mac OS X. I was also too lazy to back up my data so I
-could just reformat the whole drive with Disk Utility.&lt;/p&gt;
-
-&lt;p&gt;Couple of days ago I finally set up my headless home media server running Ubuntu
-12.04 LTS (more on this later) and I thought it&amp;rsquo;s a good time to revisit the
-partitioning problem.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://gparted.sourceforge.net/&#34;&gt;GParted&lt;/a&gt; was the first obvious thing, except I had no X11 installed. GParted has
-a command line interface as well, but installing all those gtk lib dependencies just for that didn&amp;rsquo;t
-seem reasonable.&lt;/p&gt;
-
-&lt;p&gt;A lot of searches later I wasn&amp;rsquo;t still much smarter. There are many ways how to
-accomplish the task, but none of them actually said that you might not even
-experience any data loss.&lt;/p&gt;
-
-&lt;p&gt;So I had to pull myself together and start with the backup. After that I decided
-to try my luck with &lt;a href=&#34;http://www.gnu.org/software/parted/&#34;&gt;Parted&lt;/a&gt;. It came with
-the server and should work on pretty much on all Linux distros. I have version
-2.3 and I think it&amp;rsquo;s the latest that works, because in the Parted user manual
-they say: &amp;ldquo;Note that after version 2.4, the following commands were removed:
-check, cp, mkfs, mkpartfs, move, resize.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;So this was my &amp;lsquo;fdisk -l&amp;rsquo; output:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    Disk /dev/sdb: 250.1 GB, 250059350016 bytes
-    255 heads, 63 sectors/track, 30401 cylinders, total 488397168 sectors
-    Units = sectors of 1 * 512 = 512 bytes
-    Sector size (logical/physical): 512 bytes / 512 bytes
-    I/O size (minimum/optimal): 512 bytes / 512 bytes
-    Disk identifier: 0x8d7fe87c
-
-    Device Boot      Start         End      Blocks   Id  System
-    /dev/sdb1               1      409639      204819+  ee  GPT
-    /dev/sdb2          409640   195722143    97656252   af  HFS / HFS+
-    /dev/sdb3       195984288   488134983   146075348    b  W95 FAT32
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I needed to preserve /dev/sdb3, have all my files still accessible and extend
-the size of the partition form 150GB to the whole disk 250GB.&lt;/p&gt;
-
-&lt;p&gt;I started with unmounting everything (every command below was performed as a
-root):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    umount /dev/sdb1
-    umount /dev/sdb2
-    umount /dev/sdb3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then I started Parted with &amp;lsquo;parted /dev/sdb&amp;rsquo;. After typing &amp;lsquo;print&amp;rsquo; I saw:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    Model: WDC WD25 00BEVT-00SCST0 (scsi)
-    Disk /dev/sdb: 250GB
-    Sector size (logical/physical): 512B/512B
-    Partition Table: gpt
-
-    Number  Start   End    Size   File system  Name                   Flags
-    1      20.5kB  210MB  210MB  fat32        EFI System Partition   boot
-    2      210MB   100GB  100GB  hfs+         MacBook
-    3      100GB   250GB  150GB  fat32        DOS_FAT_32_Untitled_2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ok, let&amp;rsquo;s remove unnecessary partitions:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    (parted) rm 1
-    (parted) rm 2
-    (parted) print
-    Model: WDC WD25 00BEVT-00SCST0 (scsi)
-    Disk /dev/sdb: 250GB
-    Sector size (logical/physical): 512B/512B
-    Partition Table: gpt
-
-    Number  Start  End    Size   File system  Name                   Flags
-    3      100GB  250GB  150GB  fat32        DOS_FAT_32_Untitled_2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That was easy. Now I just closed my eyes, prayed and typed:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    (parted) resize 3
-    WARNING: you are attempting to use parted to operate on (resize) a file system.
-    parted&#39;s file system manipulation code is not as robust as what you&#39;ll find in
-    dedicated, file-system-specific packages like e2fsprogs.  We recommend
-    you use parted only to manipulate partition tables, whenever possible.
-    Support for performing most operations on most types of file systems
-    will be removed in an upcoming release.
-    Start?  [100GB]? 0GB
-    End?  [250GB]?
-
-    (parted) print
-    Model: WDC WD25 00BEVT-00SCST0 (scsi)
-    Disk /dev/sdb: 250GB
-    Sector size (logical/physical): 512B/512B
-    Partition Table: gpt
-
-    Number  Start   End    Size   File system  Name                   Flags
-    3      17.4kB  250GB  250GB  fat32        DOS_FAT_32_Untitled_2
-
-    (parted) quit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Resize worked nicely. I mounted the drive and were much pleased. All my data
-still there and accessible. I hope you will be as fortunate as me (:&lt;/p&gt;
 </content>
       
     </item>
