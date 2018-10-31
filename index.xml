@@ -307,10 +307,10 @@ copy something_nice_eng.avi
     
     <item>
       <title>Console wars, over before they even began?</title>
-      <link>http://kerma.codes/posts/2013-06-11_console_wars/</link>
+      <link>http://kerma.codes/posts/console-wars/</link>
       <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/2013-06-11_console_wars/</guid>
+      <guid>http://kerma.codes/posts/console-wars/</guid>
       <description></description>
       
       <content>&lt;iframe width=&#34;640&#34; height=&#34;360&#34; src=&#34;http://www.youtube.com/embed/kWSIFh8ICaA?feature=player_embedded&#34; 
@@ -340,6 +340,10 @@ consider the alternative. Sony isn&amp;rsquo;t just a little better, they seem t
 better in everything. And they have won the hearts of the gamers, leaving Microsoft with
 an average Jane who sooner or later realizes, that one big company has sold her a box
 which puts a TV inside her TV so she could watch TV on her TV.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;2018 edit:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve a PS4 now.&lt;/p&gt;
 </content>
       
     </item>
@@ -512,10 +516,10 @@ MOUNTOPTIONS=&amp;quot;sync,noexec,nodev,noatime,nodiratime&amp;quot;
     
     <item>
       <title>How to make your MP4 video play on Xbox 360</title>
-      <link>http://kerma.codes/posts/2013-03-13_play_mp4_files_on_xbox/</link>
+      <link>http://kerma.codes/posts/mp4-on-xbox360/</link>
       <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/2013-03-13_play_mp4_files_on_xbox/</guid>
+      <guid>http://kerma.codes/posts/mp4-on-xbox360/</guid>
       <description></description>
       
       <content>&lt;p&gt;There are some known limitations on Xbox 360 to play mp4 video. First of all you
@@ -805,10 +809,10 @@ sudo pip install matplotlib
     
     <item>
       <title>Python easter eggs</title>
-      <link>http://kerma.codes/posts/2012-10-17_python_easter_eggs/</link>
+      <link>http://kerma.codes/posts/python-easter-eggs/</link>
       <pubDate>Wed, 17 Oct 2012 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/2012-10-17_python_easter_eggs/</guid>
+      <guid>http://kerma.codes/posts/python-easter-eggs/</guid>
       <description></description>
       
       <content>&lt;p&gt;&lt;img src=&#34;https://imgs.xkcd.com/comics/python.png&#34; alt=&#34;xkcd&#34; /&gt;&lt;/p&gt;
@@ -858,16 +862,16 @@ most simple and clear on comes from
     
     <item>
       <title>Procrastinate more</title>
-      <link>http://kerma.codes/posts/2012-08-22_procrastinate_more/</link>
+      <link>http://kerma.codes/posts/procrastinate-more/</link>
       <pubDate>Wed, 22 Aug 2012 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/2012-08-22_procrastinate_more/</guid>
+      <guid>http://kerma.codes/posts/procrastinate-more/</guid>
       <description></description>
       
-      <content>&lt;p&gt;&lt;img src=&#34;https://dl.dropbox.com/u/2009653/blog/gfda.png&#34; alt=&#34;good fucking design advice&#34; /&gt;&lt;/p&gt;
+      <content>&lt;p&gt;&lt;img src=&#34;https://wewastetime.files.wordpress.com/2012/05/motivational-mugs-by-good-fcking-design-advice-3.jpg&#34; alt=&#34;good fucking design advice&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ve had this wallpaper from
-&lt;a href=&#34;http://www.goodfuckingdesignadvice.com/wallpaper.php&#34;&gt;goodfuckingdesignadvice&lt;/a&gt;
+&lt;p&gt;I&amp;rsquo;ve had a wallpaper by
+&lt;a href=&#34;https://www.goodfuckingdesignadvice.com&#34;&gt;goodfuckingdesignadvice&lt;/a&gt;
 for a while now (next to &amp;ldquo;Always ask for more fucking money&amp;rdquo;). But it&amp;rsquo;s usually hidden behind soundcloud, beatport,
 djtechools, facebook and all the other nice pages that I&amp;rsquo;m interested
 in. And for years I&amp;rsquo;ve been trying to find ways how to procrastinate
@@ -884,6 +888,10 @@ around places where I definitelly should not be.&lt;/p&gt;
 and suddenly all my wondering makes more sense.&lt;/p&gt;
 
 &lt;p&gt;Life is short. Do what you fucking love&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;2018 edit:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I no longer use scriptogr.am. And I still spend countless of hours on random stuff my mind wonders about. Yolo.&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
@@ -1021,19 +1029,6 @@ root):&lt;/p&gt;
 
 &lt;p&gt;Resize worked nicely. I mounted the drive and were much pleased. All my data
 still there and accessible. I hope you will be as fortunate as me (:&lt;/p&gt;
-</content>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://kerma.codes/posts/2017-03-xx_rabbitmq_delayed_messages/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kerma</author>
-      <guid>http://kerma.codes/posts/2017-03-xx_rabbitmq_delayed_messages/</guid>
-      <description></description>
-      
-      <content>&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/23158310/how-do-i-set-a-number-of-retry-attempts-in-rabbitmq#23161921&#34;&gt;http://stackoverflow.com/questions/23158310/how-do-i-set-a-number-of-retry-attempts-in-rabbitmq#23161921&lt;/a&gt;&lt;/p&gt;
 </content>
       
     </item>

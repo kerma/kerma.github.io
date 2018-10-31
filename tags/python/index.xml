@@ -23,10 +23,10 @@ src/ft2font.h:16:22: error: ft2build.h: No such file or directory src/ft2font.h:
     
     <item>
       <title>Python easter eggs</title>
-      <link>http://kerma.codes/posts/2012-10-17_python_easter_eggs/</link>
+      <link>http://kerma.codes/posts/python-easter-eggs/</link>
       <pubDate>Wed, 17 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/2012-10-17_python_easter_eggs/</guid>
+      <guid>http://kerma.codes/posts/python-easter-eggs/</guid>
       <description>I found some interesting easter eggs from python (2.7) recently. Try the following:
 from __future__ import braces
 import this

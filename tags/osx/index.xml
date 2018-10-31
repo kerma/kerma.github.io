@@ -31,15 +31,5 @@ I&amp;rsquo;m not alone, but it doesn&amp;rsquo;t mean that there is a straightf
 And apparently it&amp;rsquo;s due to a thing called High-bandwidth Digital Content Protection (HDCP). Something fancy that Apple added to all Macbook and Macbook Pro&amp;rsquo;s made after 2008.</description>
     </item>
     
-    <item>
-      <title>How to install matplotlib on Mac OS X Lion</title>
-      <link>http://kerma.codes/posts/install-matplotlib-on-osx/</link>
-      <pubDate>Fri, 26 Oct 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://kerma.codes/posts/install-matplotlib-on-osx/</guid>
-      <description>I was struggeling with installation of matplotlib on Mac OS X Lion. While trying to pip install matplotlib I saw a lot of bad stuff like
-src/ft2font.h:16:22: error: ft2build.h: No such file or directory src/ft2font.h:17:10: error: #include expects &amp;quot;FILENAME&amp;quot; or &amp;lt;FILENAME&amp;gt; ... lipo: can&#39;t open input file: /var/tmp//ccuS7mkF.out (No such file or directory) error: command &#39;llvm-gcc-4.2&#39; failed with exit status 1  It seemed that that issue was caused by</description>
-    </item>
-    
   </channel>
 </rss>
