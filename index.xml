@@ -811,7 +811,7 @@ sudo pip install matplotlib
       <guid>http://kerma.codes/posts/2012-10-17_python_easter_eggs/</guid>
       <description></description>
       
-      <content>&lt;p&gt;&lt;img src=&#34;https://dl.dropbox.com/u/2009653/blog/xkcd_python.png&#34; alt=&#34;xkcd&#34; /&gt;&lt;/p&gt;
+      <content>&lt;p&gt;&lt;img src=&#34;https://imgs.xkcd.com/comics/python.png&#34; alt=&#34;xkcd&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I found some interesting easter eggs from python (2.7) recently. Try the
 following:&lt;/p&gt;
