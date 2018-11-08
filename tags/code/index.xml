@@ -6,10 +6,19 @@
     <description>Recent content in Code on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Jul 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerma.codes/tags/code/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Would you like to send an email?</title>
+      <link>http://kerma.codes/posts/sendmail/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kerma.codes/posts/sendmail/</guid>
+      <description>There is a simple task that I occasionally need to perform which has caused me many headaches during the past 10 years: send an email from a server. I remember a day in my early career where I spent hours and hours trying to get Exim4 configured. I’ve similar recollections with Postfix, Sendmail and ssmtp. The last being close to what I was initially hoping for to find. But even this had it’s issues.</description>
+    </item>
     
     <item>
       <title>Set MacOS default browser via command line</title>

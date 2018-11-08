@@ -6,3 +6,7 @@
 .content h6:not(:first-child) {
   margin-top: 1em;
 }
+
+.subtitle:not(:last-child) {
+  margin-bottom: 30px;
+}

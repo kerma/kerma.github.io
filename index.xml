@@ -13,6 +13,33 @@
     
     
     <item>
+      <title>Would you like to send an email?</title>
+      <link>http://kerma.codes/posts/sendmail/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      <author>kerma</author>
+      <guid>http://kerma.codes/posts/sendmail/</guid>
+      <description></description>
+      
+      <content>&lt;p&gt;There is a simple task that I occasionally need to perform which has caused me many headaches during the past 10 years: send an email from a server. I remember a day in my early career where I spent hours and hours trying to get Exim4 configured. I’ve similar recollections with Postfix, Sendmail and ssmtp. The last being close to what I was initially hoping for to find. But even this had it’s issues.&lt;/p&gt;
+
+&lt;p&gt;When the first Email-as-a-Service offerings started to arrive I was really excited. Finally something simple for a straightforward task. I used &lt;a href=&#34;https://www.mailgun.com/&#34;&gt;Mailgun&lt;/a&gt; for some projects and it worked well. Except the fact that it was another service account to be maintained.&lt;/p&gt;
+
+&lt;p&gt;Couple of weeks ago I had another moment where I felt the need to send an email from a server.  Of course, this happened:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mail
+zsh: command not found: mail
+$ sendmail
+zsh: command not found: sendmail 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;.. and it all came back to me. I really don’t want to spend time again on this tedious searching and reading man-pages. I rather spend time on learning something useful. Like Golang.&lt;/p&gt;
+
+&lt;p&gt;So I built my own &lt;a href=&#34;https://github.com/kerma/sendmail&#34;&gt;sendmail&lt;/a&gt;. Instead of being a MTA it tries to adhere to the UNIX philosophy: make each program do one thing well. In this case: send an email via SMTP server. Golang made it possible to write this also cross-platform with zero effort. And an existing &lt;a href=&#34;https://github.com/go-mail/mail&#34;&gt;email library&lt;/a&gt; made the whole job a breeze.&lt;/p&gt;
+</content>
+      
+    </item>
+    
+    <item>
       <title>From Mercurial to Git</title>
       <link>http://kerma.codes/posts/hg-to-git/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
@@ -23,8 +50,7 @@
       <content>&lt;p&gt;I recently went through some Mercurial to Git migrations.
 While &lt;a href=&#34;https://stackoverflow.com/a/16037861&#34;&gt;stack overflow&lt;/a&gt;
 pretty much always has something to tell you, it never goes so smoothly in real life.
-Here&amp;rsquo;s my step-by-step guide including some random errors that you are bound to encounter.
-&lt;/p&gt;
+Here&amp;rsquo;s my step-by-step guide including some random errors that you are bound to encounter.&lt;/p&gt;
 
 &lt;h2 id=&#34;step-1-fast-export&#34;&gt;Step 1 - fast-export&lt;/h2&gt;
 
@@ -125,8 +151,7 @@ the third part.. Well, resolving conflicts is hard.&lt;/p&gt;</content>
       <guid>http://kerma.codes/posts/assume-role/</guid>
       <description></description>
       
-      <content>&lt;p&gt;I just spent two hours of my life trying to get AssumeRole working. And that was not the first time. So I hope this article saves someone elses time or reminds me again in six months how to do this properly.
-&lt;/p&gt;
+      <content>&lt;p&gt;I just spent two hours of my life trying to get AssumeRole working. And that was not the first time. So I hope this article saves someone elses time or reminds me again in six months how to do this properly.&lt;/p&gt;
 
 &lt;h1 id=&#34;assume-what&#34;&gt;Assume what?&lt;/h1&gt;
 

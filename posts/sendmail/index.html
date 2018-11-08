@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Git | notes to self</title>
+<title>Would you like to send an email? | notes to self</title>
 
 
 
@@ -65,56 +65,60 @@
 
 <section class="section">
   <div class="container">
-    
-    
-    <article>
-      <div class="subtitle tags is-6 is-pulled-right">
-        
-        
-<a class="subtitle is-6" href="/tags/git">#git</a>
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/code">#code</a>
 
 
 
   
-  | <a class="subtitle is-6" href="/tags/hg">#hg</a>
+  | <a class="subtitle is-6" href="/tags/golang">#golang</a>
   
 
-        
-      </div>
-      <h2 class="subtitle is-6">July 31, 2018</h2>
-      <h1 class="title"><a href="http://kerma.codes/posts/hg-to-git/">From Mercurial to Git</a></h1>
-      <div class="content">
-        I recently went through some Mercurial to Git migrations. While stack overflow pretty much always has something to tell you, it never goes so smoothly in real life. Here&rsquo;s my step-by-step guide including some random errors that you are bound to encounter.
+      
+    </div>
+    <h2 class="subtitle is-6">November 8, 2018</h2>
+    <h1 class="title">Would you like to send an email?</h1>
+    
+    <div class="content">
+      <p>There is a simple task that I occasionally need to perform which has caused me many headaches during the past 10 years: send an email from a server. I remember a day in my early career where I spent hours and hours trying to get Exim4 configured. I’ve similar recollections with Postfix, Sendmail and ssmtp. The last being close to what I was initially hoping for to find. But even this had it’s issues.</p>
 
-        
-        <a class="button is-link" href="http://kerma.codes/posts/hg-to-git/" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
-        
-      </div>
-    </article>
+<p>When the first Email-as-a-Service offerings started to arrive I was really excited. Finally something simple for a straightforward task. I used <a href="https://www.mailgun.com/">Mailgun</a> for some projects and it worked well. Except the fact that it was another service account to be maintained.</p>
+
+<p>Couple of weeks ago I had another moment where I felt the need to send an email from a server.  Of course, this happened:</p>
+
+<pre><code>$ mail
+zsh: command not found: mail
+$ sendmail
+zsh: command not found: sendmail 
+</code></pre>
+
+<p>.. and it all came back to me. I really don’t want to spend time again on this tedious searching and reading man-pages. I rather spend time on learning something useful. Like Golang.</p>
+
+<p>So I built my own <a href="https://github.com/kerma/sendmail">sendmail</a>. Instead of being a MTA it tries to adhere to the UNIX philosophy: make each program do one thing well. In this case: send an email via SMTP server. Golang made it possible to write this also cross-platform with zero effort. And an existing <a href="https://github.com/go-mail/mail">email library</a> made the whole job a breeze.</p>
+
+      
+    </div>
     
   </div>
 </section>
+
 <section class="section">
   <div class="container">
-    <nav class="level is-mobile">
-      <div class="level-left">
-        <div class="level-item">
-          
-        </div>
-      </div>
-      <div class="level-right is-marginless">
-        <div class="level-item">
-          
-        </div>
-      </div>
-    </nav>
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'kerma';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
   </div>
 </section>
+
 
 <section class="section">
   <div class="container has-text-centered">
@@ -129,5 +133,4 @@
 
 </body>
 </html>
-
 
