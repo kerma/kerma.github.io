@@ -1049,5 +1049,278 @@ and suddenly all my wondering makes more sense.&lt;/p&gt;
       
     </item>
     
+    <item>
+      <title></title>
+      <link>http://kerma.codes/prez/ide/slides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerma</author>
+      <guid>http://kerma.codes/prez/ide/slides/</guid>
+      <description></description>
+      
+      <content>
+
+&lt;p&gt;&lt;img src=&#34;xp.png&#34; alt=&#34;xp&#34; width=&#34;800&#34;/&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;custom.png&#34; alt=&#34;custom&#34; /&gt;&lt;/p&gt;
+
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;But if you like neat things, in order, 
+customized the way you actually prefer, 
+please do listen on
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;
+&lt;section data-noprocess data-shortcode-slide
+      data-background-image=&#34;journey.jpg&#34;&gt;
+  
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;And come to this small journey with me.
+But as with every journey the begninng
+is usually pretty boring
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;notepad.png&#34; alt=&#34;notepad&#34; /&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;I had my first flirt with code,
+in Notepad. And realized pretty quickly that this
+does not really scale
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;gentoo.png&#34; alt=&#34;gentoo&#34; /&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;So I went to full retard, sorry, &amp;quot;hacker&amp;quot; mode
+installed gentoo linux, gcc, make and all other 
+leet haxxor stuff.
+but I couldn&#39;t quit vim, needed to grow up and
+get some real stuff done.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;eclipse.jpg&#34; alt=&#34;eclipse&#34; /&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;now imagine that you are going to your first date.
+but it&#39;s a blind date. and all you know is that dates
+are fun and cool and butterflys.
+but then someone shows up who is not the most handsome 
+specimen. and you try to convince yourself
+it&#39;s what&#39;s on the inside that matters.
+yeah right, eclipse..
+i had to move on. obviously. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;netbeans.png&#34; alt=&#34;netbeans&#34; width=&#34;700&#34;/&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;and i kind of liked my second relationship.
+it was almost pretty, behaved the way how i wanted
+to it to behave and it also Taught me some new tricks.
+but it turned out inside also matters. 
+it was still java..
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;textmate.png&#34; alt=&#34;textmate&#34; width=&#34;1000&#34;/&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;my relationship with textmate was close to what
+i was looking for I think. it proved that it is possible
+to be lightweight, flexible, pretty and reasonably 
+powerful at the same time.
+however, during all this time I didn&#39;t learn how to 
+quit vim really. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;macvim.png&#34; alt=&#34;macvim&#34; width=&#34;800&#34;/&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;so i found my way back to it again and again.
+and things were pretty ok for a while
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;bsod.png&#34; alt=&#34;bsod&#34; /&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;next step in my journey was terrifing - windows.
+so i was on the market again to ease my pain.     
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;section data-shortcode-section&gt;
+&lt;p&gt;&lt;section data-noprocess data-shortcode-slide
+      data-background-image=&#34;sublime_wall.jpg&#34;&gt;&lt;/p&gt;
+
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;now, if you go through the creative effort to 
+make a wallpaper for a piece of software it must
+be great, right? 
+enter sublime text    
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;80&#34;&gt;$80&lt;/h1&gt;
+
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;and I admit, it is weird to pay for something
+that you&#39;ve used to getting for free.
+but at the same time it most likely makes you 
+ask better questions and be generally more invested
+in the transaction. yeah, you have higher expectations,
+but you also read the fucking manuals instead of 
+complaining on some forum.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;section data-noprocess data-shortcode-slide
+      data-background-image=&#34;gordon.gif&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;h1 style=&#34;text-shadow: 2px 2px white; color: black; margin-top:400px&#34;&gt;API does not suck&lt;/h1&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;I also quickly realized that customizing your edditor
+does not have to be soulsucking experience. at least
+untill the API is good enough.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;section data-noprocess data-shortcode-slide
+      data-background-image=&#34;monty.gif&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;h1 style=&#34;text-shadow: 2px 2px black&#34;&gt;Python&lt;/h1&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;And the best part, the plugin system is implemented
+in the best language in the world.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;/section&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;i-need-an-excuse&#34;&gt;I need an excuse&lt;/h1&gt;
+
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;but I still needed an excuse to build something 
+meanigful. as I was quite late to the party 
+all the common sense plugins were already there.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;
+&lt;section data-noprocess data-shortcode-slide
+      data-background-image=&#34;coldfusion.jpg&#34;&gt;
+  
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;So if you think Flash is the worst possible thing
+Adobe ever produced - you haven&#39;t met ColdFusion.
+But there is a wallpaper - it must be awesome you say.
+no. it was worse than PHP3. Worse than Javascript.
+Luckily the project I worked with had some conventions.
+so i was able to build an &amp;quot;IDE&amp;quot; which helped me to 
+navigate this mess. And I realized that building something
+like this completely on your own is not so difficult.
+It&#39;s mostly just very unreasonable and useless for others.
+OK, there are worse companies out there that Adobe, right?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;
+&lt;section data-noprocess data-shortcode-slide
+      data-background-color=&#34;white&#34;
+      data-transition=&#34;zoom&#34;
+      data-transition-speed=&#34;fast&#34;&gt;
+  
+&lt;img src=&#34;microsoft.png&#34; alt=&#34;microsoft&#34; style=&#34;border:0;box-shadow:0 0 white&#34;/&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;like the beloved Microsoft.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;
+&lt;section data-noprocess data-shortcode-slide
+      data-background-image=&#34;balmer.gif&#34;&gt;
+  
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;maybe back in this guys days.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;
+&lt;section data-noprocess data-shortcode-slide
+      data-transition=&#34;slide-in none&#34;&gt;
+  
+&lt;img src=&#34;ms-github.png&#34; alt=&#34;ms-github&#34; style=&#34;border:0;box-shadow:0 0 white&#34;/&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;Microsoft today is cool. They have Github. An account and the company. 
+And if it wasn&#39;t obvious already, let me point it out to you
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;
+&lt;section data-noprocess data-shortcode-slide
+      data-transition=&#34;none&#34;&gt;
+  
+&lt;img src=&#34;ms-github-red.png&#34; alt=&#34;ms-github-red&#34; style=&#34;border:0;box-shadow:0 0 white&#34;/&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;they are cool on scale.
+ok sometimes they do stupid shit like
+writing their IDE in Javascript, but mostly 
+they are cool. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;language-server-protocol&#34;&gt;Language Server Protocol&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://microsoft.github.io/language-server-protocol/&#34;&gt;https://microsoft.github.io/language-server-protocol/&lt;/a&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;And they make cool things. Like defining something obvious
+as language server protocol. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;
+&lt;section data-noprocess data-shortcode-slide
+      data-background-color=&#34;white&#34;&gt;
+  
+&lt;img src=&#34;language-server.png&#34; alt=&#34;language-server&#34; style=&#34;border:0;box-shadow:0 0 white&#34;/&gt;
+&lt;aside class=&#34;notes&#34;&gt;&lt;pre&gt;&lt;code&gt;it just enables different tools to speak different language
+servers. you implement something once and it works everywhere.
+you implement LSP in your editor, IDE or any tool once, and
+can use all the servers out there.
+you implement a LSP server once and it can be used in any tool
+or IDE.
+what the fuck were all those IDE developers thinking before?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/aside&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;langserver-org&#34;&gt;langserver.org&lt;/h1&gt;
+
+&lt;aside class=&#34;notes&#34;&gt;&lt;/aside&gt;
+</content>
+      
+    </item>
+    
   </channel>
 </rss>

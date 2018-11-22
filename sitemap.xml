@@ -88,6 +88,18 @@
   </url>
   
   <url>
+    <loc>http://kerma.codes/prez/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kerma.codes/prez/ide/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kerma.codes/prez/ide/slides/</loc>
+  </url>
+  
+  <url>
     <loc>http://kerma.codes/tags/aac/</loc>
     <lastmod>2013-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
