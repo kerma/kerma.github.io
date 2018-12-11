@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Api on notes to self</title>
-    <link>http://kerma.codes/tags/api/</link>
+    <link>https://kerma.codes/tags/api/</link>
     <description>Recent content in Api on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 30 Aug 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://kerma.codes/tags/api/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kerma.codes/tags/api/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PUT versus POST in RESTful API</title>
-      <link>http://kerma.codes/posts/put-vs-post/</link>
+      <link>https://kerma.codes/posts/put-vs-post/</link>
       <pubDate>Thu, 30 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/put-vs-post/</guid>
+      <guid>https://kerma.codes/posts/put-vs-post/</guid>
       <description>I&amp;rsquo;m designing an API. And obviously first question I had was: what&amp;rsquo;s the real difference between PUT and POST? Someone is always wrong in the internet. And there are a lot of opinions out there. But I think the most simple and clear on comes from stackoverflow:
 PUT implies putting a resource - completely replacing whatever is available at the given URL with a different thing. By definition, a PUT is idempotent.</description>
     </item>

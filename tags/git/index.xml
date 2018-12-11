@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on notes to self</title>
-    <link>http://kerma.codes/tags/git/</link>
+    <link>https://kerma.codes/tags/git/</link>
     <description>Recent content in Git on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 31 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://kerma.codes/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kerma.codes/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>From Mercurial to Git</title>
-      <link>http://kerma.codes/posts/hg-to-git/</link>
+      <link>https://kerma.codes/posts/hg-to-git/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/hg-to-git/</guid>
+      <guid>https://kerma.codes/posts/hg-to-git/</guid>
       <description>&lt;p&gt;I recently went through some Mercurial to Git migrations.
 While &lt;a href=&#34;https://stackoverflow.com/a/16037861&#34;&gt;stack overflow&lt;/a&gt;
 pretty much always has something to tell you, it never goes so smoothly in real life.

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Audiovideo on notes to self</title>
-    <link>http://kerma.codes/tags/audiovideo/</link>
+    <link>https://kerma.codes/tags/audiovideo/</link>
     <description>Recent content in Audiovideo on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 30 Jul 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://kerma.codes/tags/audiovideo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kerma.codes/tags/audiovideo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to remove unnecessary audio from a video file</title>
-      <link>http://kerma.codes/posts/remove-audio-from-video/</link>
+      <link>https://kerma.codes/posts/remove-audio-from-video/</link>
       <pubDate>Tue, 30 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/remove-audio-from-video/</guid>
+      <guid>https://kerma.codes/posts/remove-audio-from-video/</guid>
       <description>Once in a while I encounter a video file which has more than one audio stream attached to it. Usually I&amp;rsquo;m only interested in one of those and want to get rid of the others. Specially if the first one is not the one I&amp;rsquo;m interested in. Xbox for example does provide an easy way to selecting some other stream besides the first one.
 The wonderful open-source project libav provides the tools we need: avprobe and avconv.</description>
     </item>

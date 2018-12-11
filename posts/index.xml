@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on notes to self</title>
-    <link>http://kerma.codes/posts/</link>
+    <link>https://kerma.codes/posts/</link>
     <description>Recent content in Posts on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://kerma.codes/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kerma.codes/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Would you like to send an email?</title>
-      <link>http://kerma.codes/posts/sendmail/</link>
+      <link>https://kerma.codes/posts/sendmail/</link>
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/sendmail/</guid>
+      <guid>https://kerma.codes/posts/sendmail/</guid>
       <description>There is a simple task that I occasionally need to perform which has caused me many headaches during the past 10 years: send an email from a server. I remember a day in my early career where I spent hours and hours trying to get Exim4 configured. I’ve similar recollections with Postfix, Sendmail and ssmtp. The last being close to what I was initially hoping for to find. But even this had it’s issues.</description>
     </item>
     
     <item>
       <title>From Mercurial to Git</title>
-      <link>http://kerma.codes/posts/hg-to-git/</link>
+      <link>https://kerma.codes/posts/hg-to-git/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/hg-to-git/</guid>
+      <guid>https://kerma.codes/posts/hg-to-git/</guid>
       <description>&lt;p&gt;I recently went through some Mercurial to Git migrations.
 While &lt;a href=&#34;https://stackoverflow.com/a/16037861&#34;&gt;stack overflow&lt;/a&gt;
 pretty much always has something to tell you, it never goes so smoothly in real life.
@@ -34,28 +34,28 @@ Here&amp;rsquo;s my step-by-step guide including some random errors that you are
     
     <item>
       <title>How to assume ec2 instance role</title>
-      <link>http://kerma.codes/posts/assume-role/</link>
+      <link>https://kerma.codes/posts/assume-role/</link>
       <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/assume-role/</guid>
+      <guid>https://kerma.codes/posts/assume-role/</guid>
       <description>&lt;p&gt;I just spent two hours of my life trying to get AssumeRole working. And that was not the first time. So I hope this article saves someone elses time or reminds me again in six months how to do this properly.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Set MacOS default browser via command line</title>
-      <link>http://kerma.codes/posts/set-default-browser/</link>
+      <link>https://kerma.codes/posts/set-default-browser/</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/set-default-browser/</guid>
+      <guid>https://kerma.codes/posts/set-default-browser/</guid>
       <description>On my day job I use Chrome as my default browser and at home I roll with Safari. Occasionally I want to get work stuff done at home as well, with my personal laptop. Chrome profile sync works well for bookmarks, plugins and preferences, but opening links from email and chats in Safari while I&amp;rsquo;m in &amp;ldquo;work mode&amp;rdquo; is a bit annoying. Navigation to Chrome preferences to set it as the default, and later to remember to set Safari back seems a bit daft.</description>
     </item>
     
     <item>
       <title>How to concatenate multiple mp3&#39;s</title>
-      <link>http://kerma.codes/posts/join-mp3-with-lame/</link>
+      <link>https://kerma.codes/posts/join-mp3-with-lame/</link>
       <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/join-mp3-with-lame/</guid>
+      <guid>https://kerma.codes/posts/join-mp3-with-lame/</guid>
       <description>It&amp;rsquo;s 2014 and yet it&amp;rsquo;s not an obvious thing for some strange reason. Luckly someone else was as frustrated as me.
 Here&amp;rsquo;s my a bit shorter version of it:
 find . -name &#39;*.mp3&#39; -exec lame --decode &#39;{}&#39; - &#39;;&#39; | lame -a -b 64 - out.mp3  Edit: I found out, that the max length of a output is around 3.5 hours. Don&amp;rsquo;t know why, but something happens and lame decode stops:</description>
@@ -63,30 +63,30 @@ find . -name &#39;*.mp3&#39; -exec lame --decode &#39;{}&#39; - &#39;;&#39; | la
     
     <item>
       <title>How to remove unnecessary audio from a video file</title>
-      <link>http://kerma.codes/posts/remove-audio-from-video/</link>
+      <link>https://kerma.codes/posts/remove-audio-from-video/</link>
       <pubDate>Tue, 30 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/remove-audio-from-video/</guid>
+      <guid>https://kerma.codes/posts/remove-audio-from-video/</guid>
       <description>Once in a while I encounter a video file which has more than one audio stream attached to it. Usually I&amp;rsquo;m only interested in one of those and want to get rid of the others. Specially if the first one is not the one I&amp;rsquo;m interested in. Xbox for example does provide an easy way to selecting some other stream besides the first one.
 The wonderful open-source project libav provides the tools we need: avprobe and avconv.</description>
     </item>
     
     <item>
       <title>Console wars, over before they even began?</title>
-      <link>http://kerma.codes/posts/console-wars/</link>
+      <link>https://kerma.codes/posts/console-wars/</link>
       <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/console-wars/</guid>
+      <guid>https://kerma.codes/posts/console-wars/</guid>
       <description>By the end of this year Sony has launched their new PlayStation 4 and Microsoft their new Xbox One. I&amp;rsquo;ve always been a Xbox user and haven&amp;rsquo;t ever really understood PS&amp;rsquo;s strange controller and ugly user interface, but the new generation console war seems already to be won by Sony.
 Microsoft keeps shooting itself in the foot. They desperately try to innovate, but it just won&amp;rsquo;t work. Instead of acknowledging the problem, they lie to themselves and keep on trying.</description>
     </item>
     
     <item>
       <title>Install mongoDB on 64bit Debian (Squeeze)</title>
-      <link>http://kerma.codes/posts/mongodb-on-64bit-debian/</link>
+      <link>https://kerma.codes/posts/mongodb-on-64bit-debian/</link>
       <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/mongodb-on-64bit-debian/</guid>
+      <guid>https://kerma.codes/posts/mongodb-on-64bit-debian/</guid>
       <description>Sometime the most obvious thing turns out to be the most complicated one. Here&amp;rsquo;s my small journey to get mongoDB running on one 64bit Debian server.
 Like any other reasonable person I started from the manual. Everything worked as they said it would and for some time I was quite happy with it. But at some point for whatever reason I peaked into /var/log/mongodb/mongodb.log.
 ***** SERVER RESTARTED ***** Wed Dec 12 17:34:37 warning: 32-bit servers don&#39;t have journaling enabled by default.</description>
@@ -94,70 +94,70 @@ Like any other reasonable person I started from the manual. Everything worked as
     
     <item>
       <title>USB drive extremely slow in Ubuntu</title>
-      <link>http://kerma.codes/posts/slow-usb-drive/</link>
+      <link>https://kerma.codes/posts/slow-usb-drive/</link>
       <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/slow-usb-drive/</guid>
+      <guid>https://kerma.codes/posts/slow-usb-drive/</guid>
       <description>After I got my ybercool home media server ready it was time to start using it properly. Which, for a sad reason, also meant that I had to occasionally copy some of my media to USB stick, to enjoy it also on my bedroom TV which is not connected to the network.
 At some point I noticed that moving 1.4GB data from server hard drive to usb flash drive took like an hour.</description>
     </item>
     
     <item>
       <title>How to make your MP4 video play on Xbox 360</title>
-      <link>http://kerma.codes/posts/mp4-on-xbox360/</link>
+      <link>https://kerma.codes/posts/mp4-on-xbox360/</link>
       <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/mp4-on-xbox360/</guid>
+      <guid>https://kerma.codes/posts/mp4-on-xbox360/</guid>
       <description>There are some known limitations on Xbox 360 to play mp4 video. First of all you should update your Xbox, so if it&amp;rsquo;s not yet in the network you have to get it there. Once you&amp;rsquo;re confident that your box is up to date you can start looking into MP4 and it&amp;rsquo;s issues with Xbox. Some say that Xbox has the following special needs:
 Xbox can play H.264 MP4 video, but only up to 10 Mbps with resolutions of 1920*1080, 30 frames per second.</description>
     </item>
     
     <item>
       <title>How to resize FAT partition in Linux without losing data</title>
-      <link>http://kerma.codes/posts/resize-fat-partition/</link>
+      <link>https://kerma.codes/posts/resize-fat-partition/</link>
       <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/resize-fat-partition/</guid>
+      <guid>https://kerma.codes/posts/resize-fat-partition/</guid>
       <description>I have a small external hard drive that had three partitions on it. One I created for TimeMachine backups, one for keeping movies and one that I was not aware of. It had a boot flag so I suspect it was created by TimeMachine itself.
 So once I got a bigger HD just for TimeMachine I no longer needed the allocated 100GB on that older drive. Getting rid of it however without losing data seemed a bit too complicated in Mac OS X.</description>
     </item>
     
     <item>
       <title>Can not select Airport Express remote speakers</title>
-      <link>http://kerma.codes/posts/airport-express-remote-speakers/</link>
+      <link>https://kerma.codes/posts/airport-express-remote-speakers/</link>
       <pubDate>Mon, 17 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/airport-express-remote-speakers/</guid>
+      <guid>https://kerma.codes/posts/airport-express-remote-speakers/</guid>
       <description>I have a first generation Airport Express which works flawlessly with iPad and iPhone. But when I try to select remote speakers from iTunes it deselects the tickbox as soon as I click on it. Usually osx restart helps, but it only lasts until I switch network or loose connectivity to wifi. Expressively inconvenient I have to say.
 I&amp;rsquo;m not alone, but it doesn&amp;rsquo;t mean that there is a straightforward answer out there.</description>
     </item>
     
     <item>
       <title>Never ever buy a movie from iTunes</title>
-      <link>http://kerma.codes/posts/never-buy-a-movie-from-itunes/</link>
+      <link>https://kerma.codes/posts/never-buy-a-movie-from-itunes/</link>
       <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/never-buy-a-movie-from-itunes/</guid>
+      <guid>https://kerma.codes/posts/never-buy-a-movie-from-itunes/</guid>
       <description>Now this is getting ridiculous. When you buy a movie from iTunes you cannot watch this on your external screen. Yes, seriously. You can not plug in your second monitor, or your 1000$ 30&amp;rdquo; Apple Cinema Display, drag your iTunes window to that screen and hit play. It just won&amp;rsquo;t work.
 And apparently it&amp;rsquo;s due to a thing called High-bandwidth Digital Content Protection (HDCP). Something fancy that Apple added to all Macbook and Macbook Pro&amp;rsquo;s made after 2008.</description>
     </item>
     
     <item>
       <title>How to install matplotlib on Mac OS X Lion</title>
-      <link>http://kerma.codes/posts/install-matplotlib-on-osx/</link>
+      <link>https://kerma.codes/posts/install-matplotlib-on-osx/</link>
       <pubDate>Fri, 26 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/install-matplotlib-on-osx/</guid>
+      <guid>https://kerma.codes/posts/install-matplotlib-on-osx/</guid>
       <description>I was struggeling with installation of matplotlib on Mac OS X Lion. While trying to pip install matplotlib I saw a lot of bad stuff like
 src/ft2font.h:16:22: error: ft2build.h: No such file or directory src/ft2font.h:17:10: error: #include expects &amp;quot;FILENAME&amp;quot; or &amp;lt;FILENAME&amp;gt; ... lipo: can&#39;t open input file: /var/tmp//ccuS7mkF.out (No such file or directory) error: command &#39;llvm-gcc-4.2&#39; failed with exit status 1  It seemed that that issue was caused by</description>
     </item>
     
     <item>
       <title>Python easter eggs</title>
-      <link>http://kerma.codes/posts/python-easter-eggs/</link>
+      <link>https://kerma.codes/posts/python-easter-eggs/</link>
       <pubDate>Wed, 17 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/python-easter-eggs/</guid>
+      <guid>https://kerma.codes/posts/python-easter-eggs/</guid>
       <description>I found some interesting easter eggs from python (2.7) recently. Try the following:
 from __future__ import braces
 import this
@@ -167,20 +167,20 @@ Do you know more?</description>
     
     <item>
       <title>PUT versus POST in RESTful API</title>
-      <link>http://kerma.codes/posts/put-vs-post/</link>
+      <link>https://kerma.codes/posts/put-vs-post/</link>
       <pubDate>Thu, 30 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/put-vs-post/</guid>
+      <guid>https://kerma.codes/posts/put-vs-post/</guid>
       <description>I&amp;rsquo;m designing an API. And obviously first question I had was: what&amp;rsquo;s the real difference between PUT and POST? Someone is always wrong in the internet. And there are a lot of opinions out there. But I think the most simple and clear on comes from stackoverflow:
 PUT implies putting a resource - completely replacing whatever is available at the given URL with a different thing. By definition, a PUT is idempotent.</description>
     </item>
     
     <item>
       <title>Procrastinate more</title>
-      <link>http://kerma.codes/posts/procrastinate-more/</link>
+      <link>https://kerma.codes/posts/procrastinate-more/</link>
       <pubDate>Wed, 22 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/procrastinate-more/</guid>
+      <guid>https://kerma.codes/posts/procrastinate-more/</guid>
       <description>I&amp;rsquo;ve had a wallpaper by goodfuckingdesignadvice for a while now (next to &amp;ldquo;Always ask for more fucking money&amp;rdquo;). But it&amp;rsquo;s usually hidden behind soundcloud, beatport, djtechools, facebook and all the other nice pages that I&amp;rsquo;m interested in. And for years I&amp;rsquo;ve been trying to find ways how to procrastinate less, do more and actually feel that I&amp;rsquo;ve accomplished something by the end of the day.
 I&amp;rsquo;ve tried inbox zero, Pomodoro, keeping my Skype and Twitter client closed, but eventually I still find myself wondering around places where I definitelly should not be.</description>
     </item>

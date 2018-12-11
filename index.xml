@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>notes to self</title>
-    <link>http://kerma.codes/</link>
+    <link>https://kerma.codes/</link>
     <description>Recent content on notes to self</description>
     <generator>Hugo - gohugo.io</generator>
     <language>en</language>
     <contact>hello@world.com</contact>
     <copyright></copyright>
     
-        <atom:link href="http://kerma.codes/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kerma.codes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Would you like to send an email?</title>
-      <link>http://kerma.codes/posts/sendmail/</link>
+      <link>https://kerma.codes/posts/sendmail/</link>
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/sendmail/</guid>
+      <guid>https://kerma.codes/posts/sendmail/</guid>
       <description></description>
       
       <content>&lt;p&gt;There is a simple task that I occasionally need to perform which has caused me many headaches during the past 10 years: send an email from a server. I remember a day in my early career where I spent hours and hours trying to get Exim4 configured. I’ve similar recollections with Postfix, Sendmail and ssmtp. The last being close to what I was initially hoping for to find. But even this had it’s issues.&lt;/p&gt;
@@ -41,10 +41,10 @@ zsh: command not found: sendmail
     
     <item>
       <title>From Mercurial to Git</title>
-      <link>http://kerma.codes/posts/hg-to-git/</link>
+      <link>https://kerma.codes/posts/hg-to-git/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/hg-to-git/</guid>
+      <guid>https://kerma.codes/posts/hg-to-git/</guid>
       <description></description>
       
       <content>&lt;p&gt;I recently went through some Mercurial to Git migrations.
@@ -145,10 +145,10 @@ the third part.. Well, resolving conflicts is hard.&lt;/p&gt;</content>
     
     <item>
       <title>How to assume ec2 instance role</title>
-      <link>http://kerma.codes/posts/assume-role/</link>
+      <link>https://kerma.codes/posts/assume-role/</link>
       <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/assume-role/</guid>
+      <guid>https://kerma.codes/posts/assume-role/</guid>
       <description></description>
       
       <content>&lt;p&gt;I just spent two hours of my life trying to get AssumeRole working. And that was not the first time. So I hope this article saves someone elses time or reminds me again in six months how to do this properly.&lt;/p&gt;
@@ -218,10 +218,10 @@ A client error (AccessDenied) occurred when calling the AssumeRole operation: Us
     
     <item>
       <title>Set MacOS default browser via command line</title>
-      <link>http://kerma.codes/posts/set-default-browser/</link>
+      <link>https://kerma.codes/posts/set-default-browser/</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/set-default-browser/</guid>
+      <guid>https://kerma.codes/posts/set-default-browser/</guid>
       <description></description>
       
       <content>&lt;p&gt;&lt;img src=&#34;http://imgs.xkcd.com/comics/automation.png&#34; alt=&#34;xkcd automation&#34; /&gt;&lt;/p&gt;
@@ -250,10 +250,10 @@ know whether it works for you.&lt;/p&gt;
     
     <item>
       <title>How to concatenate multiple mp3&#39;s</title>
-      <link>http://kerma.codes/posts/join-mp3-with-lame/</link>
+      <link>https://kerma.codes/posts/join-mp3-with-lame/</link>
       <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/join-mp3-with-lame/</guid>
+      <guid>https://kerma.codes/posts/join-mp3-with-lame/</guid>
       <description></description>
       
       <content>&lt;p&gt;It&amp;rsquo;s 2014 and yet it&amp;rsquo;s not an obvious thing for some strange reason. Luckly someone
@@ -287,10 +287,10 @@ Encoding as 44.1 kHz single-ch MPEG-1 Layer III (11x)  64 kbps qval=3
     
     <item>
       <title>How to remove unnecessary audio from a video file</title>
-      <link>http://kerma.codes/posts/remove-audio-from-video/</link>
+      <link>https://kerma.codes/posts/remove-audio-from-video/</link>
       <pubDate>Tue, 30 Jul 2013 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/remove-audio-from-video/</guid>
+      <guid>https://kerma.codes/posts/remove-audio-from-video/</guid>
       <description></description>
       
       <content>&lt;p&gt;Once in a while I encounter a video file which has more than one audio stream attached to it. Usually
@@ -332,10 +332,10 @@ copy something_nice_eng.avi
     
     <item>
       <title>Console wars, over before they even began?</title>
-      <link>http://kerma.codes/posts/console-wars/</link>
+      <link>https://kerma.codes/posts/console-wars/</link>
       <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/console-wars/</guid>
+      <guid>https://kerma.codes/posts/console-wars/</guid>
       <description></description>
       
       <content>&lt;iframe width=&#34;640&#34; height=&#34;360&#34; src=&#34;http://www.youtube.com/embed/kWSIFh8ICaA?feature=player_embedded&#34; 
@@ -375,10 +375,10 @@ which puts a TV inside her TV so she could watch TV on her TV.&lt;/p&gt;
     
     <item>
       <title>Install mongoDB on 64bit Debian (Squeeze)</title>
-      <link>http://kerma.codes/posts/mongodb-on-64bit-debian/</link>
+      <link>https://kerma.codes/posts/mongodb-on-64bit-debian/</link>
       <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/mongodb-on-64bit-debian/</guid>
+      <guid>https://kerma.codes/posts/mongodb-on-64bit-debian/</guid>
       <description></description>
       
       <content>&lt;p&gt;Sometime the most obvious thing turns out to be the most complicated one. Here&amp;rsquo;s
@@ -498,10 +498,10 @@ dafuq?
     
     <item>
       <title>USB drive extremely slow in Ubuntu</title>
-      <link>http://kerma.codes/posts/slow-usb-drive/</link>
+      <link>https://kerma.codes/posts/slow-usb-drive/</link>
       <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/slow-usb-drive/</guid>
+      <guid>https://kerma.codes/posts/slow-usb-drive/</guid>
       <description></description>
       
       <content>&lt;p&gt;After I got my ybercool home media server ready it was time to start using it
@@ -541,10 +541,10 @@ MOUNTOPTIONS=&amp;quot;sync,noexec,nodev,noatime,nodiratime&amp;quot;
     
     <item>
       <title>How to make your MP4 video play on Xbox 360</title>
-      <link>http://kerma.codes/posts/mp4-on-xbox360/</link>
+      <link>https://kerma.codes/posts/mp4-on-xbox360/</link>
       <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/mp4-on-xbox360/</guid>
+      <guid>https://kerma.codes/posts/mp4-on-xbox360/</guid>
       <description></description>
       
       <content>&lt;p&gt;There are some known limitations on Xbox 360 to play mp4 video. First of all you
@@ -711,10 +711,10 @@ video:1993177kB audio:126711kB global headers:0kB muxing overhead 0.123045%
     
     <item>
       <title>How to resize FAT partition in Linux without losing data</title>
-      <link>http://kerma.codes/posts/resize-fat-partition/</link>
+      <link>https://kerma.codes/posts/resize-fat-partition/</link>
       <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/resize-fat-partition/</guid>
+      <guid>https://kerma.codes/posts/resize-fat-partition/</guid>
       <description></description>
       
       <content>&lt;p&gt;I have a small external hard drive that had three partitions on it. One I
@@ -830,10 +830,10 @@ still there and accessible. I hope you will be as fortunate as me (:&lt;/p&gt;
     
     <item>
       <title>Can not select Airport Express remote speakers</title>
-      <link>http://kerma.codes/posts/airport-express-remote-speakers/</link>
+      <link>https://kerma.codes/posts/airport-express-remote-speakers/</link>
       <pubDate>Mon, 17 Dec 2012 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/airport-express-remote-speakers/</guid>
+      <guid>https://kerma.codes/posts/airport-express-remote-speakers/</guid>
       <description></description>
       
       <content>&lt;p&gt;&lt;img src=&#34;https://dl.dropbox.com/u/2009653/blog/airport-express.jpg&#34; alt=&#34;airport express&#34; /&gt;&lt;/p&gt;
@@ -872,10 +872,10 @@ problem.&lt;/p&gt;
     
     <item>
       <title>Never ever buy a movie from iTunes</title>
-      <link>http://kerma.codes/posts/never-buy-a-movie-from-itunes/</link>
+      <link>https://kerma.codes/posts/never-buy-a-movie-from-itunes/</link>
       <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/never-buy-a-movie-from-itunes/</guid>
+      <guid>https://kerma.codes/posts/never-buy-a-movie-from-itunes/</guid>
       <description></description>
       
       <content>&lt;p&gt;Now this is getting ridiculous. When you buy a movie from iTunes you cannot
@@ -900,10 +900,10 @@ So I just stop here and feel more disappointed that ever.&lt;/p&gt;
     
     <item>
       <title>How to install matplotlib on Mac OS X Lion</title>
-      <link>http://kerma.codes/posts/install-matplotlib-on-osx/</link>
+      <link>https://kerma.codes/posts/install-matplotlib-on-osx/</link>
       <pubDate>Fri, 26 Oct 2012 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/install-matplotlib-on-osx/</guid>
+      <guid>https://kerma.codes/posts/install-matplotlib-on-osx/</guid>
       <description></description>
       
       <content>&lt;p&gt;I was struggeling with installation of &lt;a href=&#34;http://matplotlib.org/&#34;&gt;matplotlib&lt;/a&gt; on
@@ -953,10 +953,10 @@ sudo pip install matplotlib
     
     <item>
       <title>Python easter eggs</title>
-      <link>http://kerma.codes/posts/python-easter-eggs/</link>
+      <link>https://kerma.codes/posts/python-easter-eggs/</link>
       <pubDate>Wed, 17 Oct 2012 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/python-easter-eggs/</guid>
+      <guid>https://kerma.codes/posts/python-easter-eggs/</guid>
       <description></description>
       
       <content>&lt;p&gt;&lt;img src=&#34;https://imgs.xkcd.com/comics/python.png&#34; alt=&#34;xkcd&#34; /&gt;&lt;/p&gt;
@@ -977,10 +977,10 @@ following:&lt;/p&gt;
     
     <item>
       <title>PUT versus POST in RESTful API</title>
-      <link>http://kerma.codes/posts/put-vs-post/</link>
+      <link>https://kerma.codes/posts/put-vs-post/</link>
       <pubDate>Thu, 30 Aug 2012 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/put-vs-post/</guid>
+      <guid>https://kerma.codes/posts/put-vs-post/</guid>
       <description></description>
       
       <content>&lt;p&gt;I&amp;rsquo;m designing an API. And obviously first question I had was: what&amp;rsquo;s the
@@ -1006,10 +1006,10 @@ most simple and clear on comes from
     
     <item>
       <title>Procrastinate more</title>
-      <link>http://kerma.codes/posts/procrastinate-more/</link>
+      <link>https://kerma.codes/posts/procrastinate-more/</link>
       <pubDate>Wed, 22 Aug 2012 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/posts/procrastinate-more/</guid>
+      <guid>https://kerma.codes/posts/procrastinate-more/</guid>
       <description></description>
       
       <content>&lt;p&gt;&lt;img src=&#34;https://wewastetime.files.wordpress.com/2012/05/motivational-mugs-by-good-fcking-design-advice-3.jpg&#34; alt=&#34;good fucking design advice&#34; /&gt;&lt;/p&gt;
@@ -1051,10 +1051,10 @@ and suddenly all my wondering makes more sense.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://kerma.codes/prez/ide/slides/</link>
+      <link>https://kerma.codes/prez/ide/slides/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerma</author>
-      <guid>http://kerma.codes/prez/ide/slides/</guid>
+      <guid>https://kerma.codes/prez/ide/slides/</guid>
       <description></description>
       
       <content>

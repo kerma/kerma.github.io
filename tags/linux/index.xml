@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on notes to self</title>
-    <link>http://kerma.codes/tags/linux/</link>
+    <link>https://kerma.codes/tags/linux/</link>
     <description>Recent content in Linux on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 28 Mar 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://kerma.codes/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kerma.codes/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>USB drive extremely slow in Ubuntu</title>
-      <link>http://kerma.codes/posts/slow-usb-drive/</link>
+      <link>https://kerma.codes/posts/slow-usb-drive/</link>
       <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/slow-usb-drive/</guid>
+      <guid>https://kerma.codes/posts/slow-usb-drive/</guid>
       <description>After I got my ybercool home media server ready it was time to start using it properly. Which, for a sad reason, also meant that I had to occasionally copy some of my media to USB stick, to enjoy it also on my bedroom TV which is not connected to the network.
 At some point I noticed that moving 1.4GB data from server hard drive to usb flash drive took like an hour.</description>
     </item>
     
     <item>
       <title>How to resize FAT partition in Linux without losing data</title>
-      <link>http://kerma.codes/posts/resize-fat-partition/</link>
+      <link>https://kerma.codes/posts/resize-fat-partition/</link>
       <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://kerma.codes/posts/resize-fat-partition/</guid>
+      <guid>https://kerma.codes/posts/resize-fat-partition/</guid>
       <description>I have a small external hard drive that had three partitions on it. One I created for TimeMachine backups, one for keeping movies and one that I was not aware of. It had a boot flag so I suspect it was created by TimeMachine itself.
 So once I got a bigger HD just for TimeMachine I no longer needed the allocated 100GB on that older drive. Getting rid of it however without losing data seemed a bit too complicated in Mac OS X.</description>
     </item>
