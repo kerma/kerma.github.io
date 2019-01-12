@@ -6,21 +6,10 @@
     <description>Recent content in Howto on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Mar 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Mar 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kerma.codes/tags/howto/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>How to concatenate multiple mp3&#39;s</title>
-      <link>https://kerma.codes/posts/join-mp3-with-lame/</link>
-      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/posts/join-mp3-with-lame/</guid>
-      <description>It&amp;rsquo;s 2014 and yet it&amp;rsquo;s not an obvious thing for some strange reason. Luckly someone else was as frustrated as me.
-Here&amp;rsquo;s my a bit shorter version of it:
-find . -name &#39;*.mp3&#39; -exec lame --decode &#39;{}&#39; - &#39;;&#39; | lame -a -b 64 - out.mp3  Edit: I found out, that the max length of a output is around 3.5 hours. Don&amp;rsquo;t know why, but something happens and lame decode stops:</description>
-    </item>
     
     <item>
       <title>How to resize FAT partition in Linux without losing data</title>

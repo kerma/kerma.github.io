@@ -1,0 +1,30 @@
+---
+Title: How to concatenate multiple mp3's
+Date: 2014-03-18
+Tags: [cli, howto]
+Slug: join-mp3-with-lame
+---
+
+It's 2014 and yet it's not an obvious thing for some strange reason. Luckly someone 
+[else](http://serialized.net/2007/09/quick-lame-tip-concatenate-mp3s/) 
+was as frustrated as me. 
+
+Here's my a bit shorter version of it:
+    
+    find . -name '*.mp3' -exec lame --decode '{}' - ';' | lame -a -b 64 - out.mp3
+
+Edit: I found out, that the max length of a output is around 3.5 hours. Don't know why, 
+but something happens and lame decode stops:
+    
+    ...
+    input:  ./input-04.mp3
+        (44.1 kHz, 2 channels, MPEG-1 Layer III)
+    output: <stdout>  (16 bit, Microsoft WAVE)
+    skipping initial 529 samples (encoder+decoder delay)
+    Frame#  5505/80510   64 kbps   MS    LAME 3.99.5 64bits (http://lame.sf.net)
+    Autoconverting from stereo to mono. Setting encoding to mono mode.
+    Using polyphase lowpass filter, transition band: 16538 Hz - 17071 Hz
+    Encoding <stdin> to out.mp3
+    Encoding as 44.1 kHz single-ch MPEG-1 Layer III (11x)  64 kbps qval=3
+    
+Everything works nicely if I keep input below 3.5 hours.
