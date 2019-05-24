@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>notes to self</title>
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/reveal-js/css/reveal.css"><link rel="stylesheet" href="/reveal-js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="/highlight-js/default.min.css">
+    
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+  
+<section>
+
+<section data-shortcode-section>
+<h1 id="serverless">Serverless</h1>
+
+</section><section>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+<li><a href="https://slack.engineering/taking-php-seriously-cf7a60065329">Taking PHP Seriously</a></li>
+<li><a href="https://www.martinfowler.com/articles/serverless.html">Serverless Architectures</a></li>
+<li><a href="https://blog.symphonia.io/defining-serverless-part-1-704d72bc8a32">Defining Serverless</a></li>
+<li><a href="https://aws.amazon.com/serverless/">AWS Serverless</a></li>
+<li><a href="https://serverless.com/framework/">Serverless Framework</a></li>
+<li><a href="https://fnproject.io/">Fn Project</a></li>
+<li><a href="https://www.zappa.io/">Zappa</a></li>
+<li><a href="https://claudiajs.com/">ClaudiaJS</a></li>
+<li><a href="https://gosparta.io/">Sparta</a></li>
+<li><a href="https://www.terraform.io/">Terraform</a></li>
+<li><a href="https://registry.terraform.io/modules/claranet/lambda/aws/0.12.0">terraform-aws-lambda</a></li>
+<li><a href="https://github.com/aws/chalice">AWS Chalice</a></li>
+<li><a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html">AWS SAM</a></li>
+</ul>
+
+</section>
+
+</section><section>
+
+<h2 id="the-next-best-thing-after-php">The Next Best Thing After PHP!</h2>
+
+</section><section>
+
+<h2 id="php-is-the-best">PHP Is The Best</h2>
+
+<section data-shortcode-section>
+<span class='fragment '
+  >
+  Wikipedia
+</span></p>
+
+</section><section>
+
+<h1 id="18-000-000-000">18 000 000 000</h1>
+
+</section><section>
+
+<ul>
+<li>Wikipedia (18 BILLION page views per month)</li>
+<li>Wordpress</li>
+</ul>
+
+</section><section>
+
+<h2 id="runs-1-3-of-the-entire-internet">Runs <sup>1</sup>&frasl;<sub>3</sub> of the entire Internet</h2>
+
+</section><section>
+
+<ul>
+<li>Wikipedia (18 BILLION page views per month)</li>
+<li>Wordpress (Runs 33% of the entire Internet)</li>
+<li>Facebook</li>
+</ul>
+
+</section><section>
+
+<h1 id="mau-2-billion">MAU &gt; 2 BILLION</h1>
+
+</section><section>
+
+<ul>
+<li>Wikipedia (18 BILLION page views per month)</li>
+<li>Wordpress (Runs 33% of the entire Internet)</li>
+<li>Facebook  (MAU &gt; 2 BILLION)</li>
+<li><span class='fragment '
+>
+Skype, Pipedrive, Slack etc
+</span></li>
+</ul>
+
+</section>
+
+</section><section>
+
+<h2 id="why-is-php-the-best">Why Is PHP The Best?</h2>
+
+<ul>
+<li><span class='fragment '
+  >
+  Common Gateway Interface
+</span></li>
+<li><span class='fragment '
+  >
+  Feature rich, but terrible, standard library
+</span></li>
+<li><span class='fragment '
+  >
+  Frameworks, not libraries
+</span></li>
+<li><span class='fragment '
+  >
+  No package manager
+</span>
+<span class='fragment '
+  >
+  <ul>
+<li>PEAR</li>
+</ul>
+
+</span>
+<span class='fragment '
+  >
+  <ul>
+<li>Composer</li>
+</ul>
+
+</span></li>
+<li><span class='fragment '
+  >
+  Single request model
+</span>
+<span class='fragment '
+  >
+  <ul>
+<li>State is easy</li>
+</ul>
+
+</span>
+<span class='fragment '
+  >
+  <ul>
+<li>Concurrency is easy</li>
+</ul>
+
+</span></li>
+<li><span class='fragment '
+  >
+  Optional type system
+</span></li>
+</ul>
+
+</section><section>
+
+<p>While PHP as a language sucks, the PHP environment has some unique
+properties that have made it a very successful choice.</p>
+
+</section><section>
+
+<h1 id="enter-serverless">Enter serverless</h1>
+
+</section><section>
+
+<h2 id="serverless-traits">Serverless traits</h2>
+
+<ul>
+<li><span class='fragment '
+  >
+  Requires no management of server hosts or server processes
+</span></li>
+<li><span class='fragment '
+  >
+  Auto-scales and auto-provisions, based on load
+</span></li>
+<li><span class='fragment '
+  >
+  Offers costs based on precise usage
+</span></li>
+<li><span class='fragment '
+  >
+  Has performance capabilities defined in terms other than host size / count
+</span></li>
+<li><span class='fragment '
+  >
+  Has implicit High Availability
+</span></li>
+</ul>
+
+</section><section>
+
+<section data-shortcode-section>
+<h2 id="faas">Faas</h2>
+
+<h2 id="baas">Baas</h2>
+
+</section><section>
+
+<h2 id="backend-as-a-service">Backend-as-a-Service</h2>
+
+<ul>
+<li><span class='fragment '
+>
+AWS SQS (2004)
+</span></li>
+<li><span class='fragment '
+>
+AWS S3 (2006)
+</span></li>
+<li><span class='fragment '
+>
+Parse Platform (2011, 2017 Facebook)
+</span></li>
+<li><span class='fragment '
+>
+Firebase DB (2012, Google 2014)
+</span></li>
+<li><span class='fragment '
+>
+Auth0 (2013)
+</span></li>
+</ul>
+
+</section>
+
+</section><section>
+
+<section data-shortcode-section>
+<h2 id="function-as-a-service">Function-as-a-Service</h2>
+
+</section><section>
+
+<p>Run backend code without managing your own server systems or
+your own long-lived server applications</p>
+
+</section><section>
+
+<ul>
+<li>AWS Lambda</li>
+<li>Google Cloud Functions</li>
+<li>Azure Functions</li>
+<li>Apache OpenWhisk</li>
+<li>Kubeless</li>
+<li>Fn Project</li>
+</ul>
+
+</section>
+
+</section><section>
+
+<h1 id="but-why">But why?</h1>
+
+</section><section>
+
+<h2 id="good-code">Good code</h2>
+
+<ul>
+<li><span class='fragment '
+  >
+  Single Responsibility Principle
+</span></li>
+<li><span class='fragment '
+  >
+  KISS and YAGNI
+</span></li>
+<li><span class='fragment '
+  >
+  Minimal dependencies
+</span></li>
+<li><span class='fragment '
+  >
+  Efficient
+</span></li>
+<li><span class='fragment '
+  >
+  Maintainable
+</span></li>
+<li><span class='fragment '
+  >
+  The right tool for job
+</span></li>
+</ul>
+
+</section><section>
+
+<section data-shortcode-section>
+<!--<img src="ps.svg" />-->
+
+<p><img src="https://www.martinfowler.com/articles/serverless/ps.svg" /></p>
+
+</section><section>
+
+<!-- <img src="sps.svg" /> -->
+
+<p><img src="https://www.martinfowler.com/articles/serverless/sps.svg" /></p>
+
+</section><section>
+
+<h2 id="backend-as-a-service">Backend-as-a-service</h2>
+
+<ul>
+<li>Single Responsibility Principle</li>
+<li>KISS and YAGNI</li>
+</ul>
+
+</section><section>
+
+<h2 id="function-as-a-service">Function-as-a-service</h2>
+
+<ul>
+<li>Minimal dependencies</li>
+<li>Efficient</li>
+<li>Maintainable</li>
+<li>The right tool for job</li>
+</ul>
+
+</section><section>
+
+<h2 id="serverless-architecture">Serverless architecture</h2>
+
+<ul>
+<li>Simple state</li>
+<li>Easy and cheap concurrency</li>
+<li>Optional type safety</li>
+</ul>
+
+</section>
+
+</section><section>
+
+<h2 id="but-but-microservices-1">But, but&hellip; microservices!!1</h2>
+
+</section><section>
+
+<h2 id="microservices">Microservices</h2>
+
+<ul>
+<li>Hard to define</li>
+<li>Hard to orchestrate</li>
+<li>Inefficent utilization</li>
+<li>Need cluster management
+
+<ul>
+<li>Fargate</li>
+<li>Kubeless</li>
+</ul></li>
+</ul>
+
+</section><section>
+
+<h1 id="tools-and-stuff">Tools and stuff</h1>
+
+</section><section>
+
+<h2 id="serverless-com-framework">serverless.com/framework</h2>
+
+<ul>
+<li>Vendor agnostic</li>
+<li>Language agnostic</li>
+<li>Functions</li>
+<li>Events</li>
+<li>Resources</li>
+<li>Services</li>
+<li>Plugins</li>
+<li>Node.js 😞</li>
+</ul>
+
+</section><section>
+
+<h2 id="fnproject-io">fnproject.io</h2>
+
+<ul>
+<li>Serverless platform on Docker</li>
+<li>Vendor agnostic</li>
+<li>Language agnostic</li>
+<li>Golang 😏</li>
+</ul>
+
+</section><section>
+
+<h2 id="zappa-io">zappa.io</h2>
+
+<ul>
+<li>Serverless Python Web Services
+
+<ul>
+<li>Flask/Django</li>
+<li>Any wsgi app</li>
+</ul></li>
+<li>AWS Lambda and API Gateway
+
+<ul>
+<li>Async task execution</li>
+<li>AWS events</li>
+</ul></li>
+</ul>
+
+</section><section>
+
+<h2 id="claudiajs-com">claudiajs.com</h2>
+
+<ul>
+<li>Serverless JavaScript, the easy way</li>
+<li>AWS Lambda and API Gateway</li>
+<li>Node.js apps</li>
+</ul>
+
+</section><section>
+
+<h2 id="gosparta-io">gosparta.io</h2>
+
+<ul>
+<li>Serverless go microservices for AWS</li>
+<li>AWS Lambda and API Gateway
+
+<ul>
+<li>AWS Events</li>
+</ul></li>
+<li>Golang</li>
+</ul>
+
+</section><section>
+
+<h2 id="aws-chalice">AWS Chalice</h2>
+
+<ul>
+<li>Python Microframework</li>
+<li>AWS Lambda and API Gateway
+
+<ul>
+<li>IAM integration</li>
+<li>AWS events (+Domovoi)</li>
+</ul></li>
+</ul>
+
+</section><section>
+
+<h2 id="aws-sam">AWS SAM</h2>
+
+<ul>
+<li>Framework for building serverless apps</li>
+<li>Built and supported by AWS</li>
+<li>Language agnostic</li>
+</ul>
+
+</section><section>
+
+<h2 id="terraform">Terraform</h2>
+
+<ul>
+<li>Cloud agnostic</li>
+<li>Language agnostic</li>
+<li>Existing modules</li>
+</ul>
+
+</section><section>
+
+<h2 id="good-to-know">Good to know</h2>
+
+<ul>
+<li><span class='fragment '
+  >
+  Production Ready™
+</span></li>
+<li><span class='fragment '
+  >
+  Limited function execution times
+</span></li>
+<li><span class='fragment '
+  >
+  Documentation sucks
+</span></li>
+</ul>
+
+</section><section>
+
+<h3 id="kerma-codes-slides-serverless">kerma.codes/slides/serverless</h3>
+
+<p><a href="#/0/1">resources</a></p>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src=/reveal-hugo/object-assign.js></script>
+
+<a href="/reveal-js/css/print/" id="print-location" style="display: none;"></a>
+<script type="text/javascript">
+  var printLocationElement = document.getElementById('print-location');
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<script type="application/json" id="reveal-hugo-site-params">null</script>
+<script type="application/json" id="reveal-hugo-page-params">{
+  "theme": "moon"
+}</script>
+
+<script src="/reveal-js/lib/js/head.min.js"></script>
+<script src="/reveal-js/js/reveal.js"></script>
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+  
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams));
+  Reveal.initialize(options);
+</script>
+
+<script type="text/javascript" src="/reveal-js/lib/js/classList.js"></script>
+
+
+<script type="text/javascript" src="/reveal-js/plugin/markdown/marked.js"></script>
+
+<script type="text/javascript" src="/reveal-js/plugin/markdown/markdown.js"></script>
+
+<script type="text/javascript" src="/reveal-js/plugin/highlight/highlight.js"></script>
+
+<script type="text/javascript" src="/reveal-js/plugin/zoom-js/zoom.js"></script>
+
+
+<script type="text/javascript" src="/reveal-js/plugin/notes/notes.js"></script>
+
+
+
+<script type="text/javascript">
+if (hljs)
+  hljs.initHighlightingOnLoad();
+</script>
+    
+    
+  </body>
+</html>
