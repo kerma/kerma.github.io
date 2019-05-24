@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kerma.codes/posts/apps-worth/</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://kerma.codes/posts/sendmail/</loc>
     <lastmod>2018-11-08T00:00:00+00:00</lastmod>
   </url>
@@ -102,14 +97,6 @@
   
   <url>
     <loc>https://kerma.codes/prez/ide/slides/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kerma.codes/slides/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kerma.codes/slides/serverless/</loc>
   </url>
   
   <url>
@@ -215,6 +202,10 @@
   </url>
   
   <url>
+    <loc>https://kerma.codes/slides/</loc>
+  </url>
+  
+  <url>
     <loc>https://kerma.codes/tags/hg/</loc>
     <lastmod>2018-07-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -245,12 +236,6 @@
   </url>
   
   <url>
-    <loc>https://kerma.codes/tags/misc/</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kerma.codes/tags/mongodb/</loc>
     <lastmod>2013-04-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -270,7 +255,7 @@
   
   <url>
     <loc>https://kerma.codes/posts/</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -284,6 +269,10 @@
     <loc>https://kerma.codes/tags/rest/</loc>
     <lastmod>2012-08-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kerma.codes/slides/serverless/</loc>
   </url>
   
   <url>
@@ -324,7 +313,7 @@
   
   <url>
     <loc>https://kerma.codes/</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
