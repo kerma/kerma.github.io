@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on notes to self</title>
+    <title>linux on notes to self</title>
     <link>https://kerma.codes/tags/linux/</link>
-    <description>Recent content in Linux on notes to self</description>
+    <description>Recent content in linux on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 28 Mar 2013 00:00:00 +0000</lastBuildDate>

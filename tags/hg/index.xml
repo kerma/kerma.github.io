@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hg on notes to self</title>
+    <title>hg on notes to self</title>
     <link>https://kerma.codes/tags/hg/</link>
-    <description>Recent content in Hg on notes to self</description>
+    <description>Recent content in hg on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 31 Jul 2018 00:00:00 +0000</lastBuildDate>

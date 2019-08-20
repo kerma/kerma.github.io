@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Here be books on notes to self</title>
+    <link>https://kerma.codes/books/</link>
+    <description>Recent content in Here be books on notes to self</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kerma.codes/books/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thinking in Bets</title>
+      <link>https://kerma.codes/books/thinking-in-bets/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/books/thinking-in-bets/</guid>
+      <description>Making Smarter Decisions When You Don&amp;rsquo;t Have All the Facts - My notes, selected quotes and references for Annie Duke&amp;rsquo;s book.</description>
+    </item>
+    
+  </channel>
+</rss>

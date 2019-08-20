@@ -6,17 +6,215 @@
     <description>Recent content in Tags on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Mar 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kerma.codes/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Aac</title>
+      <title>book</title>
+      <link>https://kerma.codes/tags/book/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code</title>
+      <link>https://kerma.codes/tags/code/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://kerma.codes/tags/golang/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://kerma.codes/tags/git/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hg</title>
+      <link>https://kerma.codes/tags/hg/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/hg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://kerma.codes/tags/aws/</link>
+      <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://kerma.codes/tags/cli/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>audio</title>
+      <link>https://kerma.codes/tags/audio/</link>
+      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/audio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://kerma.codes/tags/tips/</link>
+      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>audiovideo</title>
+      <link>https://kerma.codes/tags/audiovideo/</link>
+      <pubDate>Tue, 30 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/audiovideo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gaming</title>
+      <link>https://kerma.codes/tags/gaming/</link>
+      <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/gaming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>https://kerma.codes/tags/mongodb/</link>
+      <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://kerma.codes/tags/linux/</link>
+      <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://kerma.codes/tags/ubuntu/</link>
+      <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>usb</title>
+      <link>https://kerma.codes/tags/usb/</link>
+      <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/usb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>usbmount</title>
+      <link>https://kerma.codes/tags/usbmount/</link>
+      <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/usbmount/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aac</title>
       <link>https://kerma.codes/tags/aac/</link>
       <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
       
       <guid>https://kerma.codes/tags/aac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>avconv</title>
+      <link>https://kerma.codes/tags/avconv/</link>
+      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/avconv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ffmpeg</title>
+      <link>https://kerma.codes/tags/ffmpeg/</link>
+      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/ffmpeg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>libav</title>
+      <link>https://kerma.codes/tags/libav/</link>
+      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/libav/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mp4</title>
+      <link>https://kerma.codes/tags/mp4/</link>
+      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/mp4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xbox360</title>
+      <link>https://kerma.codes/tags/xbox360/</link>
+      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/xbox360/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>howto</title>
+      <link>https://kerma.codes/tags/howto/</link>
+      <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/howto/</guid>
       <description></description>
     </item>
     
@@ -30,160 +228,7 @@
     </item>
     
     <item>
-      <title>Api</title>
-      <link>https://kerma.codes/tags/api/</link>
-      <pubDate>Thu, 30 Aug 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Apple</title>
-      <link>https://kerma.codes/tags/apple/</link>
-      <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/apple/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Audio</title>
-      <link>https://kerma.codes/tags/audio/</link>
-      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/audio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Audiovideo</title>
-      <link>https://kerma.codes/tags/audiovideo/</link>
-      <pubDate>Tue, 30 Jul 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/audiovideo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Avconv</title>
-      <link>https://kerma.codes/tags/avconv/</link>
-      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/avconv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aws</title>
-      <link>https://kerma.codes/tags/aws/</link>
-      <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cli</title>
-      <link>https://kerma.codes/tags/cli/</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Code</title>
-      <link>https://kerma.codes/tags/code/</link>
-      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Drm</title>
-      <link>https://kerma.codes/tags/drm/</link>
-      <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/drm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fail</title>
-      <link>https://kerma.codes/tags/fail/</link>
-      <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/fail/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ffmpeg</title>
-      <link>https://kerma.codes/tags/ffmpeg/</link>
-      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/ffmpeg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gaming</title>
-      <link>https://kerma.codes/tags/gaming/</link>
-      <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/gaming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://kerma.codes/tags/git/</link>
-      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://kerma.codes/tags/golang/</link>
-      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hdcp</title>
-      <link>https://kerma.codes/tags/hdcp/</link>
-      <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/hdcp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hg</title>
-      <link>https://kerma.codes/tags/hg/</link>
-      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/hg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Howto</title>
-      <link>https://kerma.codes/tags/howto/</link>
-      <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/howto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Itunes</title>
+      <title>itunes</title>
       <link>https://kerma.codes/tags/itunes/</link>
       <pubDate>Mon, 17 Dec 2012 00:00:00 +0000</pubDate>
       
@@ -192,43 +237,7 @@
     </item>
     
     <item>
-      <title>Libav</title>
-      <link>https://kerma.codes/tags/libav/</link>
-      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/libav/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://kerma.codes/tags/linux/</link>
-      <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mongodb</title>
-      <link>https://kerma.codes/tags/mongodb/</link>
-      <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/mongodb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mp4</title>
-      <link>https://kerma.codes/tags/mp4/</link>
-      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/mp4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Osx</title>
+      <title>osx</title>
       <link>https://kerma.codes/tags/osx/</link>
       <pubDate>Mon, 17 Dec 2012 00:00:00 +0000</pubDate>
       
@@ -237,7 +246,43 @@
     </item>
     
     <item>
-      <title>Python</title>
+      <title>apple</title>
+      <link>https://kerma.codes/tags/apple/</link>
+      <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/apple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>drm</title>
+      <link>https://kerma.codes/tags/drm/</link>
+      <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/drm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fail</title>
+      <link>https://kerma.codes/tags/fail/</link>
+      <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/fail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hdcp</title>
+      <link>https://kerma.codes/tags/hdcp/</link>
+      <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/hdcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
       <link>https://kerma.codes/tags/python/</link>
       <pubDate>Fri, 26 Oct 2012 00:00:00 +0000</pubDate>
       
@@ -246,56 +291,20 @@
     </item>
     
     <item>
-      <title>Rest</title>
+      <title>API</title>
+      <link>https://kerma.codes/tags/api/</link>
+      <pubDate>Thu, 30 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>REST</title>
       <link>https://kerma.codes/tags/rest/</link>
       <pubDate>Thu, 30 Aug 2012 00:00:00 +0000</pubDate>
       
       <guid>https://kerma.codes/tags/rest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tips</title>
-      <link>https://kerma.codes/tags/tips/</link>
-      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ubuntu</title>
-      <link>https://kerma.codes/tags/ubuntu/</link>
-      <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Usb</title>
-      <link>https://kerma.codes/tags/usb/</link>
-      <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/usb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Usbmount</title>
-      <link>https://kerma.codes/tags/usbmount/</link>
-      <pubDate>Thu, 28 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/usbmount/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xbox360</title>
-      <link>https://kerma.codes/tags/xbox360/</link>
-      <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/xbox360/</guid>
       <description></description>
     </item>
     
