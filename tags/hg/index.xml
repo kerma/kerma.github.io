@@ -6,7 +6,7 @@
     <description>Recent content in hg on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 31 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kerma.codes/tags/hg/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,26 @@
     <item>
       <title>From Mercurial to Git</title>
       <link>https://kerma.codes/posts/hg-to-git/</link>
-      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://kerma.codes/posts/hg-to-git/</guid>
-      <description>&lt;p&gt;I recently went through some Mercurial to Git migrations.
+      <description>&lt;p&gt;Update: It&amp;rsquo;s official, Mercurial is dead. The last hg stronghold has fallen:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We&amp;rsquo;ve decided to remove Mercurial support from Bitbucket Cloud and the API.
+Mercurial usage on Bitbucket is steadily declining, and the percentage of
+new Bitbucket users choosing Mercurial has fallen to less than 1%.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&amp;ndash; Atlassian&lt;/p&gt;
+
+&lt;p&gt;Happy &lt;a href=&#34;https://github.com/kerma/git&#34;&gt;aliasing&lt;/a&gt;!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;Original post from 2018-07-31&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I recently went through some Mercurial to Git migrations.
 While &lt;a href=&#34;https://stackoverflow.com/a/16037861&#34;&gt;stack overflow&lt;/a&gt;
 pretty much always has something to tell you, it never goes so smoothly in real life.
 Here&amp;rsquo;s my step-by-step guide including some random errors that you are bound to encounter.&lt;/p&gt;</description>

@@ -6,10 +6,28 @@
     <description>Recent content in Tags on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kerma.codes/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git</title>
+      <link>https://kerma.codes/tags/git/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hg</title>
+      <link>https://kerma.codes/tags/hg/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/tags/hg/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>book</title>
@@ -35,24 +53,6 @@
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://kerma.codes/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://kerma.codes/tags/git/</link>
-      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hg</title>
-      <link>https://kerma.codes/tags/hg/</link>
-      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kerma.codes/tags/hg/</guid>
       <description></description>
     </item>
     

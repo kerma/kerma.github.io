@@ -3,14 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kerma.codes/books/</loc>
-    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+    <loc>https://kerma.codes/posts/hg-to-git/</loc>
+    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kerma.codes/posts/</loc>
+    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kerma.codes/tags/</loc>
-    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kerma.codes/tags/git/</loc>
+    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kerma.codes/tags/hg/</loc>
+    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kerma.codes/</loc>
+    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kerma.codes/books/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -21,18 +50,6 @@
   <url>
     <loc>https://kerma.codes/tags/book/</loc>
     <lastmod>2019-08-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kerma.codes/</loc>
-    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kerma.codes/posts/</loc>
-    <lastmod>2018-11-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -50,23 +67,6 @@
   <url>
     <loc>https://kerma.codes/tags/golang/</loc>
     <lastmod>2018-11-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kerma.codes/posts/hg-to-git/</loc>
-    <lastmod>2018-07-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kerma.codes/tags/git/</loc>
-    <lastmod>2018-07-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kerma.codes/tags/hg/</loc>
-    <lastmod>2018-07-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

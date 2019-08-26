@@ -12,6 +12,126 @@
     
     
     <item>
+      <title>From Mercurial to Git</title>
+      <link>https://kerma.codes/posts/hg-to-git/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      <author>kerma</author>
+      <guid>https://kerma.codes/posts/hg-to-git/</guid>
+      <description></description>
+      
+      <content>&lt;p&gt;Update: It&amp;rsquo;s official, Mercurial is dead. The last hg stronghold has fallen:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We&amp;rsquo;ve decided to remove Mercurial support from Bitbucket Cloud and the API.
+Mercurial usage on Bitbucket is steadily declining, and the percentage of
+new Bitbucket users choosing Mercurial has fallen to less than 1%.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&amp;ndash; Atlassian&lt;/p&gt;
+
+&lt;p&gt;Happy &lt;a href=&#34;https://github.com/kerma/git&#34;&gt;aliasing&lt;/a&gt;!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;Original post from 2018-07-31&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I recently went through some Mercurial to Git migrations.
+While &lt;a href=&#34;https://stackoverflow.com/a/16037861&#34;&gt;stack overflow&lt;/a&gt;
+pretty much always has something to tell you, it never goes so smoothly in real life.
+Here&amp;rsquo;s my step-by-step guide including some random errors that you are bound to encounter.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-fast-export&#34;&gt;Step 1 - fast-export&lt;/h2&gt;
+
+&lt;p&gt;Get fast-export from &lt;a href=&#34;https://github.com/frej/fast-export&#34;&gt;https://github.com/frej/fast-export&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;step-2-upgrade-mercurial&#34;&gt;Step 2 - upgrade Mercurial&lt;/h2&gt;
+
+&lt;p&gt;Use pipenv for example to use the latest via clean install:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pipenv --two
+pipenv shell
+pipenv install mercurial
+pipenv shell
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;step-3-encounter-errors&#34;&gt;Step 3 - encounter errors&lt;/h2&gt;
+
+&lt;p&gt;Weird things may happen. Specially if you have a lot of history in the
+mercurial repository. Fear not, just strip a lot.&lt;/p&gt;
+
+&lt;p&gt;I encoutered the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;master: Exporting simple delta revision 609/1718 with 0/1/0 added/changed/removed files
+master: Exporting simple delta revision 610/1718 with 0/0/114 added/changed/removed files
+master: Exporting simple delta revision 611/1718 with 15/0/0 added/changed/removed files
+Traceback (most recent call last):
+  File &amp;quot;../../git/fast-export/hg-fast-export.py&amp;quot;, line 550, in &amp;lt;module&amp;gt;
+    notes=options.notes,encoding=encoding,fn_encoding=fn_encoding,filter_contents=filter_contents))
+  File &amp;quot;../../git/fast-export/hg-fast-export.py&amp;quot;, line 441, in hg2git
+    sob,brmap,hgtags,encoding,fn_encoding,filter_contents)
+  File &amp;quot;../../git/fast-export/hg-fast-export.py&amp;quot;, line 262, in export_commit
+    export_file_contents(ctx,man,added,hgtags,fn_encoding,filter_contents)
+  File &amp;quot;../../git/fast-export/hg-fast-export.py&amp;quot;, line 139, in export_file_contents
+    d=file_ctx.data()
+  File &amp;quot;/Users/margus/src/venvs/api-1ofvI4PQ/lib/python2.7/site-packages/mercurial/context.py&amp;quot;, line 1088, in data
+    return self._filelog.read(self._filenode)
+  File &amp;quot;/Users/margus/src/venvs/api-1ofvI4PQ/lib/python2.7/site-packages/mercurial/util.py&amp;quot;, line 1437, in __get__
+    result = self.func(obj)
+  File &amp;quot;/Users/margus/src/venvs/api-1ofvI4PQ/lib/python2.7/site-packages/mercurial/context.py&amp;quot;, line 702, in _filenode
+    return self._filelog.lookup(self._fileid)
+  File &amp;quot;/Users/margus/src/venvs/api-1ofvI4PQ/lib/python2.7/site-packages/mercurial/filelog.py&amp;quot;, line 54, in lookup
+    return self._revlog.lookup(node)
+  File &amp;quot;/Users/margus/src/venvs/api-1ofvI4PQ/lib/python2.7/site-packages/mercurial/revlog.py&amp;quot;, line 1501, in lookup
+    raise LookupError(id, self.indexfile, _(&#39;no match found&#39;))
+mercurial.error.LookupError: data/handlers/__init__.pyc.i@6f9b45217cdc: no match found
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No matter how much I tried to delete all possible references to the file,
+this happened again and again. So I decided to strip history from around there instead.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-4-strip-history&#34;&gt;Step 4 - strip history&lt;/h2&gt;
+
+&lt;p&gt;Enable &lt;code&gt;convert&lt;/code&gt; extension in your &lt;code&gt;hgrc&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[extensions]
+convert=
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pick your starting rev and shoot:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hg convert --config convert.hg.startrev=889 old-repo stripped-repo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;step-5-fast-export-again&#34;&gt;Step 5 - fast-export, again&lt;/h2&gt;
+
+&lt;p&gt;Hopefully you picked a good place, so the following goes without errors:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init new-git-repo
+cd new-git-repo
+../fast-export/hg-fast-export.sh -r ../stripped-repo --force
+git checkout HEAD
+git remote add origin git@&amp;lt;your-upstream-url&amp;gt;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pick your branches and push them as needed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch --list
+git push -u origin &amp;lt;branch-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;step-6-cry-a-little&#34;&gt;Step 6 - cry a little&lt;/h2&gt;
+
+&lt;p&gt;Mercurial is &lt;a href=&#34;https://www.reddit.com/r/programming/comments/42mx3z/im_going_to_slowly_move_on_from_mercurial/czbm7bb/&#34;&gt;nice&lt;/a&gt;.
+But it has lost the race. Big platforms don&amp;rsquo;t support it, self hosting is pain and OSS has pretty much adapted Git as a standard.
+Have fun with configuring the hell out of you aliases now and reading through countless posts
+on how to actually &lt;a href=&#34;https://stackoverflow.com/questions/2530060/can-you-explain-what-git-reset-does-in-plain-english&#34;&gt;use&lt;/a&gt;
+the beast. Like this three part &lt;a href=&#34;https://hackernoon.com/understanding-git-fcffd87c15a3&#34;&gt;guide&lt;/a&gt; which is missing
+the third part.. Well, resolving conflicts is hard.&lt;/p&gt;</content>
+      
+    </item>
+    
+    <item>
       <title>Thinking in Bets</title>
       <link>https://kerma.codes/books/thinking-in-bets/</link>
       <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
@@ -157,110 +277,6 @@ zsh: command not found: sendmail
 
 &lt;p&gt;So I built my own &lt;a href=&#34;https://github.com/kerma/sendmail&#34;&gt;sendmail&lt;/a&gt;. Instead of being a MTA it tries to adhere to the UNIX philosophy: make each program do one thing well. In this case: send an email via SMTP server. Golang made it possible to write this also cross-platform with zero effort. And an existing &lt;a href=&#34;https://github.com/go-mail/mail&#34;&gt;email library&lt;/a&gt; made the whole job a breeze.&lt;/p&gt;
 </content>
-      
-    </item>
-    
-    <item>
-      <title>From Mercurial to Git</title>
-      <link>https://kerma.codes/posts/hg-to-git/</link>
-      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
-      <author>kerma</author>
-      <guid>https://kerma.codes/posts/hg-to-git/</guid>
-      <description></description>
-      
-      <content>&lt;p&gt;I recently went through some Mercurial to Git migrations.
-While &lt;a href=&#34;https://stackoverflow.com/a/16037861&#34;&gt;stack overflow&lt;/a&gt;
-pretty much always has something to tell you, it never goes so smoothly in real life.
-Here&amp;rsquo;s my step-by-step guide including some random errors that you are bound to encounter.&lt;/p&gt;
-
-&lt;h2 id=&#34;step-1-fast-export&#34;&gt;Step 1 - fast-export&lt;/h2&gt;
-
-&lt;p&gt;Get fast-export from &lt;a href=&#34;https://github.com/frej/fast-export&#34;&gt;https://github.com/frej/fast-export&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;step-2-upgrade-mercurial&#34;&gt;Step 2 - upgrade Mercurial&lt;/h2&gt;
-
-&lt;p&gt;Use pipenv for example to use the latest via clean install:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pipenv --two
-pipenv shell
-pipenv install mercurial
-pipenv shell
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;step-3-encounter-errors&#34;&gt;Step 3 - encounter errors&lt;/h2&gt;
-
-&lt;p&gt;Weird things may happen. Specially if you have a lot of history in the
-mercurial repository. Fear not, just strip a lot.&lt;/p&gt;
-
-&lt;p&gt;I encoutered the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;master: Exporting simple delta revision 609/1718 with 0/1/0 added/changed/removed files
-master: Exporting simple delta revision 610/1718 with 0/0/114 added/changed/removed files
-master: Exporting simple delta revision 611/1718 with 15/0/0 added/changed/removed files
-Traceback (most recent call last):
-  File &amp;quot;../../git/fast-export/hg-fast-export.py&amp;quot;, line 550, in &amp;lt;module&amp;gt;
-    notes=options.notes,encoding=encoding,fn_encoding=fn_encoding,filter_contents=filter_contents))
-  File &amp;quot;../../git/fast-export/hg-fast-export.py&amp;quot;, line 441, in hg2git
-    sob,brmap,hgtags,encoding,fn_encoding,filter_contents)
-  File &amp;quot;../../git/fast-export/hg-fast-export.py&amp;quot;, line 262, in export_commit
-    export_file_contents(ctx,man,added,hgtags,fn_encoding,filter_contents)
-  File &amp;quot;../../git/fast-export/hg-fast-export.py&amp;quot;, line 139, in export_file_contents
-    d=file_ctx.data()
-  File &amp;quot;/Users/margus/src/venvs/api-1ofvI4PQ/lib/python2.7/site-packages/mercurial/context.py&amp;quot;, line 1088, in data
-    return self._filelog.read(self._filenode)
-  File &amp;quot;/Users/margus/src/venvs/api-1ofvI4PQ/lib/python2.7/site-packages/mercurial/util.py&amp;quot;, line 1437, in __get__
-    result = self.func(obj)
-  File &amp;quot;/Users/margus/src/venvs/api-1ofvI4PQ/lib/python2.7/site-packages/mercurial/context.py&amp;quot;, line 702, in _filenode
-    return self._filelog.lookup(self._fileid)
-  File &amp;quot;/Users/margus/src/venvs/api-1ofvI4PQ/lib/python2.7/site-packages/mercurial/filelog.py&amp;quot;, line 54, in lookup
-    return self._revlog.lookup(node)
-  File &amp;quot;/Users/margus/src/venvs/api-1ofvI4PQ/lib/python2.7/site-packages/mercurial/revlog.py&amp;quot;, line 1501, in lookup
-    raise LookupError(id, self.indexfile, _(&#39;no match found&#39;))
-mercurial.error.LookupError: data/handlers/__init__.pyc.i@6f9b45217cdc: no match found
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;No matter how much I tried to delete all possible references to the file,
-this happened again and again. So I decided to strip history from around there instead.&lt;/p&gt;
-
-&lt;h2 id=&#34;step-4-strip-history&#34;&gt;Step 4 - strip history&lt;/h2&gt;
-
-&lt;p&gt;Enable &lt;code&gt;convert&lt;/code&gt; extension in your &lt;code&gt;hgrc&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[extensions]
-convert=
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Pick your starting rev and shoot:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hg convert --config convert.hg.startrev=889 old-repo stripped-repo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;step-5-fast-export-again&#34;&gt;Step 5 - fast-export, again&lt;/h2&gt;
-
-&lt;p&gt;Hopefully you picked a good place, so the following goes without errors:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git init new-git-repo
-cd new-git-repo
-../fast-export/hg-fast-export.sh -r ../stripped-repo --force
-git checkout HEAD
-git remote add origin git@&amp;lt;your-upstream-url&amp;gt;
-git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Pick your branches and push them as needed:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git branch --list
-git push -u origin &amp;lt;branch-name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;step-6-cry-a-little&#34;&gt;Step 6 - cry a little&lt;/h2&gt;
-
-&lt;p&gt;Mercurial is &lt;a href=&#34;https://www.reddit.com/r/programming/comments/42mx3z/im_going_to_slowly_move_on_from_mercurial/czbm7bb/&#34;&gt;nice&lt;/a&gt;.
-But it has lost the race. Big platforms don&amp;rsquo;t support it, self hosting is pain and OSS has pretty much adapted Git as a standard.
-Have fun with configuring the hell out of you aliases now and reading through countless posts
-on how to actually &lt;a href=&#34;https://stackoverflow.com/questions/2530060/can-you-explain-what-git-reset-does-in-plain-english&#34;&gt;use&lt;/a&gt;
-the beast. Like this three part &lt;a href=&#34;https://hackernoon.com/understanding-git-fcffd87c15a3&#34;&gt;guide&lt;/a&gt; which is missing
-the third part.. Well, resolving conflicts is hard.&lt;/p&gt;</content>
       
     </item>
     
