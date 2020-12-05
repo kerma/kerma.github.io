@@ -15,20 +15,21 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://kerma.codes/posts/put-vs-post/">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 <section class="section">
   <div class="container">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item" href="https://kerma.codes">
-          <h1 class="title is-4">notes to self</h1>
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://kerma.codes">
+          <h1 id="nav-heading" class="title is-4">notes to self</h1>
         </a>
       </div>
       <div class="nav-right">
-        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
             target='_blank' rel='noopener'>
             <span class="icon">
               <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
@@ -66,19 +67,21 @@
     </nav>
 
   </div>
+  <script src="/js/navicon-shift.js"></script>
 </section>
 <section class="section">
   <div class="container">
     <div class="subtitle tags is-6 is-pulled-right">
       
       
-<a class="subtitle is-6" href="/tags/rest">#REST</a>
+<a class="subtitle is-6" href="/tags/rest/">#REST</a>
 
 
 
   
-  | <a class="subtitle is-6" href="/tags/api">#API</a>
+  | <a class="subtitle is-6" href="/tags/api/">#API</a>
   
+
 
       
     </div>
@@ -91,17 +94,14 @@ real difference between PUT and POST? Someone is always wrong in the
 internet. And there are a lot of opinions out there. But I think the
 most simple and clear on comes from
 <a href="http://stackoverflow.com/questions/630453/put-vs-post-in-rest/2691891#2691891">stackoverflow</a>:</p>
-
 <p><em>PUT implies putting a resource - completely replacing whatever is
-    available at the given URL with a different thing. By definition, a
-    PUT is idempotent. Do it as many times as you like, and the result
-    is the same. x=5 is idempotent. You can PUT a resource whether it
-    previously exists, or not (eg, to Create, or to Update)!</em></p>
-
+available at the given URL with a different thing. By definition, a
+PUT is idempotent. Do it as many times as you like, and the result
+is the same. x=5 is idempotent. You can PUT a resource whether it
+previously exists, or not (eg, to Create, or to Update)!</em></p>
 <p><em>POST updates a resource, adds a subsidiary resource, or causes a
-    change. A POST is not idempotent, in the way that x++ is not
-    idempotent.</em></p>
-
+change. A POST is not idempotent, in the way that x++ is not
+idempotent.</em></p>
 <p>Easy.</p>
 
       
@@ -109,6 +109,7 @@ most simple and clear on comes from
     
   </div>
 </section>
+
 
 <section class="section">
   <div class="container">

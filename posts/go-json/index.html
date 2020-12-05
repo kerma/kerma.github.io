@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>My guide to working with JSON in Go | notes to self</title>
+
+
+
+<link href="https://kerma.codes/index.xml" rel="alternate" type="application/rss+xml" title="notes to self" />
+
+<link rel="stylesheet" href="/css/style.css"/><link rel='stylesheet' href='https://kerma.codes/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://kerma.codes/posts/go-json/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://kerma.codes">
+          <h1 id="nav-heading" class="title is-4">notes to self</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="github" href='https://github.com/kerma'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="linkedin" href='https://linkedin.com/in/kerma'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/code/">#code</a>
+
+
+
+  
+  | <a class="subtitle is-6" href="/tags/golang/">#golang</a>
+  
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">November 27, 2020</h2>
+    <h1 class="title">My guide to working with JSON in Go</h1>
+    
+    <div class="content">
+      <p>Working with JSON in Go can be tricky. Specially if you&rsquo;re coming from dynamic languages like Python or JavaScript,
+where JSON encoding often &ldquo;just works&rdquo;. Over the years I had grown accustomed to
+those conveniences and that made me overlook many details which affect JSON encoding
+in Go. This guide hopefully helps me to avoid those mistakes in the future.</p>
+<p>There are many libraries that deal with JSON, but this guide focuses on the one in standard library:
+<code>encoding/json</code>.</p>
+<h2 id="struct-properties-must-be-exported">struct properties must be exported</h2>
+<p>Go differentiates between private and public objects by capitalization. In order for json package
+to access the type defined in your package its fields must be capitalised. For example:</p>
+<div class="go-player" style="text-align:right;float:right">
+    <iframe class="go-playground" type="text/html" width="800" height="250" src="https://play.golang.org/p/ZJ5uMbhIv63.go" frameborder="0">
+</iframe>
+<a href="https://play.golang.org/p/ZJ5uMbhIv63" target="_BLANK" style="font-size:75%">
+    Run in Go Playground ↗</a>
+</div>
+
+
+<h2 id="always-use-struct-tags">always use struct tags</h2>
+<p>Struct tags are metadata assigned to fields. While JSON encode/decode works without specifying
+any tags, it makes sense to always use them. This makes it easier for the reader
+to quickly understand which structs are used for JSON and it avoids issues caused by capitalization.</p>
+<p>The following example demonstrates how input data lowercase key will get lost:</p>
+<div class="go-player" style="text-align:right;float:right">
+    <iframe class="go-playground" type="text/html" width="800" height="330" src="https://play.golang.org/p/2OkWMpcg3w4.go" frameborder="0">
+</iframe>
+<a href="https://play.golang.org/p/2OkWMpcg3w4" target="_BLANK" style="font-size:75%">
+    Run in Go Playground ↗</a>
+</div>
+
+
+<p>To avoid issues use tags as:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> object <span style="color:#000;font-weight:bold">struct</span> {
+	Somekey <span style="color:#458;font-weight:bold">string</span> <span style="color:#d14">`json:&#34;somekey&#34;`</span>
+}
+</code></pre></div><p>Without tags decoding is essentially case insensitive and encoding always makes keys to be <em>Capitalised</em>.</p>
+<h2 id="omitempty-and-default-values">omitempty and default values</h2>
+<p><code>omitempty</code> is a value you can use in your tags to specify how null values are handled. Usage seems simple:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> object <span style="color:#000;font-weight:bold">struct</span> {
+    Somekey <span style="color:#458;font-weight:bold">string</span> <span style="color:#d14">`json:&#34;somekey,omitempty&#34;`</span>
+}
+</code></pre></div><p>The behaviour however may surprise you. By looking at it&rsquo;s definition:</p>
+<blockquote>
+<p>The &ldquo;omitempty&rdquo; option specifies that the field should be omitted from the encoding if the field has
+an empty value, defined as false, 0, a nil pointer, a nil interface value,
+and any empty array, slice, map, or string.</p>
+</blockquote>
+<p>.. it becomes clear that you need to pay close attention of the underlying type of your field. One of the
+first things you need to know are the default values for each data type:</p>
+<ul>
+<li>string: &quot;&quot;</li>
+<li>int: 0</li>
+<li>number: 0.0</li>
+<li>bool: false</li>
+<li>array: empty slice</li>
+</ul>
+<p>The problem with <code>omitempty</code> raises when your intended values match the default ones. So in most cases you
+probably want to use <code>omitempty</code> only for optional nested objects. Dropping boolean or number value keys from the JSON
+will most likely create unnecessary confusion. Example:</p>
+<div class="go-player" style="text-align:right;float:right">
+    <iframe class="go-playground" type="text/html" width="800" height="280" src="https://play.golang.org/p/xJIu-OTVB6E.go" frameborder="0">
+</iframe>
+<a href="https://play.golang.org/p/xJIu-OTVB6E" target="_BLANK" style="font-size:75%">
+    Run in Go Playground ↗</a>
+</div>
+
+
+<p>The out value is: <code>{&quot;number&quot;:0}</code></p>
+<p>The second group you need to pay attention to are nested objects, pointers and <code>interface{}</code> types.
+Without <code>omitempty</code> they will be encoded as <code>{&quot;key&quot;: null}</code>.</p>
+<h2 id="nested-objects">nested objects</h2>
+<p>You can define nested objects by referencing a struct (or a pointer to one):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> Inner <span style="color:#000;font-weight:bold">struct</span> {
+    Key <span style="color:#458;font-weight:bold">string</span>
+}
+
+<span style="color:#000;font-weight:bold">type</span> object <span style="color:#000;font-weight:bold">struct</span> {
+    Key      <span style="color:#458;font-weight:bold">string</span> <span style="color:#d14">`json:&#34;key&#34;`</span>
+    Inner    Inner  <span style="color:#d14">`json:&#34;object&#34;`</span>
+}
+</code></pre></div><p>You can also use nested structs for deeply nested JSON:</p>
+<div class="go-player" style="text-align:right;float:right">
+    <iframe class="go-playground" type="text/html" width="800" height="480" src="https://play.golang.org/p/fYInEjAylm2.go" frameborder="0">
+</iframe>
+<a href="https://play.golang.org/p/fYInEjAylm2" target="_BLANK" style="font-size:75%">
+    Run in Go Playground ↗</a>
+</div>
+
+
+<h2 id="any-type-and-interface">any type and interface{}</h2>
+<p>If you cannot get away from not defining your input type you can use <code>interface{}</code>. You&rsquo;ll lose a
+convenient error check right on the <code>Unmarshal</code> call, but gain flexibility where needed. Example:</p>
+<div class="go-player" style="text-align:right;float:right">
+    <iframe class="go-playground" type="text/html" width="800" height="450" src="https://play.golang.org/p/mENfysT6VCx.go" frameborder="0">
+</iframe>
+<a href="https://play.golang.org/p/mENfysT6VCx" target="_BLANK" style="font-size:75%">
+    Run in Go Playground ↗</a>
+</div>
+
+
+<p>This is usually followed by a lot of type checks and casts, so I&rsquo;d suggest to avoid it
+where possible.</p>
+<h2 id="datetime">datetime</h2>
+<p>In addition to standard JSON data types, <code>encoding/json</code> can also handle datetime.
+JSON doesn&rsquo;t define an official datetime format, but it&rsquo;s recommended to use the <a href="https://tools.ietf.org/html/rfc3339#section-5.6">Internet Date/Time
+Format</a>: <code>2006-01-02T15:05:05Z</code>. That&rsquo;s also supported
+in Go, so a string corresponding to datetime format will be decoded into <code>time.Time</code> type:</p>
+<div class="go-player" style="text-align:right;float:right">
+    <iframe class="go-playground" type="text/html" width="800" height="300" src="https://play.golang.org/p/otjPFrmABKn.go" frameborder="0">
+</iframe>
+<a href="https://play.golang.org/p/otjPFrmABKn" target="_BLANK" style="font-size:75%">
+    Run in Go Playground ↗</a>
+</div>
+
+
+<h2 id="custom-format">custom format</h2>
+<p>There are couple of ways how you could handle custom input or output formats. The one I like the most
+and which requires the least amount of code to be maintained is to use a wrapped type and define
+it&rsquo;s encode/decode functions.</p>
+<p>For example, if you would like to represent your <code>time.Time</code> object as a unix timestamp instead of the
+datetime string, you could define your own type with embedded <code>time.Time</code>. You need embedded, as we
+need access to Time methods, which would not be possible with type aliasing:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">type</span> UnixTime <span style="color:#000;font-weight:bold">struct</span> {
+    time.Time
+}
+</code></pre></div><p>Then you can write your own function for encode:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">func</span> (t UnixTime) <span style="color:#900;font-weight:bold">MarshalJSON</span>() ([]<span style="color:#458;font-weight:bold">byte</span>, <span style="color:#458;font-weight:bold">error</span>) {
+	<span style="color:#000;font-weight:bold">return</span> json.<span style="color:#900;font-weight:bold">Marshal</span>(t.<span style="color:#900;font-weight:bold">Unix</span>())
+}
+</code></pre></div><p>Similarly, you can decode an unix timestamp to <code>time.Time</code> with your own type and <code>UnmarshalJSON</code>
+function:</p>
+<div class="go-player" style="text-align:right;float:right">
+    <iframe class="go-playground" type="text/html" width="800" height="420" src="https://play.golang.org/p/fsBDn1zBK5G.go" frameborder="0">
+</iframe>
+<a href="https://play.golang.org/p/fsBDn1zBK5G" target="_BLANK" style="font-size:75%">
+    Run in Go Playground ↗</a>
+</div>
+
+
+<p>Similar approach works for any custom type you may have. Just pay attention to the UnmarshalJSON
+function which needs to be a <a href="https://tour.golang.org/methods/4">pointer receiver</a>.</p>
+<h2 id="null-and-collections">null and collections</h2>
+<p>Null is bad. Some say
+<a href="https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/">billion dollars</a>
+worth of bad even. Unfortunately Go does very little to help us with it. <code>nil</code> is everywhere, and the
+<a href="https://github.com/golang/go/issues/7054">&ldquo;optional&rdquo;</a>
+type introduced in many other languages has to wait at least <a href="https://github.com/golang/go/issues/19412">till Go 2.x</a>.</p>
+<p>And even if you carefully check for <code>nil</code> and make sure your structs are always initiated properly via <code>New()</code>,
+JSON will still bite you. Specially when it comes to collections.</p>
+<p>The main problem is that different encoding implementations have decided to treat empty collections
+differently, there is no real &ldquo;standard&rdquo; there. For example, json module from Python standard library will
+encode an empty array or a dictionary to it&rsquo;s representation in JSON:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#000080">&#34;map&#34;</span>: {},
+    <span style="color:#000080">&#34;array&#34;</span>: []
+}
+</code></pre></div><p>While <code>encoding/json</code> in Go could give you:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#000080">&#34;map&#34;</span>: <span style="color:#000;font-weight:bold">null</span>,
+    <span style="color:#000080">&#34;array&#34;</span>: <span style="color:#000;font-weight:bold">null</span>
+}
+</code></pre></div><p>You can make an argument that the same can be achieved in Python by setting the map value to <code>None</code>.
+But by following good practises this doesn&rsquo;t often happen.</p>
+<p>The following example demonstrates things which may not be obvious at first sight:</p>
+<div class="go-player" style="text-align:right;float:right">
+    <iframe class="go-playground" type="text/html" width="800" height="460" src="https://play.golang.org/p/Y5k4Jlwr4cm.go" frameborder="0">
+</iframe>
+<a href="https://play.golang.org/p/Y5k4Jlwr4cm" target="_BLANK" style="font-size:75%">
+    Run in Go Playground ↗</a>
+</div>
+
+
+<p>The output may surprise you:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#000080">&#34;array&#34;</span>:<span style="color:#000;font-weight:bold">null</span>,<span style="color:#000080">&#34;map&#34;</span>:<span style="color:#000;font-weight:bold">null</span>,<span style="color:#000080">&#34;object&#34;</span>:{<span style="color:#000080">&#34;value&#34;</span>:<span style="color:#d14">&#34;&#34;</span>}}
+</code></pre></div><p>JSON doesn&rsquo;t differentiate between maps and objects. For the sake of clarity in this post a map represents
+an arbitrary collection of keys and values, while object keys are always the same.</p>
+<p>Getting rid of null values for arrays and maps requires explicit initialisation. Getting &ldquo;empty&rdquo; struct
+to be encoded as null requires a pointer and explicitly setting it&rsquo;s value to <code>nil</code>:</p>
+<div class="go-player" style="text-align:right;float:right">
+    <iframe class="go-playground" type="text/html" width="800" height="480" src="https://play.golang.org/p/rtdKTa2RVjk.go" frameborder="0">
+</iframe>
+<a href="https://play.golang.org/p/rtdKTa2RVjk" target="_BLANK" style="font-size:75%">
+    Run in Go Playground ↗</a>
+</div>
+
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#000080">&#34;array&#34;</span>:[],<span style="color:#000080">&#34;map&#34;</span>:{},<span style="color:#000080">&#34;object&#34;</span>:<span style="color:#000;font-weight:bold">null</span>}
+</code></pre></div><h2 id="null-vs-default-vs-unset-values">null vs default vs unset values</h2>
+<p>One of the problems of <code>encoding/json</code> is its inability to differentiate between null, default and unset values.
+Decoding a default or null value makes it impossible to know whether the value was not present in the JSON,
+or was it explicitly set to default/null/empty. A partial workaround for this is to use field pointers:</p>
+<div class="go-player" style="text-align:right;float:right">
+    <iframe class="go-playground" type="text/html" width="800" height="300" src="https://play.golang.org/p/bAlZy8AxxrI.go" frameborder="0">
+</iframe>
+<a href="https://play.golang.org/p/bAlZy8AxxrI" target="_BLANK" style="font-size:75%">
+    Run in Go Playground ↗</a>
+</div>
+
+
+<p>This makes it possible to check for <code>nil</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000;font-weight:bold">if</span> obj.Ptr <span style="color:#000;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">nil</span> {
+    <span style="color:#000;font-weight:bold">return</span> errors.<span style="color:#900;font-weight:bold">New</span>(<span style="color:#d14">&#34;ptr required&#34;</span>)
+}
+</code></pre></div><p>That also works for collections, until they are missing or null in the JSON. Explicit <code>[]</code> and <code>{}</code> will
+be decoded to empty pointer slice and struct with its default values.</p>
+<p>Depending on your use case that may not be feasible or convenient. In those cases it&rsquo;s worth to look
+around <a href="https://github.com/clarketm/json">drop-in replacements</a> or
+<a href="https://github.com/leighmcculloch/go-optional">wrapper types</a>. More info on the limitations can be
+found from <a href="https://github.com/golang/go/issues/11939">#11939</a>.</p>
+<h2 id="you-dont-need-a-library-and-then-you-do">you don&rsquo;t need a library, and then you do</h2>
+<p>I&rsquo;m a strong proponent of using Go standard library. Or at least starting from there. It is well
+designed and feature rich. And <code>encoding/json</code> has been enough for all the tasks I&rsquo;ve needed to
+perform with it so far.</p>
+<p>However, it does have some limitations. It is using reflection which makes it slower compared to
+some other implementations. You can find drop-in replacements which focus on
+<a href="https://github.com/json-iterator/go">being faster</a> or
+<a href="https://github.com/segmentio/encoding">taking less resources</a>.
+Some even claim to be <a href="https://github.com/buger/jsonparser">10x faster</a>, while forcing you to learn a new API.
+Some provide additional features like <a href="https://github.com/tidwall/gjson">one line retrieval and dot notation paths</a>.
+Know you task and pick the corresponding tool. But <code>encoding/json</code> can do a lot,
+you may not need anything else.</p>
+<h2 id="more-code-please">more code please</h2>
+<p>In order to better understand how a particular thing works, you could just read
+its code. The test files for <a href="https://golang.org/src/encoding/json/encode_test.go">encode</a>
+and <a href="https://golang.org/src/encoding/json/decode_test.go">decode</a> are worth a glance.
+I also wrote some tests to verify and clarify the things described in this post.
+All code is available in <a href="https://gist.github.com/kerma/ea726055540da482810147df272375a5">that gist</a>.</p>
+      
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+  
+    <div id="show_comments"><a id="load_comments" class="button is-link">Load comments</a></div>
+  
+    <script type="text/javascript">
+      var disqus_shortname = 'kerma';
+      function disqus() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+  
+      
+      var hash = window.location.hash.substr(1);
+      if ((hash.length > 8) && (hash.substring(0, 8) === "comment-")) {
+        disqus();
+        document.getElementById("show_comments").style.display = "none";
+      } else {
+        document.getElementById('load_comments').onclick = function() {
+          disqus();
+          document.getElementById("show_comments").style.display = "none";
+        };
+      }
+  
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+    
+  </div>
+</section>
+
+
+
+</body>
+</html>
+

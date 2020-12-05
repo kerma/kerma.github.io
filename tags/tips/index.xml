@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tips on notes to self</title>
@@ -6,11 +6,7 @@
     <description>Recent content in tips on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Mar 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://kerma.codes/tags/tips/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 18 Mar 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.codes/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to concatenate multiple mp3&#39;s</title>
       <link>https://kerma.codes/posts/join-mp3-with-lame/</link>
@@ -18,7 +14,6 @@
       
       <guid>https://kerma.codes/posts/join-mp3-with-lame/</guid>
       <description>&lt;p&gt;Edit3, 2018: Just use &lt;code&gt;ffmpeg&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;Re-encode is usually not what you are after, specially if the source itself is already a low qualtiy MP3 file.&lt;/p&gt;</description>
     </item>
     

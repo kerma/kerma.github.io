@@ -15,20 +15,21 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://kerma.codes/posts/hg-to-git/">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 <section class="section">
   <div class="container">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item" href="https://kerma.codes">
-          <h1 class="title is-4">notes to self</h1>
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://kerma.codes">
+          <h1 id="nav-heading" class="title is-4">notes to self</h1>
         </a>
       </div>
       <div class="nav-right">
-        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
             target='_blank' rel='noopener'>
             <span class="icon">
               <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
@@ -66,19 +67,21 @@
     </nav>
 
   </div>
+  <script src="/js/navicon-shift.js"></script>
 </section>
 <section class="section">
   <div class="container">
     <div class="subtitle tags is-6 is-pulled-right">
       
       
-<a class="subtitle is-6" href="/tags/git">#git</a>
+<a class="subtitle is-6" href="/tags/git/">#git</a>
 
 
 
   
-  | <a class="subtitle is-6" href="/tags/hg">#hg</a>
+  | <a class="subtitle is-6" href="/tags/hg/">#hg</a>
   
+
 
       
     </div>
@@ -87,47 +90,32 @@
     
     <div class="content">
       <p>Update: It&rsquo;s official, Mercurial is dead. The last hg stronghold has fallen:</p>
-
 <blockquote>
 <p>We&rsquo;ve decided to remove Mercurial support from Bitbucket Cloud and the API.
 Mercurial usage on Bitbucket is steadily declining, and the percentage of
 new Bitbucket users choosing Mercurial has fallen to less than 1%.</p>
 </blockquote>
-
 <p>&ndash; Atlassian</p>
-
 <p>Happy <a href="https://github.com/kerma/git">aliasing</a>!</p>
-
-<hr />
-
+<hr>
 <p><em>Original post from 2018-07-31</em></p>
-
 <p>I recently went through some Mercurial to Git migrations.
 While <a href="https://stackoverflow.com/a/16037861">stack overflow</a>
 pretty much always has something to tell you, it never goes so smoothly in real life.
 Here&rsquo;s my step-by-step guide including some random errors that you are bound to encounter.</p>
-
-<h2 id="step-1-fast-export">Step 1 - fast-export</h2>
-
+<h2 id="step-1---fast-export">Step 1 - fast-export</h2>
 <p>Get fast-export from <a href="https://github.com/frej/fast-export">https://github.com/frej/fast-export</a></p>
-
-<h2 id="step-2-upgrade-mercurial">Step 2 - upgrade Mercurial</h2>
-
+<h2 id="step-2---upgrade-mercurial">Step 2 - upgrade Mercurial</h2>
 <p>Use pipenv for example to use the latest via clean install:</p>
-
 <pre><code>pipenv --two
 pipenv shell
 pipenv install mercurial
 pipenv shell
 </code></pre>
-
-<h2 id="step-3-encounter-errors">Step 3 - encounter errors</h2>
-
+<h2 id="step-3---encounter-errors">Step 3 - encounter errors</h2>
 <p>Weird things may happen. Specially if you have a lot of history in the
 mercurial repository. Fear not, just strip a lot.</p>
-
 <p>I encoutered the following:</p>
-
 <pre><code>master: Exporting simple delta revision 609/1718 with 0/1/0 added/changed/removed files
 master: Exporting simple delta revision 610/1718 with 0/0/114 added/changed/removed files
 master: Exporting simple delta revision 611/1718 with 15/0/0 added/changed/removed files
@@ -152,27 +140,18 @@ Traceback (most recent call last):
     raise LookupError(id, self.indexfile, _('no match found'))
 mercurial.error.LookupError: data/handlers/__init__.pyc.i@6f9b45217cdc: no match found
 </code></pre>
-
 <p>No matter how much I tried to delete all possible references to the file,
 this happened again and again. So I decided to strip history from around there instead.</p>
-
-<h2 id="step-4-strip-history">Step 4 - strip history</h2>
-
+<h2 id="step-4---strip-history">Step 4 - strip history</h2>
 <p>Enable <code>convert</code> extension in your <code>hgrc</code></p>
-
 <pre><code>[extensions]
 convert=
 </code></pre>
-
 <p>Pick your starting rev and shoot:</p>
-
 <pre><code>hg convert --config convert.hg.startrev=889 old-repo stripped-repo
 </code></pre>
-
-<h2 id="step-5-fast-export-again">Step 5 - fast-export, again</h2>
-
+<h2 id="step-5---fast-export-again">Step 5 - fast-export, again</h2>
 <p>Hopefully you picked a good place, so the following goes without errors:</p>
-
 <pre><code>git init new-git-repo
 cd new-git-repo
 ../fast-export/hg-fast-export.sh -r ../stripped-repo --force
@@ -180,15 +159,11 @@ git checkout HEAD
 git remote add origin git@&lt;your-upstream-url&gt;
 git push -u origin master
 </code></pre>
-
 <p>Pick your branches and push them as needed:</p>
-
 <pre><code>git branch --list
 git push -u origin &lt;branch-name&gt;
 </code></pre>
-
-<h2 id="step-6-cry-a-little">Step 6 - cry a little</h2>
-
+<h2 id="step-6---cry-a-little">Step 6 - cry a little</h2>
 <p>Mercurial is <a href="https://www.reddit.com/r/programming/comments/42mx3z/im_going_to_slowly_move_on_from_mercurial/czbm7bb/">nice</a>.
 But it has lost the race. Big platforms don&rsquo;t support it, self hosting is pain and OSS has pretty much adapted Git as a standard.
 Have fun with configuring the hell out of you aliases now and reading through countless posts
@@ -200,6 +175,7 @@ the third part.. Well, resolving conflicts is hard.</p>
     
   </div>
 </section>
+
 
 <section class="section">
   <div class="container">

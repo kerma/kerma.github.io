@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on notes to self</title>
@@ -6,10 +6,18 @@
     <description>Recent content in Posts on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://kerma.codes/posts/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 27 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.codes/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My guide to working with JSON in Go</title>
+      <link>https://kerma.codes/posts/go-json/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/posts/go-json/</guid>
+      <description>&lt;p&gt;Working with JSON in Go can be tricky. Specially if you&amp;rsquo;re coming from dynamic languages like Python or JavaScript,
+where JSON encoding often &amp;ldquo;just works&amp;rdquo;. Over the years I had grown accustomed to
+those conveniences and that made me overlook many details which affect JSON encoding
+in Go. This guide hopefully helps me to avoid those mistakes in the future.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>From Mercurial to Git</title>
@@ -18,21 +26,15 @@
       
       <guid>https://kerma.codes/posts/hg-to-git/</guid>
       <description>&lt;p&gt;Update: It&amp;rsquo;s official, Mercurial is dead. The last hg stronghold has fallen:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;We&amp;rsquo;ve decided to remove Mercurial support from Bitbucket Cloud and the API.
 Mercurial usage on Bitbucket is steadily declining, and the percentage of
 new Bitbucket users choosing Mercurial has fallen to less than 1%.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;&amp;ndash; Atlassian&lt;/p&gt;
-
 &lt;p&gt;Happy &lt;a href=&#34;https://github.com/kerma/git&#34;&gt;aliasing&lt;/a&gt;!&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;p&gt;&lt;em&gt;Original post from 2018-07-31&lt;/em&gt;&lt;/p&gt;
-
 &lt;p&gt;I recently went through some Mercurial to Git migrations.
 While &lt;a href=&#34;https://stackoverflow.com/a/16037861&#34;&gt;stack overflow&lt;/a&gt;
 pretty much always has something to tell you, it never goes so smoothly in real life.
@@ -73,7 +75,6 @@ Here&amp;rsquo;s my step-by-step guide including some random errors that you are
       
       <guid>https://kerma.codes/posts/join-mp3-with-lame/</guid>
       <description>&lt;p&gt;Edit3, 2018: Just use &lt;code&gt;ffmpeg&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;Re-encode is usually not what you are after, specially if the source itself is already a low qualtiy MP3 file.&lt;/p&gt;</description>
     </item>
     
@@ -154,7 +155,7 @@ I&amp;rsquo;m not alone, but it doesn&amp;rsquo;t mean that there is a straightf
       <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
       
       <guid>https://kerma.codes/posts/never-buy-a-movie-from-itunes/</guid>
-      <description>Now this is getting ridiculous. When you buy a movie from iTunes you cannot watch this on your external screen. Yes, seriously. You can not plug in your second monitor, or your 1000$ 30&amp;rdquo; Apple Cinema Display, drag your iTunes window to that screen and hit play. It just won&amp;rsquo;t work.
+      <description>Now this is getting ridiculous. When you buy a movie from iTunes you cannot watch this on your external screen. Yes, seriously. You can not plug in your second monitor, or your 1000$ 30&amp;quot; Apple Cinema Display, drag your iTunes window to that screen and hit play. It just won&amp;rsquo;t work.
 And apparently it&amp;rsquo;s due to a thing called High-bandwidth Digital Content Protection (HDCP). Something fancy that Apple added to all Macbook and Macbook Pro&amp;rsquo;s made after 2008.</description>
     </item>
     

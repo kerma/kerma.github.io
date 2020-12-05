@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>golang on notes to self</title>
@@ -6,10 +6,18 @@
     <description>Recent content in golang on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://kerma.codes/tags/golang/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 27 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.codes/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My guide to working with JSON in Go</title>
+      <link>https://kerma.codes/posts/go-json/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerma.codes/posts/go-json/</guid>
+      <description>&lt;p&gt;Working with JSON in Go can be tricky. Specially if you&amp;rsquo;re coming from dynamic languages like Python or JavaScript,
+where JSON encoding often &amp;ldquo;just works&amp;rdquo;. Over the years I had grown accustomed to
+those conveniences and that made me overlook many details which affect JSON encoding
+in Go. This guide hopefully helps me to avoid those mistakes in the future.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Would you like to send an email?</title>

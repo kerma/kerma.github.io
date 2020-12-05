@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on notes to self</title>
@@ -6,11 +6,7 @@
     <description>Recent content in git on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://kerma.codes/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.codes/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>From Mercurial to Git</title>
       <link>https://kerma.codes/posts/hg-to-git/</link>
@@ -18,21 +14,15 @@
       
       <guid>https://kerma.codes/posts/hg-to-git/</guid>
       <description>&lt;p&gt;Update: It&amp;rsquo;s official, Mercurial is dead. The last hg stronghold has fallen:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;We&amp;rsquo;ve decided to remove Mercurial support from Bitbucket Cloud and the API.
 Mercurial usage on Bitbucket is steadily declining, and the percentage of
 new Bitbucket users choosing Mercurial has fallen to less than 1%.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;&amp;ndash; Atlassian&lt;/p&gt;
-
 &lt;p&gt;Happy &lt;a href=&#34;https://github.com/kerma/git&#34;&gt;aliasing&lt;/a&gt;!&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;p&gt;&lt;em&gt;Original post from 2018-07-31&lt;/em&gt;&lt;/p&gt;
-
 &lt;p&gt;I recently went through some Mercurial to Git migrations.
 While &lt;a href=&#34;https://stackoverflow.com/a/16037861&#34;&gt;stack overflow&lt;/a&gt;
 pretty much always has something to tell you, it never goes so smoothly in real life.

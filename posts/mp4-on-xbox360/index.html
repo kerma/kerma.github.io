@@ -15,20 +15,21 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://kerma.codes/posts/mp4-on-xbox360/">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 <section class="section">
   <div class="container">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item" href="https://kerma.codes">
-          <h1 class="title is-4">notes to self</h1>
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://kerma.codes">
+          <h1 id="nav-heading" class="title is-4">notes to self</h1>
         </a>
       </div>
       <div class="nav-right">
-        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
             target='_blank' rel='noopener'>
             <span class="icon">
               <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
@@ -66,27 +67,29 @@
     </nav>
 
   </div>
+  <script src="/js/navicon-shift.js"></script>
 </section>
 <section class="section">
   <div class="container">
     <div class="subtitle tags is-6 is-pulled-right">
       
       
-<a class="subtitle is-6" href="/tags/mp4">#mp4</a>
+<a class="subtitle is-6" href="/tags/mp4/">#mp4</a>
 
 
 
   
-  | <a class="subtitle is-6" href="/tags/xbox360">#xbox360</a>
+  | <a class="subtitle is-6" href="/tags/xbox360/">#xbox360</a>
   
-  | <a class="subtitle is-6" href="/tags/avconv">#avconv</a>
+  | <a class="subtitle is-6" href="/tags/avconv/">#avconv</a>
   
-  | <a class="subtitle is-6" href="/tags/libav">#libav</a>
+  | <a class="subtitle is-6" href="/tags/libav/">#libav</a>
   
-  | <a class="subtitle is-6" href="/tags/ffmpeg">#ffmpeg</a>
+  | <a class="subtitle is-6" href="/tags/ffmpeg/">#ffmpeg</a>
   
-  | <a class="subtitle is-6" href="/tags/aac">#aac</a>
+  | <a class="subtitle is-6" href="/tags/aac/">#aac</a>
   
+
 
       
     </div>
@@ -99,27 +102,17 @@ should update your Xbox, so if it&rsquo;s not yet in the network you have to get
 there. Once you&rsquo;re confident that your box is up to date you can start looking
 into MP4 and it&rsquo;s issues with Xbox. Some say that Xbox has the following
 special needs:</p>
-
-<p><code>Xbox can play H.264 MP4 video, but only up to 10 Mbps with resolutions of
-1920*1080, 30 frames per second. Baseline, main and high video profile (up to
-level 4.1). Audio profiles must be in AAC, 2-channel, Low Complexity</code></p>
-
-<p><code>Xbox can also play MPEG-4 Part 2 video, but up to 5 Mbps with resolutions of
-1280*720, 30 frames per second. Simple Profile and Advanced Simple Profile.
-Audio profiles must be in AAC, 2-channel, Low Complexity.</code></p>
-
+<p><code>Xbox can play H.264 MP4 video, but only up to 10 Mbps with resolutions of 1920*1080, 30 frames per second. Baseline, main and high video profile (up to level 4.1). Audio profiles must be in AAC, 2-channel, Low Complexity</code></p>
+<p><code>Xbox can also play MPEG-4 Part 2 video, but up to 5 Mbps with resolutions of 1280*720, 30 frames per second. Simple Profile and Advanced Simple Profile. Audio profiles must be in AAC, 2-channel, Low Complexity.</code></p>
 <p>Last night I found out that this is only partially true. I noticed that I can
 play most of my MP4&rsquo;s without issues, but some fail to start. It didn&rsquo;t matter
 whether I had the files on a USB or streamed them over DLNA server.</p>
-
 <p>So I took a closer look into those exceptions. For that I installed libav-tools
 to my Ubuntu headless server (It&rsquo;s basically a <a href="http://libav.org/about.html">fork</a> of the well known ffmpeg,
 funny <a href="http://blog.pkh.me/p/13-the-ffmpeg-libav-situation.html">story</a> with
 that..). This packages provides some multimedia tools, and I was interested in avprobe and
 avconv.</p>
-
 <p>So first let&rsquo;s see what we&rsquo;re dealing with:</p>
-
 <pre><code>avprobe My.Awesome.Movie.mp4
 avprobe version 0.8.5-4:0.8.5-0ubuntu0.12.04.1, Copyright (c) 2007-2012 the Libav developers
 built on Jan 24 2013 18:03:14 with gcc 4.6.3
@@ -137,13 +130,10 @@ Duration: 01:48:07.59, start: 0.000000, bitrate: 2911 kb/s
     Metadata:
         creation_time   : 2011-03-06 20:42:41
 </code></pre>
-
 <p>Video resolution was fine. So the issue had to be in audio. Codec is aac, but
 the 5.1 has more like 6 channels, not 2 as required.</p>
-
 <p>So, let&rsquo;s convert the 6 channel aac to 2 cannel aac and we&rsquo;re good to go. avconv
 is nice enough tool for that:</p>
-
 <pre><code>avconv -i My.Awesome.Movie.mp4 -vcodec copy -acodec aac -ab 160k -ac 2
 -strict experimental output.mp4
 avconv version 0.8.5-4:0.8.5-0ubuntu0.12.04.1, Copyright (c) 2000-2012 the Libav developers
@@ -181,7 +171,6 @@ Stream mapping:
 Resampling output channel count must be 1 or 2 for mono input; 1, 2 or 6 for stereo input; or N for N channel input.
 Can not resample 6 channels @ 48000 Hz to 2 channels @ 48000 Hz
 </code></pre>
-
 <p>Huston, we&rsquo;ve had a problem here. It turns out that as simple as converting a 6
 channel audio down to 2 seems to be, it&rsquo;s still not properly solved. I spent
 hours finding a solution. Some of them suggested to install newer version of
@@ -191,10 +180,8 @@ it, some said to <a href="http://lzone.de/ffmpeg+AAC+Can+not+resample+channels">
 it with some other tool (ie <a href="http://www.audiocoding.com/faad2.html">faad</a>) and
 then mux audio and video back together. I also tried to use other codecs without any
 luck.</p>
-
 <p>Out of despair I started to look into my other MP4&rsquo;s as well, specially the
 ones that were playing nicely in Xbox. And I noticed:</p>
-
 <pre><code>avprobe More.Awesomeness.mp4
 avprobe version 0.8.5-4:0.8.5-0ubuntu0.12.04.1, Copyright (c) 2007-2012 the Libav developers
 built on Jan 24 2013 18:03:14 with gcc 4.6.3
@@ -208,10 +195,8 @@ Duration: 00:22:38.27, start: 0.000000, bitrate: 3400 kb/s
     Stream #0.0(eng): Video: h264 (High), yuv420p, 1280x720, 3011 kb/s, 23.98 fps, 47.92 tbr, 1k tbn, 47.95 tbc
     Stream #0.1(und): Audio: ac3, 48000 Hz, 5.1, s16, 384 kb/s
 </code></pre>
-
 <p>Wait, what? 5.1 and works! So it&rsquo;s aac issue and ac3 seems to work. Luckily aac
 to ac3 is a breeze for avconv:</p>
-
 <pre><code>avconv -i My.Awesome.Movie.mp4 -vcodec copy -acodec ac3 -ab 160k output.mp4
 avconv version 0.8.5-4:0.8.5-0ubuntu0.12.04.1, Copyright (c) 2000-2012 the Libav developers
 built on Jan 24 2013 18:03:14 with gcc 4.6.3
@@ -250,7 +235,6 @@ Input stream #0:1 frame changed from rate:48000 fmt:s16 ch:6 to rate:48000 fmt:f
 frame=155543 fps= 91 q=-1.0 Lsize= 2122497kB time=6487.41 bitrate=2680.2kbits/s
 video:1993177kB audio:126711kB global headers:0kB muxing overhead 0.123045%
 </code></pre>
-
 <p>And it works.</p>
 
       
@@ -258,6 +242,7 @@ video:1993177kB audio:126711kB global headers:0kB muxing overhead 0.123045%
     
   </div>
 </section>
+
 
 <section class="section">
   <div class="container">

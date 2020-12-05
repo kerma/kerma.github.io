@@ -15,20 +15,21 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://kerma.codes/posts/mongodb-on-64bit-debian/">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 <section class="section">
   <div class="container">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item" href="https://kerma.codes">
-          <h1 class="title is-4">notes to self</h1>
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://kerma.codes">
+          <h1 id="nav-heading" class="title is-4">notes to self</h1>
         </a>
       </div>
       <div class="nav-right">
-        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
             target='_blank' rel='noopener'>
             <span class="icon">
               <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
@@ -66,13 +67,15 @@
     </nav>
 
   </div>
+  <script src="/js/navicon-shift.js"></script>
 </section>
 <section class="section">
   <div class="container">
     <div class="subtitle tags is-6 is-pulled-right">
       
       
-<a class="subtitle is-6" href="/tags/mongodb">#mongodb</a>
+<a class="subtitle is-6" href="/tags/mongodb/">#mongodb</a>
+
 
 
 
@@ -84,13 +87,11 @@
     <div class="content">
       <p>Sometime the most obvious thing turns out to be the most complicated one. Here&rsquo;s
 my small journey to get mongoDB running on one 64bit Debian server.</p>
-
 <p>Like any other reasonable person I started from the
 <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-debian/">manual</a>.
 Everything worked as they said it would and for some time I was quite happy with
 it. But at some point for whatever reason I peaked into
 <code>/var/log/mongodb/mongodb.log</code>.</p>
-
 <pre><code>***** SERVER RESTARTED *****
 
 Wed Dec 12 17:34:37 warning: 32-bit servers don't have journaling enabled by default. Please use --journal if you want durability.
@@ -113,85 +114,63 @@ Wed Dec 12 17:34:37 [initandlisten] Unable to check for journal files due to: bo
 Wed Dec 12 17:34:37 [websvr] admin web console waiting for connections on port 28017
 Wed Dec 12 17:34:37 [initandlisten] waiting for connections on port 27017
 </code></pre>
-
 <p>2GB limit? That really does not work for me in the long run. So how can I get
 this running on 64bit?</p>
-
 <p>After spending an hour trying to figure out how to install 64bit binaries via
 apt I gave up. There just isn&rsquo;t a way (please let me know if there is).</p>
-
 <p>So I downloaded Linux 64-bit binaries, but:</p>
-
 <pre><code>debian-server:~/mongodb-linux-x86_64-2.4.1/bin# ./mongod
 bash: ./mongod: No such file or directory
 </code></pre>
-
 <p>Obviously the file exists, which means that the binary is not for the correct
 arch. As I knew little about my server I started to doubt whether I was actually
 on 64bit arch. Let&rsquo;s find out:</p>
-
 <pre><code>debian-server:~/mongodb-linux-x86_64-2.4.1/bin# uname -a
 Linux debian-server 2.6.32-5-amd64 #1 SMP Sun May 6 05:12:07 UTC 2012 x86_64 GNU/Linux
 </code></pre>
-
 <p>amd64 definitely looks like 64bit.</p>
-
 <pre><code>debian-server:~/mongodb-linux-x86_64-2.4.1/bin# lscpu
 Architecture:          x86_64
 CPU op-mode(s):        64-bit
 ...
 
 debian-server:~/mongodb-linux-x86_64-2.4.1/bin# grep flags /proc/cpuinfo
-flags       : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt lm 3dnowext 3dnow rep_good pni cmp_legacy
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt lm 3dnowext 3dnow rep_good pni cmp_legacy
 </code></pre>
-
 <p>So I have 64bit CPU and 64bit kernel. Did I download the correct
 binaries?</p>
-
 <pre><code>debian-server:~/mongodb-linux-x86_64-2.4.1/bin# file mongod
 mongod: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.9, stripped
 </code></pre>
-
 <p>Yup. Damn. Why is it not running then?</p>
-
 <p>Quite a few searches later I found a small tip, so I created a file test.c</p>
-
 <pre><code>#include &lt;stdio.h&gt;
 int main(){
     printf(&quot;dafuq?\n&quot;);
     return 0;
 }
 </code></pre>
-
 <p>And tried to compile it:</p>
-
 <pre><code>debian-server:~/mongodb-linux-x86_64-2.4.1/bin# gcc -m64 test.c
 In file included from /usr/include/features.h:378,
              from /usr/include/stdio.h:28,
              from test.c:1:
 /usr/include/gnu/stubs.h:9:27: error: gnu/stubs-64.h: No such file or directory
 </code></pre>
-
 <p>Now we are getting somewhere. Aparently stubs-64.h is part of a debian package
 libc6-dev-amd64. Let&rsquo;s install it and try my test again</p>
-
 <pre><code>debian-server:~/mongodb-linux-x86_64-2.4.1/bin# apt-get install libc6-dev-amd64
 debian-server:~/mongodb-linux-x86_64-2.4.1/bin# gcc -m64 test.c
 debian-server:~/mongodb-linux-x86_64-2.4.1/bin# ./a.out
 dafuq?
 </code></pre>
-
 <p>Better. How about mongoDB?</p>
-
 <pre><code>debian-server:~/mongodb-linux-x86_64-2.4.1/bin# ./mongod
 ./mongod: error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
 </code></pre>
-
 <p>Dear mongoDB, why didn&rsquo;t you start with this? Final fix and it works:</p>
-
 <pre><code>debian-server:~/mongodb-linux-x86_64-2.4.1/bin# apt-get install lib64stdc++6
 </code></pre>
-
 <p>PS. You may also be interested in mongodb.conf and init scripts for <a href="https://github.com/mongodb/mongo/tree/master/debian">debian</a></p>
 
       
@@ -199,6 +178,7 @@ dafuq?
     
   </div>
 </section>
+
 
 <section class="section">
   <div class="container">

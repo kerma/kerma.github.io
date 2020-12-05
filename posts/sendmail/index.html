@@ -15,20 +15,21 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://kerma.codes/posts/sendmail/">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 <section class="section">
   <div class="container">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item" href="https://kerma.codes">
-          <h1 class="title is-4">notes to self</h1>
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://kerma.codes">
+          <h1 id="nav-heading" class="title is-4">notes to self</h1>
         </a>
       </div>
       <div class="nav-right">
-        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/kerma_dj'
             target='_blank' rel='noopener'>
             <span class="icon">
               <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
@@ -66,19 +67,21 @@
     </nav>
 
   </div>
+  <script src="/js/navicon-shift.js"></script>
 </section>
 <section class="section">
   <div class="container">
     <div class="subtitle tags is-6 is-pulled-right">
       
       
-<a class="subtitle is-6" href="/tags/code">#code</a>
+<a class="subtitle is-6" href="/tags/code/">#code</a>
 
 
 
   
-  | <a class="subtitle is-6" href="/tags/golang">#golang</a>
+  | <a class="subtitle is-6" href="/tags/golang/">#golang</a>
   
+
 
       
     </div>
@@ -87,19 +90,13 @@
     
     <div class="content">
       <p>There is a simple task that I occasionally need to perform which has caused me many headaches during the past 10 years: send an email from a server. I remember a day in my early career where I spent hours and hours trying to get Exim4 configured. I’ve similar recollections with Postfix, Sendmail and ssmtp. The last being close to what I was initially hoping for to find. But even this had it’s issues.</p>
-
 <p>When the first Email-as-a-Service offerings started to arrive I was really excited. Finally something simple for a straightforward task. I used <a href="https://www.mailgun.com/">Mailgun</a> for some projects and it worked well. Except the fact that it was another service account to be maintained.</p>
-
 <p>Couple of weeks ago I had another moment where I felt the need to send an email from a server.  Of course, this happened:</p>
-
 <pre><code>$ mail
 zsh: command not found: mail
 $ sendmail
 zsh: command not found: sendmail 
-</code></pre>
-
-<p>.. and it all came back to me. I really don’t want to spend time again on this tedious searching and reading man-pages. I rather spend time on learning something useful. Like Golang.</p>
-
+</code></pre><p>.. and it all came back to me. I really don’t want to spend time again on this tedious searching and reading man-pages. I rather spend time on learning something useful. Like Golang.</p>
 <p>So I built my own <a href="https://github.com/kerma/sendmail">sendmail</a>. Instead of being a MTA it tries to adhere to the UNIX philosophy: make each program do one thing well. In this case: send an email via SMTP server. Golang made it possible to write this also cross-platform with zero effort. And an existing <a href="https://github.com/go-mail/mail">email library</a> made the whole job a breeze.</p>
 
       
@@ -107,6 +104,7 @@ zsh: command not found: sendmail
     
   </div>
 </section>
+
 
 <section class="section">
   <div class="container">
