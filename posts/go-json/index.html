@@ -294,9 +294,10 @@ or was it explicitly set to default/null/empty. A partial workaround for this is
 </code></pre></div><p>That also works for collections, until they are missing or null in the JSON. Explicit <code>[]</code> and <code>{}</code> will
 be decoded to empty pointer slice and struct with its default values.</p>
 <p>Depending on your use case that may not be feasible or convenient. In those cases it&rsquo;s worth to look
-around <a href="https://github.com/clarketm/json">drop-in replacements</a> or
-<a href="https://github.com/leighmcculloch/go-optional">wrapper types</a>. More info on the limitations can be
-found from <a href="https://github.com/golang/go/issues/11939">#11939</a>.</p>
+for <a href="https://github.com/clarketm/json">drop-in replacements</a>,
+or packages implementing <a href="https://github.com/emvi/null">nullable</a> or
+<a href="https://github.com/leighmcculloch/go-optional">optional</a> types.
+More info on the limitations can be found from <a href="https://github.com/golang/go/issues/11939">#11939</a>.</p>
 <h2 id="you-dont-need-a-library-and-then-you-do">you don&rsquo;t need a library, and then you do</h2>
 <p>I&rsquo;m a strong proponent of using Go standard library. Or at least starting from there. It is well
 designed and feature rich. And <code>encoding/json</code> has been enough for all the tasks I&rsquo;ve needed to
