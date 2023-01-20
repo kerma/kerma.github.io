@@ -2,29 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>howto on notes to self</title>
-    <link>https://kerma.codes/tags/howto/</link>
+    <link>https://kerma.github.io/tags/howto/</link>
     <description>Recent content in howto on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Mar 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.codes/tags/howto/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Mar 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.github.io/tags/howto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to resize FAT partition in Linux without losing data</title>
-      <link>https://kerma.codes/posts/resize-fat-partition/</link>
+      <link>https://kerma.github.io/posts/resize-fat-partition/</link>
       <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://kerma.codes/posts/resize-fat-partition/</guid>
+      <guid>https://kerma.github.io/posts/resize-fat-partition/</guid>
       <description>I have a small external hard drive that had three partitions on it. One I created for TimeMachine backups, one for keeping movies and one that I was not aware of. It had a boot flag so I suspect it was created by TimeMachine itself.
 So once I got a bigger HD just for TimeMachine I no longer needed the allocated 100GB on that older drive. Getting rid of it however without losing data seemed a bit too complicated in Mac OS X.</description>
     </item>
     
     <item>
       <title>How to install matplotlib on Mac OS X Lion</title>
-      <link>https://kerma.codes/posts/install-matplotlib-on-osx/</link>
+      <link>https://kerma.github.io/posts/install-matplotlib-on-osx/</link>
       <pubDate>Fri, 26 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://kerma.codes/posts/install-matplotlib-on-osx/</guid>
+      <guid>https://kerma.github.io/posts/install-matplotlib-on-osx/</guid>
       <description>I was struggeling with installation of matplotlib on Mac OS X Lion. While trying to pip install matplotlib I saw a lot of bad stuff like
-src/ft2font.h:16:22: error: ft2build.h: No such file or directory src/ft2font.h:17:10: error: #include expects &amp;quot;FILENAME&amp;quot; or &amp;lt;FILENAME&amp;gt; ... lipo: can&#39;t open input file: /var/tmp//ccuS7mkF.out (No such file or directory) error: command &#39;llvm-gcc-4.2&#39; failed with exit status 1  It seemed that that issue was caused by</description>
+src/ft2font.h:16:22: error: ft2build.h: No such file or directory src/ft2font.h:17:10: error: #include expects &amp;quot;FILENAME&amp;quot; or &amp;lt;FILENAME&amp;gt; ... lipo: can&#39;t open input file: /var/tmp//ccuS7mkF.out (No such file or directory) error: command &#39;llvm-gcc-4.2&#39; failed with exit status 1 It seemed that that issue was caused by
+REQUIRED DEPENDENCIES numpy: 1.</description>
     </item>
     
   </channel>

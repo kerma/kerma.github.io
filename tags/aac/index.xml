@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>aac on notes to self</title>
-    <link>https://kerma.codes/tags/aac/</link>
+    <link>https://kerma.github.io/tags/aac/</link>
     <description>Recent content in aac on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Mar 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.codes/tags/aac/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Mar 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.github.io/tags/aac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to make your MP4 video play on Xbox 360</title>
-      <link>https://kerma.codes/posts/mp4-on-xbox360/</link>
+      <link>https://kerma.github.io/posts/mp4-on-xbox360/</link>
       <pubDate>Wed, 13 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://kerma.codes/posts/mp4-on-xbox360/</guid>
+      <guid>https://kerma.github.io/posts/mp4-on-xbox360/</guid>
       <description>There are some known limitations on Xbox 360 to play mp4 video. First of all you should update your Xbox, so if it&amp;rsquo;s not yet in the network you have to get it there. Once you&amp;rsquo;re confident that your box is up to date you can start looking into MP4 and it&amp;rsquo;s issues with Xbox. Some say that Xbox has the following special needs:
 Xbox can play H.264 MP4 video, but only up to 10 Mbps with resolutions of 1920*1080, 30 frames per second.</description>
     </item>

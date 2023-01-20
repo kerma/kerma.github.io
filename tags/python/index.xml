@@ -2,27 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on notes to self</title>
-    <link>https://kerma.codes/tags/python/</link>
+    <link>https://kerma.github.io/tags/python/</link>
     <description>Recent content in python on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Oct 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.codes/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Oct 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to install matplotlib on Mac OS X Lion</title>
-      <link>https://kerma.codes/posts/install-matplotlib-on-osx/</link>
+      <link>https://kerma.github.io/posts/install-matplotlib-on-osx/</link>
       <pubDate>Fri, 26 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://kerma.codes/posts/install-matplotlib-on-osx/</guid>
+      <guid>https://kerma.github.io/posts/install-matplotlib-on-osx/</guid>
       <description>I was struggeling with installation of matplotlib on Mac OS X Lion. While trying to pip install matplotlib I saw a lot of bad stuff like
-src/ft2font.h:16:22: error: ft2build.h: No such file or directory src/ft2font.h:17:10: error: #include expects &amp;quot;FILENAME&amp;quot; or &amp;lt;FILENAME&amp;gt; ... lipo: can&#39;t open input file: /var/tmp//ccuS7mkF.out (No such file or directory) error: command &#39;llvm-gcc-4.2&#39; failed with exit status 1  It seemed that that issue was caused by</description>
+src/ft2font.h:16:22: error: ft2build.h: No such file or directory src/ft2font.h:17:10: error: #include expects &amp;quot;FILENAME&amp;quot; or &amp;lt;FILENAME&amp;gt; ... lipo: can&#39;t open input file: /var/tmp//ccuS7mkF.out (No such file or directory) error: command &#39;llvm-gcc-4.2&#39; failed with exit status 1 It seemed that that issue was caused by
+REQUIRED DEPENDENCIES numpy: 1.</description>
     </item>
     
     <item>
       <title>Python easter eggs</title>
-      <link>https://kerma.codes/posts/python-easter-eggs/</link>
+      <link>https://kerma.github.io/posts/python-easter-eggs/</link>
       <pubDate>Wed, 17 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://kerma.codes/posts/python-easter-eggs/</guid>
+      <guid>https://kerma.github.io/posts/python-easter-eggs/</guid>
       <description>I found some interesting easter eggs from python (2.7) recently. Try the following:
 from __future__ import braces
 import this

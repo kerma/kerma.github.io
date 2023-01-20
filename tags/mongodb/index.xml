@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mongodb on notes to self</title>
-    <link>https://kerma.codes/tags/mongodb/</link>
+    <link>https://kerma.github.io/tags/mongodb/</link>
     <description>Recent content in mongodb on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Apr 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.codes/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Apr 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install mongoDB on 64bit Debian (Squeeze)</title>
-      <link>https://kerma.codes/posts/mongodb-on-64bit-debian/</link>
+      <link>https://kerma.github.io/posts/mongodb-on-64bit-debian/</link>
       <pubDate>Thu, 18 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://kerma.codes/posts/mongodb-on-64bit-debian/</guid>
+      <guid>https://kerma.github.io/posts/mongodb-on-64bit-debian/</guid>
       <description>Sometime the most obvious thing turns out to be the most complicated one. Here&amp;rsquo;s my small journey to get mongoDB running on one 64bit Debian server.
 Like any other reasonable person I started from the manual. Everything worked as they said it would and for some time I was quite happy with it. But at some point for whatever reason I peaked into /var/log/mongodb/mongodb.log.
 ***** SERVER RESTARTED ***** Wed Dec 12 17:34:37 warning: 32-bit servers don&#39;t have journaling enabled by default.</description>

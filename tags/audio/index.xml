@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>audio on notes to self</title>
-    <link>https://kerma.codes/tags/audio/</link>
+    <link>https://kerma.github.io/tags/audio/</link>
     <description>Recent content in audio on notes to self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Mar 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.codes/tags/audio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Mar 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://kerma.github.io/tags/audio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to concatenate multiple mp3&#39;s</title>
-      <link>https://kerma.codes/posts/join-mp3-with-lame/</link>
+      <link>https://kerma.github.io/posts/join-mp3-with-lame/</link>
       <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://kerma.codes/posts/join-mp3-with-lame/</guid>
+      <guid>https://kerma.github.io/posts/join-mp3-with-lame/</guid>
       <description>&lt;p&gt;Edit3, 2018: Just use &lt;code&gt;ffmpeg&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Re-encode is usually not what you are after, specially if the source itself is already a low qualtiy MP3 file.&lt;/p&gt;</description>
     </item>

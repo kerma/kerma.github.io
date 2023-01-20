@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>How to concatenate multiple mp3&#39;s | notes to self</title>
+<title>Downscaling screen recordings on macOS | notes to self</title>
 
 
 
@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="canonical" href="https://kerma.github.io/posts/join-mp3-with-lame/">
+<link rel="canonical" href="https://kerma.github.io/posts/downscale-screen-recording/">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 </head>
@@ -81,59 +81,54 @@
     <div class="subtitle tags is-6 is-pulled-right">
       
       
-<a class="subtitle is-6" href="/tags/audio/">#audio</a>
+<a class="subtitle is-6" href="/tags/cli/">#cli</a>
 
 
 
   
-  | <a class="subtitle is-6" href="/tags/tips/">#tips</a>
+  | <a class="subtitle is-6" href="/tags/ffmpeg/">#ffmpeg</a>
   
 
 
       
     </div>
-    <h2 class="subtitle is-6">March 18, 2014</h2>
-    <h1 class="title">How to concatenate multiple mp3&#39;s</h1>
+    <h2 class="subtitle is-6">January 20, 2023</h2>
+    <h1 class="title">Downscaling screen recordings on macOS</h1>
     
     <div class="content">
-      <p>Edit3, 2018: Just use <code>ffmpeg</code>.</p>
-<p>Re-encode is usually not what you are after, specially if the source itself is already a low qualtiy MP3 file.</p>
-<p>So, prep your file list in <code>files.txt</code>:</p>
-<pre><code>file part1.mp3
-file part2.mp3
-file part3.mp3
-</code></pre>
-<p>And run:</p>
-<pre><code>ffmpeg -f concat -i files.txt -c copy out.mp3
-</code></pre>
-<hr>
-<p><em>Original post:</em></p>
-<p>It&rsquo;s 2014 and yet it&rsquo;s not an obvious thing for some strange reason. Luckly someone
-<a href="http://serialized.net/2007/09/quick-lame-tip-concatenate-mp3s/">else</a>
-was as frustrated as me.</p>
-<p>Here&rsquo;s my a bit shorter version of it:</p>
-<pre><code>find . -name '*.mp3' -exec lame --decode '{}' - ';' | lame -a -b 64 - out.mp3
-</code></pre>
-<p>Edit: I found out, that the max length of a output is around 3.5 hours. Don&rsquo;t know why,
-but something happens and lame decode stops:</p>
-<pre><code>...
-input:  ./input-04.mp3
-    (44.1 kHz, 2 channels, MPEG-1 Layer III)
-output: &lt;stdout&gt;  (16 bit, Microsoft WAVE)
-skipping initial 529 samples (encoder+decoder delay)
-Frame#  5505/80510   64 kbps   MS    LAME 3.99.5 64bits (http://lame.sf.net)
-Autoconverting from stereo to mono. Setting encoding to mono mode.
-Using polyphase lowpass filter, transition band: 16538 Hz - 17071 Hz
-Encoding &lt;stdin&gt; to out.mp3
-Encoding as 44.1 kHz single-ch MPEG-1 Layer III (11x)  64 kbps qval=3
-</code></pre>
-<p>Everything works nicely if I keep input below 3.5 hours.</p>
-<p>Edit2: Sometimes you want to sort your input..</p>
-<p><code>find</code> really doesn&rsquo;t execute files in &ldquo;sorted&rdquo; order, so sometimes you need
-to sort the output of find by file name before concatenating things. More pipes are
-needed then:</p>
-<pre><code>find . -name '*.mp3' | sort | xargs -i lame --decode {} -  | lame -a -b 64 - out.mp3
-</code></pre>
+      <p>macOS comes with some powerful tools out of the box. Press <code>Shift+Cmd+5</code> and you&rsquo;re ready to record
+the screen, with or without audio. That is neat. Once you&rsquo;re done a recording is stored on
+your Desktop, and you&rsquo;re free to share it with friends and family. Unless..</p>
+<p>Sometimes you have a lot to tell. A modern Macbook screen resolution makes your recording grow quite
+fast. I like to drop my stuff directly to Slack. But I don&rsquo;t have the patience (nor the upload
+limit) big enough to handle gigabytes.</p>
+<p>QuickTime Player allows you to Export As the recording to a more reasonable format (720p for
+example). However, this process is slow, and the downscaled video size is still too big to be easily
+shareable. But there&rsquo;s an alternative, enter <a href="https://ffmpeg.org/">ffmpeg</a>.</p>
+<p>Once installed you can just</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ffmpeg -i input.mov -vcodec libx264 -crf <span style="color:#099">24</span> -vf <span style="color:#008080">scale</span><span style="color:#000;font-weight:bold">=</span>1280:-1 output.mov
+</span></span></code></pre></div><p>The resulting output.mov file is 720p. On a Macbook M1 Pro a 63 minute recording was processed in less
+than 10 minutes, and it took the file size from 5.3GB down to 170MB.</p>
+<p>Depending on which screen you record you may encounter the following error when using the
+<code>scale:1280:-1</code> argument:</p>
+<pre tabindex="0"><code>[libx264 @ 0x14af05170] height not divisible by 2 (1280x831)
+Error initializing output stream 0:0 -- Error while opening encoder for output stream #0:0 - 
+maybe incorrect parameters such as bit_rate, rate, width or height
+</code></pre><p>I record mostly on the 14&quot; screen. According to ffmpeg the recording resolution is:</p>
+<pre tabindex="0"><code>Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 
+3548x2304, 6772 kb/s, 51.34 fps, 60 tbr, 6k tbn (default)
+</code></pre><p>After some trial and error I landed on the following value: <code>scale=1280:826</code>. This keeps the aspect
+ratio close to original.</p>
+<p>I also dropped the following into my zsh config for an easy access:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>downscale <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0086b3">local</span> <span style="color:#008080">input</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">${</span><span style="color:#008080">1</span><span style="color:#000;font-weight:bold">:-</span><span style="color:#008080">input</span>.mov<span style="color:#d14">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0086b3">local</span> <span style="color:#008080">output</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">${</span><span style="color:#008080">2</span><span style="color:#000;font-weight:bold">:-</span><span style="color:#008080">output</span>.mov<span style="color:#d14">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0086b3">local</span> <span style="color:#008080">scale</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">${</span><span style="color:#008080">3</span><span style="color:#000;font-weight:bold">:-</span><span style="color:#008080">1280</span>:<span style="color:#008080">826</span><span style="color:#d14">}</span>
+</span></span><span style="display:flex;"><span>        ffmpeg -i <span style="color:#d14">${</span><span style="color:#008080">input</span><span style="color:#d14">}</span> -vcodec libx264 -crf <span style="color:#099">24</span> -vf <span style="color:#008080">scale</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">${</span><span style="color:#008080">scale</span><span style="color:#d14">}</span> <span style="color:#d14">${</span><span style="color:#008080">output</span><span style="color:#d14">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><blockquote>
+<p><em>Don&rsquo;t you love it when a plan comes together?</em></p>
+</blockquote>
       
     </div>
     
